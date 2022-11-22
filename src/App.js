@@ -11,6 +11,7 @@ import {
   MyExchanges,
   Referrals,
   Settings,
+  ManageCopyTrading,
 } from "./pages";
 import "./App.css";
 
@@ -84,6 +85,10 @@ const App = () => {
                 <Route path="/Billing" element={<Billing />} />
                 <Route path="/Referrals" element={<Referrals />} />
                 <Route path="/Settings" element={<Settings />} />
+                <Route
+                  path="/ManageCopyTrading"
+                  element={<ManageCopyTrading />}
+                />
               </Routes>
             </div>
             <Footer />

@@ -41,6 +41,7 @@ export const links = [
       {
         name: "Dashboard",
         icon: <AiFillDashboard />,
+        path: "/",
       },
     ],
   },
@@ -48,16 +49,19 @@ export const links = [
   {
     links: [
       {
-        name: "MyExchanges",
+        name: "My Exchanges",
         icon: <FaExchangeAlt />,
+        path: "/MyExchanges",
       },
       {
         name: "Positions",
         icon: <GiPositionMarker />,
+        path: "/Positions",
       },
       {
         name: "Terminal",
         icon: <FiTerminal />,
+        path: "/Terminal",
       },
     ],
   },
@@ -66,18 +70,27 @@ export const links = [
       {
         name: "Marketplace",
         icon: <FaLandmark />,
+        path: "/Marketplace",
+      },
+      {
+        name: "Manage Copy-Trading",
+        icon: <FaLandmark />,
+        path: "/ManageCopyTrading",
       },
       {
         name: "Referrals",
         icon: <FaBullhorn />,
+        path: "/Referrals",
       },
       {
         name: "Billing",
         icon: <FaWallet />,
+        path: "/Billing",
       },
       {
         name: "Settings",
         icon: <FiSettings />,
+        path: "/Settings",
       },
     ],
   },
