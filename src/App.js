@@ -3,7 +3,15 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { FiSettings } from "react-icons/fi";
 import { TooltipComponent } from "@syncfusion/ej2-react-popups";
 import { Navbar, Footer, Sidebar, ThemeSettings } from "./components";
-import { Dashboard, SignIn, SignUp, Billing, MyExchanges ,Referrals,Settings} from "./pages";
+import {
+  Dashboard,
+  SignIn,
+  SignUp,
+  Billing,
+  MyExchanges,
+  Referrals,
+  Settings,
+} from "./pages";
 import "./App.css";
 
 import { useStateContext } from "./contexts/ContextProvider";
@@ -70,6 +78,7 @@ const App = () => {
                 <Route path="/" element={<Dashboard />} />
                 <Route path="/Dashboard" element={<Dashboard />} />
                 <Route path="/MyExchanges" element={<MyExchanges />} />
+                <Route path="/Positions" element={<MyExchanges />} />
                 <Route path="/signIn" element={<SignIn />} />
                 <Route path="/signUp" element={<SignUp />} />
                 <Route path="/Billing" element={<Billing />} />
