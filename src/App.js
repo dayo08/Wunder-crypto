@@ -12,6 +12,7 @@ import {
   Referrals,
   Settings,
   ManageCopyTrading,
+  Positions,
 } from "./pages";
 import "./App.css";
 
@@ -74,12 +75,11 @@ const App = () => {
             </div>
             <div>
               {themeSettings && <ThemeSettings />}
-
               <Routes>
                 <Route path="/" element={<Dashboard />} />
                 <Route path="/Dashboard" element={<Dashboard />} />
                 <Route path="/MyExchanges" element={<MyExchanges />} />
-                <Route path="/Positions" element={<MyExchanges />} />
+                <Route path="/Positions" element={<Positions />} />
                 <Route path="/signIn" element={<SignIn />} />
                 <Route path="/signUp" element={<SignUp />} />
                 <Route path="/Billing" element={<Billing />} />
