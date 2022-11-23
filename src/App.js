@@ -12,6 +12,8 @@ import {
   Referrals,
   Settings,
   ManageCopyTrading,
+  Positions,
+  MarketPlace,
 } from "./pages";
 import "./App.css";
 
@@ -74,16 +76,17 @@ const App = () => {
             </div>
             <div>
               {themeSettings && <ThemeSettings />}
-
               <Routes>
                 <Route path="/" element={<Dashboard />} />
                 <Route path="/Dashboard" element={<Dashboard />} />
                 <Route path="/MyExchanges" element={<MyExchanges />} />
+                <Route path="/Positions" element={<Positions />} />
                 <Route path="/signIn" element={<SignIn />} />
                 <Route path="/signUp" element={<SignUp />} />
                 <Route path="/Billing" element={<Billing />} />
                 <Route path="/Referrals" element={<Referrals />} />
                 <Route path="/Settings" element={<Settings />} />
+                <Route path="/Marketplace" element={<MarketPlace />} />
                 <Route
                   path="/ManageCopyTrading"
                   element={<ManageCopyTrading />}
