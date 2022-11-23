@@ -7,3 +7,4 @@ export { default as Referrals } from "./Referrals";
 export { default as Settings } from "./Settings";
 export { default as ManageCopyTrading } from "./ManageCopyTrading";
 export { default as MarketPlace } from "./MarketPlace";
+export { default as Terminal } from "./Terminal";
