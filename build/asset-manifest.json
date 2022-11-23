@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/static/css/main.b27ec269.css",
+    "main.js": "/static/js/main.f2b2238a.js",
+    "static/media/binance.webp": "/static/media/binance.252f4ba23356ef3fec62.webp",
+    "static/media/bitmex.webp": "/static/media/bitmex.2138fe569ef8659ff53c.webp",
+    "index.html": "/index.html"
+  },
+  "entrypoints": [
+    "static/css/main.b27ec269.css",
+    "static/js/main.f2b2238a.js"
+  ]
+}

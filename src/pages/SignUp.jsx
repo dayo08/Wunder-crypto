@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { SiShopware } from "react-icons/si";
 import { Link } from "react-router-dom";
-import { Button } from "../../components";
-import { useStateContext } from "../../contexts/ContextProvider";
+import { Button } from "../components";
+import { useStateContext } from "../contexts/ContextProvider";
 function SignUp() {
   const [firstname, setfirstname] = useState("");
   const [Lastname, setLastname] = useState("");

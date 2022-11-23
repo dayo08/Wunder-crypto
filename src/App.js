@@ -75,6 +75,9 @@ const App = () => {
               <Navbar />
             </div>
             <div>
+              <section className="user-subs-inf-banner text-center">
+                Current plan: Pro ( 3 days left )
+              </section>
               {themeSettings && <ThemeSettings />}
               <Routes>
                 <Route path="/" element={<Dashboard />} />

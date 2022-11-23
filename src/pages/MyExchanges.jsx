@@ -5,6 +5,7 @@ import binance from "../data/binance.webp";
 import bitmex from "../data/bitmex.webp";
 import { AiOutlineSave } from "react-icons/ai";
 import "./table.css";
+
 const Orders = () => {
   const { currentColor } = useStateContext();
   return (
@@ -13,7 +14,14 @@ const Orders = () => {
         <div className="border-b  border-white  ">
           <div className="md:text-2xl text-lg font-bold mb-5">My Exchanges</div>
           <div className="flex md:text-xl text-base font-bold gap-8">
-            <div className="border-b-4 border-[#03c9d7] ">API Profiles</div>
+            <div className="flex md:text-xl text-base font-bold gap-8 cursor-pointer dark:text-white border-b-2 ">
+              <div
+                style={{ padding: "16px 0 20px" }}
+                className="border-b-4 hover:text-[#598fff] border-[#03c9d7]  "
+              >
+                API Profiles
+              </div>
+            </div>
           </div>
         </div>
         <div className="flex  flex-col mt-3 ">
@@ -46,7 +54,7 @@ const Orders = () => {
             <p className="font-bold">Exchange Accounts</p>
             <p className="text-[#757474] py-2">Select default exchange.</p>
             <div className="flex gap-2 justify-center md:items-center md:flex-row flex-col">
-              <select name="Kamkala" className="dropdown list">
+              <select className="dropdown list">
                 <option value="BINANCE-SPOT">BINANCE-SPOT</option>
               </select>
               <div className="dark:text-gray-200 bg-[#02d39b] p-3 rounded-md">

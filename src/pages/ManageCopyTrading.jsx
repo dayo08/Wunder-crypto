@@ -1,13 +1,29 @@
 import React, { useState } from "react";
 import { AiFillQuestionCircle } from "react-icons/ai";
-import { Pie, Button } from "../components";
-import { ecomPieChartData } from "../data/dummy";
-import { ImCheckmark } from "react-icons/im";
+import { Button } from "../components";
 import { useStateContext } from "../contexts/ContextProvider";
+import Swal from "sweetalert2";
 
 function ManageCopyTrading() {
   const { currentColor } = useStateContext();
   const [active, setactive] = useState(1);
+
+  const rol = () => {
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire("Deleted!", "Your file has been deleted.", "success");
+      }
+    });
+  };
+
   return (
     <div className="mt-24 md:mt-3 dark:text-gray-200">
       <div className="flex flex-wrap justify-start mt-24 md:mt-3">
@@ -24,7 +40,7 @@ function ManageCopyTrading() {
             Being a Copy-Trader allows you to follow Traders.
           </p>
           <div className="flex gap-5 mt-4">
-            <div>
+            <div onClick={() => rol()}>
               <Button
                 color="white"
                 bgColor={currentColor}
@@ -61,10 +77,13 @@ function ManageCopyTrading() {
       </div>
       <div className=" dark:text-gray-200 dark:bg-secondary-dark-bg rounded-xl md:px-8 pt-5 m-3 border-b border-white ">
         <div className="p-3 ">
-          <div className="flex md:text-xl text-base font-medium md:font-bold gap-8 cursor-pointer">
+          <div className="flex md:text-xl text-base font-bold gap-8 cursor-pointer dark:text-white border-b-2 border-[#828282]">
             <div
+              style={{ padding: "16px 0 20px" }}
               className={`${
-                active === 1 ? "border-b-4 pb-5 border-[#03c9d7]  " : "deActive"
+                active === 1
+                  ? "border-b-4 hover:text-[#598fff] border-[#03c9d7]  "
+                  : "deActive hover:text-[#598fff]"
               }`}
               onClick={() => {
                 setactive(1);
@@ -72,13 +91,15 @@ function ManageCopyTrading() {
             >
               Traders I follow
             </div>
-
             <div
               onClick={() => {
                 setactive(2);
               }}
+              style={{ padding: "16px 0 20px" }}
               className={`${
-                active === 2 ? "border-b-4 pb-5 border-[#03c9d7]  " : "deActive"
+                active === 2
+                  ? "border-b-4 border-[#03c9d7] hover:text-[#598fff] "
+                  : "deActive hover:text-[#598fff]"
               }`}
             >
               Signal Provider Channels I follow

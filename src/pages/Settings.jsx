@@ -3,24 +3,65 @@ import { useStateContext } from "../contexts/ContextProvider";
 import { Button } from "../components";
 import TimezoneSelect from "react-timezone-select";
 import "./table.css";
+import { Generaldata } from "../data/dummy";
+import Swal from "sweetalert2";
+
 function Settings() {
   const [active, setactive] = useState(1);
   const { currentColor } = useStateContext();
-  const General = [
-    { id: 1, title: "Position entry" },
-    { id: 2, title: "Position exit" },
-    { id: 3, title: "Error notifications" },
-  ];
   const [selectedTimezone, setSelectedTimezone] = useState({});
+
+  const settings = () => {
+    const swalWithBootstrapButtons = Swal.mixin({
+      customClass: {
+        confirmButton: "btn btn-success",
+        cancelButton: "btn btn-danger",
+      },
+      buttonsStyling: false,
+    });
+
+    swalWithBootstrapButtons
+      .fire({
+        title: "Are you sure?",
+        text: "You won't be able to revert this!",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonText: "Yes, delete it!",
+        cancelButtonText: "No, cancel!",
+        reverseButtons: true,
+      })
+      .then((result) => {
+        if (result.isConfirmed) {
+          swalWithBootstrapButtons.fire(
+            "Deleted!",
+            "Your file has been deleted.",
+            "success"
+          );
+        } else if (
+          /* Read more about handling dismissals below */
+          result.dismiss === Swal.DismissReason.cancel
+        ) {
+          swalWithBootstrapButtons.fire(
+            "Cancelled",
+            "Your imaginary file is safe :)",
+            "error"
+          );
+        }
+      });
+  };
+
   return (
     <div className="mt-24 md:mt-3 dark:text-gray-200">
       <div className=" dark:text-gray-200 dark:bg-secondary-dark-bg rounded-xl md:px-8 pt-5 m-3 border-b border-white ">
         <div className="p-3 ">
           <div className="md:text-2xl text-lg font-bold mb-5">Billing</div>
-          <div className="flex md:text-xl text-base font-medium md:font-bold gap-8 cursor-pointer">
+          <div className="flex md:text-xl text-base font-bold gap-8 cursor-pointer dark:text-white border-b-2 border-[#828282]">
             <div
+              style={{ padding: "16px 0 20px" }}
               className={`${
-                active === 1 ? "border-b-4 pb-5 border-[#03c9d7]  " : "deActive"
+                active === 1
+                  ? "border-b-4 hover:text-[#598fff] border-[#03c9d7]  "
+                  : "deActive hover:text-[#598fff]"
               }`}
               onClick={() => {
                 setactive(1);
@@ -32,19 +73,25 @@ function Settings() {
               onClick={() => {
                 setactive(2);
               }}
+              style={{ padding: "16px 0 20px" }}
               className={`${
-                active === 2 ? "border-b-4 pb-5 border-[#03c9d7]  " : "deActive"
+                active === 2
+                  ? "border-b-4 border-[#03c9d7] hover:text-[#598fff] "
+                  : "deActive hover:text-[#598fff]"
               }`}
             >
               Security
             </div>
             <div
+              style={{ padding: "16px 0 20px" }}
+              className={`${
+                active === 3
+                  ? "border-b-4 border-[#03c9d7]  hover:text-[#598fff]"
+                  : "deActive hover:text-[#598fff]"
+              }`}
               onClick={() => {
                 setactive(3);
               }}
-              className={`${
-                active === 3 ? "border-b-4 pb-5 border-[#03c9d7]  " : "deActive"
-              }`}
             >
               Notifications
             </div>
@@ -100,7 +147,7 @@ function Settings() {
                   Choose default page for your cabinet:
                 </span>
                 <div>
-                  <select name="Kamkala" className="dropdown list mt-3">
+                  <select className="dropdown list mt-3">
                     <option value="DASHBOARD">DASHBOARD</option>
                     <option value="POSITIONS">POSITIONS</option>
                   </select>
@@ -115,7 +162,7 @@ function Settings() {
                 <span className="text-[#66686b]">
                   Select the city of your timezone:
                 </span>
-                <div >
+                <div>
                   <TimezoneSelect
                     value={selectedTimezone}
                     onChange={setSelectedTimezone}
@@ -163,12 +210,14 @@ function Settings() {
             <label className="block uppercase tracking-wide dark:text-white text-gray-700 text-base   font-bold mb-2">
               Remove my account
             </label>
-            <Button
-              color="white"
-              bgColor={currentColor}
-              text="Terminate"
-              borderRadius="2px"
-            />
+            <div onClick={() => settings()}>
+              <Button
+                color="white"
+                bgColor={currentColor}
+                text="Terminate"
+                borderRadius="2px"
+              />
+            </div>
           </div>
         </>
       )}
@@ -233,7 +282,7 @@ function Settings() {
                 </tr>
               </thead>
               <tbody className="space-y- text-left divide-y divide-gray-700">
-                {General.map((items) => (
+                {Generaldata.map((items) => (
                   <>
                     <tr>
                       <th scope="row" className="text-left w-10">
