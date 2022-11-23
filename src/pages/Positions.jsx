@@ -3,27 +3,63 @@ import "./Position.css";
 import { BsFilter } from "react-icons/bs";
 import { BsChevronRight } from "react-icons/bs";
 const Positions = () => {
+  const columnArray = [
+    { id: 1, title: "Position", selected: false },
+    { id: 2, title: "Entry", selected: false },
+    { id: 3, title: "Take Profit", selected: false },
+    { id: 4, title: "Stop Loss", selected: false },
+    { id: 5, title: "Trailing Stop ┊ Activation Price", selected: false },
+    { id: 6, title: "Portfolio", selected: false },
+    { id: 7, title: "P/L", selected: false },
+    { id: 8, title: "ROI", selected: false },
+    { id: 9, title: "R/R", selected: false },
+    { id: 10, title: "Status", selected: false },
+    { id: 11, title: "Last update", selected: false },
+    { id: 12, title: "Actions", selected: false },
+  ];
+
   const [active, setactive] = useState(1);
   const [isOpen, setIsOpen] = useState(false);
+
+  const [isChangeData, setIsChangeData] = useState({
+    List: columnArray,
+    MasterChecked: false,
+    SelectedList: [],
+  });
+  console.log("🚀 ~ Positions ~ isChangeData", isChangeData.List);
 
   const changePopup = () => {
     setIsOpen((current) => !current);
   };
 
-  const columnArray = [
-    { id: 1, title: "Position" },
-    { id: 2, title: "Entry" },
-    { id: 3, title: "Take Profit" },
-    { id: 4, title: "Stop Loss" },
-    { id: 5, title: "Trailing Stop ┊ Activation Price" },
-    { id: 6, title: "Portfolio" },
-    { id: 7, title: "P/L" },
-    { id: 8, title: "ROI" },
-    { id: 9, title: "R/R" },
-    { id: 10, title: "Status" },
-    { id: 11, title: "Last update" },
-    { id: 12, title: "Actions" },
-  ];
+  // const masterChecked = (e) => {
+  //   let tempList = isList;
+  //   tempList.map((user) => (user.selected = e.target.checked));
+  //   setIsChecked(e.target.checked);
+  //   setIsList([{ isList: tempList }]);
+  //   setIsSelectedList(isList.filter((e) => e.selected));
+  // };
+
+  const onItemCheck = (e, item) => {
+    let tempList = isChangeData.List;
+    tempList.map((user) => {
+      if (user.id === item.id) {
+        user.selected = e.target.checked;
+      }
+      return user;
+    });
+
+    //To Control Master Checkbox State
+    const totalItems = isChangeData.List.length;
+    const totalCheckedItems = tempList.filter((e) => e.selected).length;
+
+    // Update State
+    setIsChangeData({
+      MasterChecked: totalItems === totalCheckedItems,
+      List: tempList,
+      SelectedList: isChangeData.List.filter((e) => e.selected),
+    });
+  };
 
   return (
     <>
@@ -196,13 +232,20 @@ const Positions = () => {
                       className="MuiButtonBase-root MuiCheckbox-root tss-pveyo8-MUIDataTableViewCol-checkboxRoot MuiCheckbox-colorPrimary PrivateSwitchBase-root MuiCheckbox-root tss-pveyo8-MUIDataTableViewCol-checkboxRoot MuiCheckbox-colorPrimary  MuiCheckbox-root tss-pveyo8-MUIDataTableViewCol-checkboxRoot MuiCheckbox-colorPrimary tss-bvzzpc-MUIDataTableViewCol-checkbox css-zun73v"
                       data-description="table-view-col"
                     >
-                      <input
-                        className="PrivateSwitchBase-input css-1m9pwf3"
+                      {/* <input
                         type="checkbox"
-                        data-indeterminate="false"
-                        defaultValue="position"
-                      />
+                        className="form-check-input"
+                        checked={isChecked}
+                        id="mastercheck"
+                        onChange={(e) => masterChecked(e)}
+                      /> */}
 
+                      <input
+                        type="checkbox"
+                        checked={item?.selected}
+                        id="rowcheck{user.id}"
+                        onChange={(e) => onItemCheck(e, item)}
+                      />
                       <span className="MuiTouchRipple-root css-w0pj6f" />
                     </span>
                     <span className="MuiTypography-root MuiTypography-body1 MuiFormControlLabel-label tss-1sf0hhi-MUIDataTableViewCol-label css-9l3uo3">
@@ -217,9 +260,9 @@ const Positions = () => {
       )}
 
       {/* Table */}
-      <div className="mt-5 px-7  overflow-auto">
-        <table>
-          <thead >
+      <div className="mt-5 px-7  overflow-auto text-white">
+        {/* <table>
+          <thead>
             <tr>
               <th>
                 <BsChevronRight />
@@ -255,6 +298,19 @@ const Positions = () => {
               <td>Content 1</td>
             </tr>
           </tbody>
+        </table> */}
+        <table className="text-white">
+          <thead className="text-white">
+            <tr className="text-white">
+              {isChangeData?.SelectedList?.map((i) => (
+                <>
+                  <th scope="col" className="!text-white">
+                    {i.title}
+                  </th>
+                </>
+              ))}
+            </tr>
+          </thead>
         </table>
       </div>
     </>
