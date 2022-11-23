@@ -1,8 +1,6 @@
 import React from "react";
-import { FiTerminal, FiSettings } from "react-icons/fi";
-
+import { FiTerminal, FiSettings, FiFacebook } from "react-icons/fi";
 import { GiPositionMarker } from "react-icons/gi";
-
 import {
   FaExchangeAlt,
   FaLandmark,
@@ -11,30 +9,11 @@ import {
   FaBookOpen,
   FaChartBar,
   FaRoute,
+  FaTelegram,
 } from "react-icons/fa";
-
 import { AiFillDashboard } from "react-icons/ai";
-
-export const LinePrimaryXAxis = {
-  valueType: "DateTime",
-  labelFormat: "y",
-  intervalType: "Years",
-  edgeLabelPlacement: "Shift",
-  majorGridLines: { width: 0 },
-  background: "white",
-};
-
-export const LinePrimaryYAxis = {
-  labelFormat: "{value}%",
-  rangePadding: "None",
-  minimum: 0,
-  maximum: 100,
-  interval: 20,
-  lineStyle: { width: 0 },
-  majorTickLines: { width: 0 },
-  minorTickLines: { width: 0 },
-};
-
+import { SiDiscord } from "react-icons/si";
+import { AiOutlineTwitter, AiFillYoutube } from "react-icons/ai";
 export const links = [
   {
     links: [
@@ -118,6 +97,29 @@ export const social = [
   },
 ];
 
+export const socialmedai = [
+  {
+    link: "https://wundertrading.com/",
+    icon: <FiFacebook className="text-3xl"/>,
+  },
+  {
+    link: "https://wundertrading.com/",
+    icon: <AiOutlineTwitter className="text-3xl"/>,
+  },
+  {
+    link: "https://wundertrading.com/",
+    icon: <AiFillYoutube className="text-3xl"/>,
+  },
+  {
+    link: "https://wundertrading.com/",
+    icon: <FaTelegram className="text-3xl"/>,
+  },
+  {
+    link: "https://wundertrading.com/",
+    icon: <SiDiscord className="text-3xl"/>,
+  },
+];
+
 export const themeColors = [
   {
     name: "blue-theme",
@@ -145,72 +147,261 @@ export const themeColors = [
   },
 ];
 
-export const lineChartData = [
-  [
-    { x: new Date(2005, 0, 1), y: 21 },
-    { x: new Date(2006, 0, 1), y: 24 },
-    { x: new Date(2007, 0, 1), y: 36 },
-    { x: new Date(2008, 0, 1), y: 38 },
-    { x: new Date(2009, 0, 1), y: 54 },
-    { x: new Date(2010, 0, 1), y: 57 },
-    { x: new Date(2011, 0, 1), y: 70 },
-  ],
-  [
-    { x: new Date(2005, 0, 1), y: 28 },
-    { x: new Date(2006, 0, 1), y: 44 },
-    { x: new Date(2007, 0, 1), y: 48 },
-    { x: new Date(2008, 0, 1), y: 50 },
-    { x: new Date(2009, 0, 1), y: 66 },
-    { x: new Date(2010, 0, 1), y: 78 },
-    { x: new Date(2011, 0, 1), y: 84 },
-  ],
-
-  [
-    { x: new Date(2005, 0, 1), y: 10 },
-    { x: new Date(2006, 0, 1), y: 20 },
-    { x: new Date(2007, 0, 1), y: 30 },
-    { x: new Date(2008, 0, 1), y: 39 },
-    { x: new Date(2009, 0, 1), y: 50 },
-    { x: new Date(2010, 0, 1), y: 70 },
-    { x: new Date(2011, 0, 1), y: 100 },
-  ],
-];
-
-export const lineCustomSeries = [
-  {
-    dataSource: lineChartData[0],
-    xName: "x",
-    yName: "y",
-    name: "Germany",
-    width: "2",
-    marker: { visible: true, width: 10, height: 10 },
-    type: "Line",
-  },
-
-  {
-    dataSource: lineChartData[1],
-    xName: "x",
-    yName: "y",
-    name: "England",
-    width: "2",
-    marker: { visible: true, width: 10, height: 10 },
-    type: "Line",
-  },
-
-  {
-    dataSource: lineChartData[2],
-    xName: "x",
-    yName: "y",
-    name: "India",
-    width: "2",
-    marker: { visible: true, width: 10, height: 10 },
-    type: "Line",
-  },
-];
-
 export const ecomPieChartData = [
   { x: "2018", y: 18, text: "35%" },
   { x: "2019", y: 18, text: "15%" },
   { x: "2020", y: 18, text: "25%" },
   { x: "2021", y: 18, text: "25%" },
+];
+
+export const SparklineAreaData = [
+  { x: 1, yval: 2 },
+  { x: 2, yval: 6 },
+  { x: 3, yval: 8 },
+  { x: 4, yval: 5 },
+  { x: 5, yval: 10 },
+];
+
+export const datatableUsers = [
+  {
+    name: " BINANCE-FUTURES (USDT-M) One-Way Mode",
+    position: "binance_v6_leverage",
+    money: "$ 69 / mo",
+    office: "tolga simitçioğlu",
+    period: "Period P/L",
+    salary: "%49491.60",
+    id: 1,
+  },
+  {
+    name: "BINANCE-FUTURES (USDT-M) One-Way Mode",
+    position: "binance_v6_leverage",
+    money: "$ 69 / mo",
+    office: "tolga simitçioğlu",
+    period: "Period P/L",
+    salary: "%17269.83",
+    id: 2,
+  },
+  {
+    name: "BINANCE-FUTURES (USDT-M) One-Way Mode",
+    position: "binance_v6_leverage",
+    money: "$ 69 / mo",
+    office: "tolga simitçioğlu",
+    period: "Period P/L",
+    salary: "%26878.49",
+    id: 3,
+  },
+  {
+    name: "BINANCE-FUTURES (USDT-M) One-Way Mode",
+    position: "binance_v6_leverage",
+    money: "$ 69 / mo",
+    office: "tolga simitçioğlu",
+    period: "Period P/L",
+    salary: "%40424.12",
+    id: 4,
+  },
+  {
+    name: "BINANCE-FUTURES (USDT-M) One-Way Mode",
+    position: "binance_v6_leverage",
+    money: "$ 69 / mo",
+    office: "tolga simitçioğlu",
+    period: "Period P/L",
+    salary: "%43236.35",
+    id: 5,
+  },
+  {
+    name: "BINANCE-FUTURES (USDT-M) One-Way Mode",
+    position: "binance_v6_leverage",
+    money: "$ 69 / mo",
+    office: "tolga simitçioğlu",
+    period: "Period P/L",
+    salary: "%47377.66",
+    id: 6,
+  },
+  {
+    name: "BINANCE-FUTURES (USDT-M) One-Way Mode",
+    position: "binance_v6_leverage",
+    money: "$ 69 / mo",
+    office: "tolga simitçioğlu",
+    period: "Period P/L",
+    salary: "%8542.68",
+    id: 7,
+  },
+  {
+    name: "BINANCE-FUTURES (USDT-M) One-Way Mode",
+    position: "binance_v6_leverage",
+    money: "$ 69 / mo",
+    office: "tolga simitçioğlu",
+    period: "Period P/L",
+    salary: "%13361.55",
+    id: 8,
+  },
+  {
+    name: "  BINANCE-FUTURES (USDT-M)  One-Way Mode",
+    position: "binance_v6_leverage",
+    money: "$ 69 / mo",
+    office: "tolga simitçioğlu",
+    period: "Period P/L",
+    salary: "%35778.22",
+    id: 9,
+  },
+  {
+    name: "  BINANCE-FUTURES (USDT-M)  One-Way Mode",
+    position: "binance_v6_leverage",
+    money: "$ 69 / mo",
+    office: "tolga simitçioğlu",
+    period: "Period P/L",
+    salary: "%42515.25",
+    id: 10,
+  },
+  {
+    name: "BINANCE-FUTURES (USDT-M) One-Way Mode",
+    position: "binance_v6_leverage",
+    money: "$ 69 / mo",
+    office: "tolga simitçioğlu",
+    period: "Period P/L",
+    salary: "%51025.31",
+    id: 11,
+  },
+  {
+    name: "BINANCE-FUTURES (USDT-M) One-Way Mode",
+    position: "binance_v6_leverage",
+    money: "$ 69 / mo",
+    office: "tolga simitçioğlu",
+    period: "Period P/L",
+    salary: "%39220.72",
+    id: 12,
+  },
+  {
+    name: "BINANCE-FUTURES (USDT-M) One-Way Mode",
+    position: "binance_v6_leverage",
+    money: "$ 69 / mo",
+    office: "tolga simitçioğlu",
+    period: "Period P/L",
+    salary: "%4794.31",
+    id: 13,
+  },
+  {
+    name: "BINANCE-FUTURES (USDT-M) One-Way Mode",
+    position: "binance_v6_leverage",
+    money: "$ 69 / mo",
+    office: "tolga simitçioğlu",
+    period: "Period P/L",
+    salary: "%42963.14",
+    id: 14,
+  },
+  {
+    name: "BINANCE-FUTURES (USDT-M) One-Way Mode",
+    position: "binance_v6_leverage",
+    money: "$ 69 / mo",
+    office: "tolga simitçioğlu",
+    period: "Period P/L",
+    salary: "%13845.40",
+    id: 15,
+  },
+];
+export const datatableUsers1 = [
+  {
+    name: " BINANCE-FUTURES (USDT-M)",
+    money: "$ 69 / mo",
+    office: "WBT",
+    period: "AI Crypto",
+    id: 1,
+  },
+  {
+    name: "BINANCE-FUTURES (USDT-M)",
+    money: "$ 69 / mo",
+    office: "WBT",
+    period: "AI Crypto",
+    id: 2,
+  },
+];
+
+export const Trading = [
+  { id: 0, title: "Classic trading terminal " },
+  { id: 1, title: "Spot Trading" },
+  { id: 2, title: "Futures Trading" },
+  { id: 3, title: "Take Profit / Stop Loss" },
+  { id: 4, title: "Market entry (for limit order when unfilled)" },
+  { id: 5, title: "Market close" },
+  { id: 6, title: "Trailing Stop" },
+  { id: 7, title: "Multiple take profits" },
+  { id: 8, title: "Fixed Amount" },
+  { id: 9, title: "Futures Spreads & Arbitrage" },
+  { id: 10, title: "Swing trade" },
+  { id: 11, title: "DCA trading terminal" },
+];
+export const General = [
+  { id: 1, title: "Number of Open Positions" },
+  { id: 2, title: "Number of Active Signal Channels" },
+  { id: 3, title: "Number of API Profiles per exchange" },
+];
+export const Traders = [
+  { id: 1, title: "Show in marketplace" },
+  { id: 2, title: "Allow copy-trading" },
+  { id: 3, title: "Set price for copy-traders" },
+];
+
+export const Copy = [
+  { id: 0, title: "Follow Trader accounts" },
+  { id: 1, title: "Copy Entry and Exit Signals" },
+  { id: 2, title: "Unlimited API per exchange" },
+  { id: 3, title: "Edit open strategies" },
+];
+export const Other = [
+  { id: 0, title: "Publicly available trader's profile page" },
+  { id: 1, title: "Email notifications" },
+];
+
+export const Free = [
+  { id: 0, title: "5 open positions" },
+  { id: 1, title: "1 API per exchange" },
+  { id: 2, title: "Trading Terminal (Spot Trading, Futures Trading)" },
+  { id: 3, title: "Spot Trading" },
+  { id: 4, title: "Futures Trading" },
+  { id: 5, title: "Simultaneous Take Profit and Stop Loss" },
+  { id: 6, title: "2 active signal channels" },
+];
+export const Basic = [
+  { id: 1, title: "15 open positions" },
+  { id: 2, title: "2 API per exchange" },
+  { id: 3, title: "Trailing stop" },
+  { id: 4, title: "Multiple take profits" },
+  { id: 5, title: "DCA trading terminal" },
+  { id: 6, title: "5 active signal channels" },
+];
+export const Pro = [
+  { id: 0, title: "100 open positions" },
+  { id: 1, title: "15 active bots" },
+  { id: 2, title: "5 API per exchange" },
+  { id: 3, title: "Fixed amount" },
+  { id: 4, title: "Spread trading terminal" },
+  { id: 5, title: "Swing trade" },
+  { id: 6, title: "15 active signal channels" },
+];
+export const Premium = [
+  { id: 0, title: "1000 open positions" },
+  { id: 1, title: "Unlimited active bots" },
+  { id: 2, title: "Unlimited API per exchange" },
+  { id: 3, title: "Unlimited signal channels" },
+];
+
+export const columnArray = [
+  { id: 1, title: "Position" },
+  { id: 2, title: "Entry" },
+  { id: 3, title: "Take Profit" },
+  { id: 4, title: "Stop Loss" },
+  { id: 5, title: "Trailing Stop ┊ Activation Price" },
+  { id: 6, title: "Portfolio" },
+  { id: 7, title: "P/L" },
+  { id: 8, title: "ROI" },
+  { id: 9, title: "R/R" },
+  { id: 10, title: "Status" },
+  { id: 11, title: "Last update" },
+  { id: 12, title: "Actions" },
+];
+
+export const Generaldata = [
+  { id: 1, title: "Position entry" },
+  { id: 2, title: "Position exit" },
+  { id: 3, title: "Error notifications" },
 ];

@@ -2,6 +2,7 @@ import React from "react";
 import { TooltipComponent } from "@syncfusion/ej2-react-popups";
 import { TiTick } from "react-icons/ti";
 import { useStateContext } from "../contexts/ContextProvider";
+import { Trading, General, Traders, Other, Copy } from "../data/dummy";
 
 function Billingcomaper() {
   const { currentColor } = useStateContext();
@@ -22,41 +23,6 @@ function Billingcomaper() {
     </TooltipComponent>
   );
 
-  const Trading = [
-    { id: 0, title: "Classic trading terminal " },
-    { id: 1, title: "Spot Trading" },
-    { id: 2, title: "Futures Trading" },
-    { id: 3, title: "Take Profit / Stop Loss" },
-    { id: 4, title: "Market entry (for limit order when unfilled)" },
-    { id: 5, title: "Market close" },
-    { id: 6, title: "Trailing Stop" },
-    { id: 7, title: "Multiple take profits" },
-    { id: 8, title: "Fixed Amount" },
-    { id: 9, title: "Futures Spreads & Arbitrage" },
-    { id: 10, title: "Swing trade" },
-    { id: 11, title: "DCA trading terminal" },
-  ];
-  const General = [
-    { id: 1, title: "Number of Open Positions" },
-    { id: 2, title: "Number of Active Signal Channels" },
-    { id: 3, title: "Number of API Profiles per exchange" },
-  ];
-  const Traders = [
-    { id: 1, title: "Show in marketplace" },
-    { id: 2, title: "Allow copy-trading" },
-    { id: 3, title: "Set price for copy-traders" },
-  ];
-
-  const Copy = [
-    { id: 0, title: "Follow Trader accounts" },
-    { id: 1, title: "Copy Entry and Exit Signals" },
-    { id: 2, title: "Unlimited API per exchange" },
-    { id: 3, title: "Edit open strategies" },
-  ];
-  const Other = [
-    { id: 0, title: "Publicly available trader's profile page" },
-    { id: 1, title: "Email notifications" },
-  ];
   const Support = [{ id: 0, title: "Support" }];
   return (
     <div>
@@ -82,10 +48,10 @@ function Billingcomaper() {
                   </th>
                 </tr>
               </thead>
+              <p className="text-start text-2xl font-bold mt-5">
+                General features
+              </p>
               <tbody className="space-y- text-left divide-y divide-gray-700">
-                <p className="text-start text-2xl font-bold mt-5">
-                  General features
-                </p>
                 {General.map((items) => (
                   <>
                     <tr>

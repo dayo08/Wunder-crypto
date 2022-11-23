@@ -4,7 +4,12 @@ import { Button } from "../components";
 import { useStateContext } from "../contexts/ContextProvider";
 import { TooltipComponent } from "@syncfusion/ej2-react-popups";
 import { TiTick } from "react-icons/ti";
+import { Free, Basic, Pro, Premium } from "../data/dummy";
+
 function Billingprice() {
+  const [active, setactive] = useState(1);
+  const { currentColor } = useStateContext();
+
   const NavButton = ({ title, customFunc, icon, color, dotColor }) => (
     <TooltipComponent content={title} position="BottomCenter">
       <button
@@ -21,40 +26,6 @@ function Billingprice() {
       </button>
     </TooltipComponent>
   );
-  const [active, setactive] = useState(1);
-  const { currentColor } = useStateContext();
-  const Free = [
-    { id: 0, title: "5 open positions" },
-    { id: 1, title: "1 API per exchange" },
-    { id: 2, title: "Trading Terminal (Spot Trading, Futures Trading)" },
-    { id: 3, title: "Spot Trading" },
-    { id: 4, title: "Futures Trading" },
-    { id: 5, title: "Simultaneous Take Profit and Stop Loss" },
-    { id: 6, title: "2 active signal channels" },
-  ];
-  const Basic = [
-    { id: 1, title: "15 open positions" },
-    { id: 2, title: "2 API per exchange" },
-    { id: 3, title: "Trailing stop" },
-    { id: 4, title: "Multiple take profits" },
-    { id: 5, title: "DCA trading terminal" },
-    { id: 6, title: "5 active signal channels" },
-  ];
-  const Pro = [
-    { id: 0, title: "100 open positions" },
-    { id: 1, title: "15 active bots" },
-    { id: 2, title: "5 API per exchange" },
-    { id: 3, title: "Fixed amount" },
-    { id: 4, title: "Spread trading terminal" },
-    { id: 5, title: "Swing trade" },
-    { id: 6, title: "15 active signal channels" },
-  ];
-  const Premium = [
-    { id: 0, title: "1000 open positions" },
-    { id: 1, title: "Unlimited active bots" },
-    { id: 2, title: "Unlimited API per exchange" },
-    { id: 3, title: "Unlimited signal channels" },
-  ];
 
   return (
     <div>

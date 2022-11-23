@@ -12,6 +12,7 @@ import {
   Referrals,
   Settings,
   ManageCopyTrading,
+  Positions,
   MarketPlace,
   Terminal,
 } from "./pages";
@@ -75,12 +76,15 @@ const App = () => {
               <Navbar />
             </div>
             <div>
+              <section className="user-subs-inf-banner text-center">
+                Current plan: Pro ( 3 days left )
+              </section>
               {themeSettings && <ThemeSettings />}
-
               <Routes>
                 <Route path="/" element={<Dashboard />} />
                 <Route path="/Dashboard" element={<Dashboard />} />
                 <Route path="/MyExchanges" element={<MyExchanges />} />
+                <Route path="/Positions" element={<Positions />} />
                 <Route path="/signIn" element={<SignIn />} />
                 <Route path="/signUp" element={<SignUp />} />
                 <Route path="/Billing" element={<Billing />} />

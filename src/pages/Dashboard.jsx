@@ -99,7 +99,7 @@ const Dashboard = () => {
       </div>
       <div className="grid 2xl:grid-cols-3 place-content-stretch place-items-stretch  m-3 ">
         <div className="2xl:col-span-1">
-          <div className="  dark:text-gray-200 dark:bg-secondary-dark-bg h rounded-xl  md:w-500 sm:p-8 sm:pt-9  mx-3 bg-no-repeat bg-cover bg-center">
+          <div className="  dark:text-gray-200 dark:bg-secondary-dark-bg h rounded-xl  md:w-500 p-8 m-3   bg-no-repeat bg-cover bg-center">
             <div className="flex justify-between items-center">
               <div>
                 <p className="font-bold text-gray-400 dark:text">
@@ -125,7 +125,7 @@ const Dashboard = () => {
               </p>
             </div>
           </div>
-          <div className="  dark:text-gray-200 dark:bg-secondary-dark-bg h rounded-xl  md:w-500 sm:p-8 sm:pt-9  mx-3  bg-no-repeat bg-cover bg-center">
+          <div className="  dark:text-gray-200 dark:bg-secondary-dark-bg h rounded-xl  md:w-500 p-8 m-3    bg-no-repeat bg-cover bg-center">
             <div className="flex justify-between items-center">
               <div>
                 <p className="font-bold text-gray-400">Profit and Loss</p>
@@ -163,12 +163,15 @@ const Dashboard = () => {
           </div>
         </div>
         <div className="2xl:col-span-2 dark:text-gray-200 dark:bg-secondary-dark-bg rounded-xl">
-          <div className="border-b border-white p-3 ">
+          <div className=" p-3 ">
             <div className="md:text-2xl text-lg font-bold mb-5">Portfolio</div>
-            <div className="flex md:text-xl text-base font-bold gap-8">
+            <div className="flex md:text-xl text-base font-bold gap-8 cursor-pointer dark:text-white border-b-2 border-[#828282]">
               <div
+                style={{ padding: "16px 0 20px" }}
                 className={`${
-                  active === 1 ? "border-b-4 border-[#03c9d7]  " : "deActive"
+                  active === 1
+                    ? "border-b-4 hover:text-[#598fff] border-[#03c9d7]  "
+                    : "deActive hover:text-[#598fff]"
                 }`}
                 onClick={() => {
                   setactive(1);
@@ -180,15 +183,21 @@ const Dashboard = () => {
                 onClick={() => {
                   setactive(2);
                 }}
+                style={{ padding: "16px 0 20px" }}
                 className={`${
-                  active === 2 ? "border-b-4 border-[#03c9d7]  " : "deActive"
+                  active === 2
+                    ? "border-b-4 border-[#03c9d7] hover:text-[#598fff] "
+                    : "deActive hover:text-[#598fff]"
                 }`}
               >
                 Assets by Exchange
               </div>
               <div
+                style={{ padding: "16px 0 20px" }}
                 className={`${
-                  active === 3 ? "border-b-4 border-[#03c9d7]  " : "deActive"
+                  active === 3
+                    ? "border-b-4 border-[#03c9d7]  hover:text-[#598fff]"
+                    : "deActive hover:text-[#598fff]"
                 }`}
                 onClick={() => {
                   setactive(3);
@@ -290,7 +299,7 @@ const Dashboard = () => {
         </div>
         <div className="flex flex-col md:flex-row p-3 md:gap-10 gap-5 justify-start items-center">
           <div>
-            <select name="Kamkala" className="dropdown list">
+            <select className="dropdown list">
               <option value="AllTime">All Time</option>
               <option value="LastMonth">Last Month</option>
               <option value="LastWeek"> Last Week</option>
