@@ -100,9 +100,9 @@ const Dashboard = () => {
                 <p className="font-bold text-white dark:text">
                   Portfolio Value
                 </p>
-                <p className="md:text-2xl text-xl  font-bold">
+                <p className="md:text-2xl text-xl  font-bold mt-6">
                   <span className="text-gray-200">$</span>{" "}
-                  <span className="text-white text-5xl">0.0000</span>
+                  <span className="text-white text-4xl">0.0000</span>
                 </p>
               </div>
             </div>
@@ -133,9 +133,9 @@ const Dashboard = () => {
                 {" "}
                 <p className="md:text-xl text-lg font-bold text-gray-400 dark:text">
                   Unrealized P/L{" "}
-                  <p className="md:text-2xl text-xl  font-bold">
+                  <p className="md:text-2xl text-xl  font-bold py-3">
                     <span className="text-gray-500">$</span>{" "}
-                    <span className="dark:text-white text-black text-5xl">
+                    <span className="dark:text-white text-black text-4xl">
                       0.0000
                     </span>
                   </p>
@@ -143,7 +143,7 @@ const Dashboard = () => {
                 <p className="md:text-xl mt-2 text-lg font-bold text-gray-400 dark:text">
                   Last 30 days{" "}
                   <p className="md:text-2xl text-xl  font-bold">
-                    <span className="text-gray-500">$</span> 5
+                    <span className="text-gray-500">$</span>
                     <span className="dark:text-white text-black ">0.0000</span>
                   </p>
                 </p>
@@ -152,9 +152,9 @@ const Dashboard = () => {
                 {" "}
                 <p className="md:text-xl text-lg font-bold text-gray-400 dark:text">
                   Last 7 days{" "}
-                  <p className="md:text-2xl text-xl  font-bold">
+                  <p className="md:text-2xl text-xl  font-bold py-3">
                     <span className="text-gray-500">$</span>{" "}
-                    <span className="dark:text-white text-black text-5xl">
+                    <span className="dark:text-white text-black text-4xl">
                       0.0000
                     </span>
                   </p>
@@ -230,12 +230,10 @@ const Dashboard = () => {
             <div className=" flex flex-col items-center justify-center  mt-5">
               <div className="flex justify-center items-center gap-2">
                 <p>Total ($): 0.000</p>
-                <Button
-                  color="white"
-                  bgColor={currentColor}
-                  text="Update"
-                  borderRadius="5px"
-                />
+
+                <button className="hover:text-white  hover:bg-[#02d29a]  text-[#02d29a] border border-[#02d29a]  font-bold py-2 px-4 rounded ">
+                  Update
+                </button>
               </div>
 
               <div className="mt-5">
