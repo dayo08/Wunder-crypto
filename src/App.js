@@ -59,11 +59,11 @@ const App = () => {
             </TooltipComponent>
           </div>
           {activeMenu ? (
-            <div className="w-72 fixed sidebar dark:bg-secondary-dark-bg bg-white ">
+            <div className="w-72 fixed sidebar dark:bg-[#20242b] bg-white ">
               <Sidebar />
             </div>
           ) : (
-            <div className="w-0 dark:bg-secondary-dark-bg">
+            <div className="w-0 dark:bg-[#20242b]">
               <Sidebar />
             </div>
           )}
@@ -96,7 +96,7 @@ const App = () => {
                 />
               </Routes>
             </div>
-            <Footer />
+            {/* <Footer /> */}
           </div>
         </div>
       </BrowserRouter>

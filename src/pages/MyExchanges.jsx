@@ -10,7 +10,7 @@ const Orders = () => {
   const { currentColor } = useStateContext();
   return (
     <div>
-      <div className="2xl:col-span-2 bg-slate-200  dark:text-gray-200 dark:bg-secondary-dark-bg rounded-xl m-3 p-5 mt-24 md:mt-3">
+      <div className="2xl:col-span-2 bg-slate-200  dark:text-gray-200 dark:bg-[#20242b] rounded-xl m-3 p-5 mt-24 md:mt-3">
         <div className="border-b  border-white  ">
           <div className="md:text-2xl text-lg font-bold mb-5">My Exchanges</div>
           <div className="flex md:text-xl text-base font-bold gap-8">
@@ -27,10 +27,10 @@ const Orders = () => {
         <div className="flex  flex-col mt-3 ">
           <div className="font-bold">Sign up</div>
           <div className="flex justify-start  items-start">
-            <div className="w-40 flex justify-start items-start dark:text-gray-200 dark:bg-secondary-dark-bg rounded-xl">
+            <div className="w-40 flex justify-start items-start dark:text-gray-200 dark:bg-[#20242b] rounded-xl">
               <img src={binance} alt="" />
             </div>
-            <div className="w-40 flex justify-start items-start dark:text-gray-200 dark:bg-secondary-dark-bg rounded-xl">
+            <div className="w-40 flex justify-start items-start dark:text-gray-200 dark:bg-[#20242b] rounded-xl">
               <img src={bitmex} alt="" className="w-40" />
             </div>
           </div>

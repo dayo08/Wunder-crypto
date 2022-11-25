@@ -52,7 +52,7 @@ function Settings() {
 
   return (
     <div className="mt-24 md:mt-3 dark:text-gray-200">
-      <div className=" dark:text-gray-200 dark:bg-secondary-dark-bg rounded-xl md:px-8 pt-5 m-3 border-b border-white ">
+      <div className=" dark:text-gray-200 dark:bg-[#20242b] rounded-xl md:px-8 pt-5 m-3 border-b border-white ">
         <div className="p-3 ">
           <div className="md:text-2xl text-lg font-bold mb-5">Billing</div>
           <div className="flex md:text-xl text-base font-bold gap-8 cursor-pointer dark:text-white border-b-2 border-[#828282]">
@@ -269,7 +269,7 @@ function Settings() {
             </span>
           </div>
           <div className="md:grid md:grid-cols-4  mt-10 ">
-            <table className="fl-table dark:text-gray-200 dark:bg-secondary-dark-bg rounded-xl md:m-3 p-5 md:p-8 ">
+            <table className="fl-table dark:text-gray-200 dark:bg-[#20242b] rounded-xl md:m-3 p-5 md:p-8 ">
               <thead>
                 <tr>
                   <th></th>

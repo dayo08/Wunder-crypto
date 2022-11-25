@@ -27,7 +27,7 @@ function ManageCopyTrading() {
   return (
     <div className="mt-24 md:mt-3 dark:text-gray-200">
       <div className="flex flex-wrap justify-start mt-24 md:mt-3">
-        <div className="bg-slate-200  dark:text-gray-200 dark:bg-secondary-dark-bg rounded-2xl md:w-500 p-8 m-3 ">
+        <div className="bg-slate-200  dark:text-gray-200 dark:bg-[#20242b] rounded-2xl md:w-500 p-8 m-3 ">
           <div>
             <div className="flex justify-between">
               <div className="flex justify-start items-center gap-2">
@@ -50,7 +50,7 @@ function ManageCopyTrading() {
             </div>
           </div>
         </div>
-        <div className="bg-slate-200 dark:text-gray-200 dark:bg-secondary-dark-bg rounded-2xl md:w-96 p-8 m-3 ">
+        <div className="bg-slate-200 dark:text-gray-200 dark:bg-[#20242b] rounded-2xl md:w-96 p-8 m-3 ">
           <div>
             <div className="flex justify-between">
               <div className="flex justify-start items-center gap-2">
@@ -75,7 +75,7 @@ function ManageCopyTrading() {
           </div>
         </div>
       </div>
-      <div className=" dark:text-gray-200 dark:bg-secondary-dark-bg rounded-xl md:px-8 pt-5 m-3 border-b border-white ">
+      <div className=" dark:text-gray-200 dark:bg-[#20242b] rounded-xl md:px-8 pt-5 m-3 border-b border-white ">
         <div className="p-3 ">
           <div className="flex md:text-xl text-base font-bold gap-8 cursor-pointer dark:text-white border-b-2 border-[#828282]">
             <div

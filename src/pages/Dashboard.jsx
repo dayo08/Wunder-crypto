@@ -11,7 +11,7 @@ const Dashboard = () => {
   return (
     <div>
       <div className="flex flex-wrap justify-center mt-24 md:mt-3">
-        <div className="bg-slate-200  dark:text-gray-200 dark:bg-secondary-dark-bg rounded-2xl md:w-500 p-8 m-3 ">
+        <div className="bg-slate-200  dark:text-gray-200 dark:bg-[#20242b] rounded-2xl md:w-500 p-8 m-3 ">
           <div>
             <div className="flex justify-between">
               <div className="flex justify-start items-center gap-2">
@@ -44,7 +44,7 @@ const Dashboard = () => {
             </div>
           </div>
         </div>
-        <div className="bg-slate-200 dark:text-gray-200 dark:bg-secondary-dark-bg rounded-2xl md:w-500 p-8 m-3 ">
+        <div className="bg-slate-200 dark:text-gray-200 dark:bg-[#20242b] rounded-2xl md:w-500 p-8 m-3 ">
           <div>
             <div className="flex justify-between">
               <div className="flex justify-start items-center gap-2">
@@ -70,7 +70,7 @@ const Dashboard = () => {
             </div>
           </div>
         </div>
-        <div className="bg-slate-200 dark:text-gray-200 dark:bg-secondary-dark-bg rounded-2xl md:w-500 p-8 m-3 ">
+        <div className="bg-slate-200 dark:text-gray-200 dark:bg-[#20242b] rounded-2xl md:w-500 p-8 m-3 ">
           <div>
             <div className="flex justify-between">
               <div className="flex justify-start items-center gap-2">
@@ -99,7 +99,7 @@ const Dashboard = () => {
       </div>
       <div className="grid 2xl:grid-cols-3 place-content-stretch place-items-stretch  m-3 ">
         <div className="2xl:col-span-1">
-          <div className="  dark:text-gray-200 dark:bg-secondary-dark-bg h rounded-xl  md:w-500 p-8 m-3   bg-no-repeat bg-cover bg-center">
+          <div className="  dark:text-gray-200 dark:bg-[#20242b] h rounded-xl  md:w-500 p-8 m-3   bg-no-repeat bg-cover bg-center">
             <div className="flex justify-between items-center">
               <div>
                 <p className="font-bold text-gray-400 dark:text">
@@ -125,7 +125,7 @@ const Dashboard = () => {
               </p>
             </div>
           </div>
-          <div className="  dark:text-gray-200 dark:bg-secondary-dark-bg h rounded-xl  md:w-500 p-8 m-3    bg-no-repeat bg-cover bg-center">
+          <div className="  dark:text-gray-200 dark:bg-[#20242b] h rounded-xl  md:w-500 p-8 m-3    bg-no-repeat bg-cover bg-center">
             <div className="flex justify-between items-center">
               <div>
                 <p className="font-bold text-gray-400">Profit and Loss</p>
@@ -162,7 +162,7 @@ const Dashboard = () => {
             </div>
           </div>
         </div>
-        <div className="2xl:col-span-2 dark:text-gray-200 dark:bg-secondary-dark-bg rounded-xl">
+        <div className="2xl:col-span-2 dark:text-gray-200 dark:bg-[#20242b] rounded-xl">
           <div className=" p-3 ">
             <div className="md:text-2xl text-lg font-bold mb-5">Portfolio</div>
             <div className="flex md:text-xl text-base font-bold gap-8 cursor-pointer dark:text-white border-b-2 border-[#828282]">
@@ -208,7 +208,7 @@ const Dashboard = () => {
             </div>
           </div>
           <div className="flex justify-evenly flex-col xl:flex-row items-center">
-            <div className="bg-white  dark:text-gray-200 dark:bg-secondary-dark-bg rounded-2xl md:w-400 p-8 m-3 flex justify-center items-center gap-10">
+            <div className="bg-white  dark:text-gray-200 dark:bg-[#20242b] rounded-2xl md:w-400 p-8 m-3 flex justify-center items-center gap-10">
               <div className="md:w-60 w-40 mx-auto">
                 <Pie
                   id="pie-chart"
@@ -288,7 +288,7 @@ const Dashboard = () => {
           </div>
         </div>
       </div>
-      <div className="2xl:col-span-2 bg-slate-200  dark:text-gray-200 dark:bg-secondary-dark-bg rounded-xl m-3">
+      <div className="2xl:col-span-2 bg-slate-200  dark:text-gray-200 dark:bg-[#20242b] rounded-xl m-3">
         <div className="border-b  border-white p-3 ">
           <div className="md:text-2xl text-lg font-bold mb-5">Analytics</div>
           <div className="flex md:text-xl text-base font-bold gap-8">
@@ -311,7 +311,7 @@ const Dashboard = () => {
               name=""
               id=""
               placeholder="Min Trades Quantity"
-              className="dark:text-gray-200 p-1 dark:bg-secondary-dark-bg border-2 rounded"
+              className="dark:text-gray-200 p-1 dark:bg-[#20242b] border-2 rounded"
             />
           </div>
           <div>

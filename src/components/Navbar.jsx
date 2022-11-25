@@ -1,9 +1,11 @@
 import React, { useEffect } from "react";
 import { AiOutlineMenu, AiOutlineUser } from "react-icons/ai";
+import { SiShopware } from "react-icons/si";
 import { MdKeyboardArrowDown } from "react-icons/md";
 import { TooltipComponent } from "@syncfusion/ej2-react-popups";
 import avatar from "../data/avatar.jpg";
 import { useStateContext } from "../contexts/ContextProvider";
+import { Link } from "react-router-dom";
 
 const NavButton = ({ title, customFunc, icon, color, dotColor }) => (
   <TooltipComponent content={title} position="BottomCenter">
@@ -43,45 +45,55 @@ const Navbar = () => {
   }, []);
 
   useEffect(() => {
-    if (screenSize <= 900) {
+    if (screenSize <= 1023) {
       setActiveMenu(false);
     } else {
       setActiveMenu(true);
     }
   }, [screenSize]);
 
-  const handleActiveMenu = () => setActiveMenu(!activeMenu);
-
+  const handleCloseSideBar = () => {
+    if (activeMenu !== undefined && screenSize <= 1023) {
+      setActiveMenu(false);
+    }
+  };
   return (
-    <div className="flex justify-between p-2 md:ml-6 md:mr-6 relative">
-      <NavButton
-        title="Menu"
-        customFunc={handleActiveMenu}
-        color={currentColor}
-        icon={<AiOutlineMenu />}
-      />
-      <div className="flex">
-        <NavButton title="Cart" color={currentColor} icon={<AiOutlineUser />} />
+    <div className=" border-b border-gray-500">
+      <div className="flex justify-between p-2 md:ml-1 md:mr-6 relative">
+        <Link
+          to="/"
+          onClick={handleCloseSideBar}
+          className="items-center gap-3  flex text-xl font-extrabold tracking-tight dark:text-white text-slate-900"
+        >
+          <SiShopware /> <span>Wunder</span>
+        </Link>
+        <div className="flex">
+          <NavButton
+            title="Cart"
+            color={currentColor}
+            icon={<AiOutlineUser />}
+          />
 
-        <TooltipComponent content="Profile" position="BottomCenter">
-          <div
-            className="flex items-center gap-2 cursor-pointer p-1 hover:bg-light-gray rounded-lg"
-            onClick={() => handleClick("userProfile")}
-          >
-            <img
-              className="rounded-full w-8 h-8"
-              src={avatar}
-              alt="user-profile"
-            />
-            <p>
-              <span className="text-gray-400 text-14">Hi,</span>{" "}
-              <span className="text-gray-400 font-bold ml-1 text-14">
-                Michael
-              </span>
-            </p>
-            <MdKeyboardArrowDown className="text-gray-400 text-14" />
-          </div>
-        </TooltipComponent>
+          <TooltipComponent content="Profile" position="BottomCenter">
+            <div
+              className="flex items-center gap-2 cursor-pointer p-1 hover:bg-light-gray rounded-lg"
+              onClick={() => handleClick("userProfile")}
+            >
+              <img
+                className="rounded-full w-8 h-8"
+                src={avatar}
+                alt="user-profile"
+              />
+              <p>
+                <span className="text-gray-400 text-14">Hi,</span>{" "}
+                <span className="text-gray-400 font-bold ml-1 text-14">
+                  Michael
+                </span>
+              </p>
+              <MdKeyboardArrowDown className="text-gray-400 text-14" />
+            </div>
+          </TooltipComponent>
+        </div>
       </div>
     </div>
   );

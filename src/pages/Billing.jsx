@@ -10,7 +10,7 @@ function Billing() {
 
   return (
     <div className="mt-24 md:mt-3 dark:text-gray-200">
-      <div className=" dark:text-gray-200 dark:bg-secondary-dark-bg rounded-xl px-8 pt-5 m-3 border-b border-white ">
+      <div className=" dark:text-gray-200 dark:bg-[#20242b] rounded-xl px-8 pt-5 m-3 border-b border-white ">
         <div className="p-3 ">
           <div className="md:text-2xl text-lg font-bold mb-5">Billing</div>
           <div className="flex md:text-xl items-start justify-start text-base font-bold gap-8 cursor-pointer dark:text-white border-b-2 border-[#828282]">
@@ -46,19 +46,19 @@ function Billing() {
       {active === 1 && (
         <>
           <div className="grid md:grid-cols-2  ">
-            <div className="dark:text-gray-200 bg-slate-200  dark:bg-secondary-dark-bg rounded-xl p-8 m-3 ">
+            <div className="dark:text-gray-200 bg-slate-200  dark:bg-[#20242b] rounded-xl p-8 m-3 ">
               <p className="font-bold">Current plan</p>
               <p className="lg:text-3xl md:text-xl text-lg font-bold mt-5">
                 Pro ( 2 days left )
               </p>
             </div>
-            <div className="dark:text-gray-200 bg-slate-200  dark:bg-secondary-dark-bg rounded-xl p-8 m-3 ">
+            <div className="dark:text-gray-200 bg-slate-200  dark:bg-[#20242b] rounded-xl p-8 m-3 ">
               <p className="font-bold">Promo code</p>
               <div className="flex justify-center ">
                 <input
                   type="text"
                   placeholder="Enter promo code"
-                  className="bg-slate-200  dark:bg-secondary-dark-bg border-b w-full outline-none"
+                  className="bg-slate-200  dark:bg-[#20242b] border-b w-full outline-none"
                 />
                 <div>
                   <Button

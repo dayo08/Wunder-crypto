@@ -55,7 +55,7 @@ const MarketPlace = () => {
 
   return (
     <div className="mt-24 md:mt-3">
-      <div className=" dark:text-gray-200 dark:bg-secondary-dark-bg rounded-xl px-8 pt-5 m-3 border-b border-white ">
+      <div className=" dark:text-gray-200 dark:bg-[#20242b] rounded-xl px-8 pt-5 m-3 border-b border-white ">
         <div className="p-3 ">
           <div className="md:text-2xl text-lg font-bold mb-5">Marketplace</div>
           <div className="flex md:text-xl text-base font-bold gap-8 cursor-pointer dark:text-white border-b-2 border-[#828282]">
@@ -140,7 +140,7 @@ const MarketPlace = () => {
                 name=""
                 id=""
                 placeholder="Min Trades Quantity"
-                className="dark:text-gray-200 p-1 dark:bg-secondary-dark-bg border-2 rounded"
+                className="dark:text-gray-200 p-1 dark:bg-[#20242b] border-2 rounded"
               />
             </div>
             <div className="flex m-3 gap-3 items-center ">

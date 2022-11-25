@@ -122,7 +122,7 @@ const Positions = () => {
     <>
       <div className="mt-24 md:mt-3">
         {/* Main */}
-        <div className=" dark:text-gray-200 dark:bg-secondary-dark-bg rounded-xl  pt-5 m-3 border-b border-white ">
+        <div className=" dark:text-gray-200 dark:bg-[#20242b] rounded-xl  pt-5 m-3 border-b border-white ">
           <div className="p-3 ">
             <div className="md:text-2xl text-lg font-bold mb-5">Positions</div>
             <p className="text-[#828282]">
