@@ -26,7 +26,7 @@ function Billingcomaper() {
   const Support = [{ id: 0, title: "Support" }];
   return (
     <div>
-      <section className="dark:bg-gray-800 dark:text-gray-100">
+      <section className="dark: dark:text-gray-100">
         <div className="container mx-auto overflow-x-auto">
           <p className="p-2 text-xl font-bold">Pricing plan comparison</p>
           <div className="table-wrapper mt-10">
@@ -51,7 +51,7 @@ function Billingcomaper() {
               <p className="text-start text-2xl font-bold mt-5">
                 General features
               </p>
-              <tbody className="space-y- text-left divide-y divide-gray-700">
+              <tbody className="space-y- text-left divide-y divide-gray-700 bg-white  dark:bg-[#2c313c]  ">
                 {General.map((items) => (
                   <>
                     <tr>
@@ -75,10 +75,10 @@ function Billingcomaper() {
                 ))}
               </tbody>
 
-              <tbody className="space-y-6 text-left divide-y divide-gray-700">
-                <p className="text-start text-2xl font-bold mt-5">
-                  Trading terminal
-                </p>
+              <p className="text-start text-2xl font-bold mt-5">
+                Trading terminal
+              </p>
+              <tbody className="space-y-6 text-left divide-y divide-gray-700 bg-white  dark:bg-[#2c313c] ">
                 {Trading.map((items) => (
                   <>
                     <tr>
@@ -87,48 +87,32 @@ function Billingcomaper() {
                       </th>
                       <td>
                         <span className="block text-sm">
-                          <NavButton
-                            title="Cart"
-                            color={currentColor}
-                            icon={<TiTick />}
-                          />
+                          <TiTick className="text-[#03d29b] text-xl mx-auto" />
                         </span>
                       </td>
                       <td>
                         <span className="block text-sm">
-                          <NavButton
-                            title="Cart"
-                            color={currentColor}
-                            icon={<TiTick />}
-                          />
+                          <TiTick className="text-[#03d29b] text-xl mx-auto" />
                         </span>
                       </td>
                       <td>
                         <span className="block text-sm">
-                          <NavButton
-                            title="Cart"
-                            color={currentColor}
-                            icon={<TiTick />}
-                          />
+                          <TiTick className="text-[#03d29b] text-xl mx-auto" />
                         </span>
                       </td>
                       <td>
                         <span className="block text-sm">
-                          <NavButton
-                            title="Cart"
-                            color={currentColor}
-                            icon={<TiTick />}
-                          />
+                          <TiTick className="text-[#03d29b] text-xl mx-auto" />
                         </span>
                       </td>
                     </tr>
                   </>
                 ))}
               </tbody>
-              <tbody className="space-y-6 text-left divide-y divide-gray-700">
-                <p className="text-start text-2xl font-bold mt-5">
-                  Traders / Signal Providers
-                </p>
+              <p className="text-start text-2xl font-bold mt-5">
+                Traders / Signal Providers
+              </p>
+              <tbody className="space-y-6 text-left divide-y divide-gray-700 bg-white  dark:bg-[#2c313c] ">
                 {Traders.map((items) => (
                   <>
                     <tr>
@@ -137,48 +121,30 @@ function Billingcomaper() {
                       </th>
                       <td>
                         <span className="block text-sm">
-                          <NavButton
-                            title="Cart"
-                            color={currentColor}
-                            icon={<TiTick />}
-                          />
+                          <TiTick className="text-[#03d29b] text-xl mx-auto" />
                         </span>
                       </td>
                       <td>
                         <span className="block text-sm">
-                          <NavButton
-                            title="Cart"
-                            color={currentColor}
-                            icon={<TiTick />}
-                          />
+                          <TiTick className="text-[#03d29b] text-xl mx-auto" />
                         </span>
                       </td>
                       <td>
                         <span className="block text-sm">
-                          <NavButton
-                            title="Cart"
-                            color={currentColor}
-                            icon={<TiTick />}
-                          />
+                          <TiTick className="text-[#03d29b] text-xl mx-auto" />
                         </span>
                       </td>
                       <td>
                         <span className="block text-sm">
-                          <NavButton
-                            title="Cart"
-                            color={currentColor}
-                            icon={<TiTick />}
-                          />
+                          <TiTick className="text-[#03d29b] text-xl mx-auto" />
                         </span>
                       </td>
                     </tr>
                   </>
                 ))}
               </tbody>
-              <tbody className="space-y-6 text-left divide-y divide-gray-700">
-                <p className="text-start text-2xl font-bold mt-5">
-                  Copy-Traders
-                </p>
+              <p className="text-start text-2xl font-bold mt-5">Copy-Traders</p>
+              <tbody className="space-y-6 text-left divide-y divide-gray-700 bg-white  dark:bg-[#2c313c] ">
                 {Copy.map((items) => (
                   <>
                     <tr>
@@ -187,48 +153,32 @@ function Billingcomaper() {
                       </th>
                       <td>
                         <span className="block text-sm">
-                          <NavButton
-                            title="Cart"
-                            color={currentColor}
-                            icon={<TiTick />}
-                          />
+                          <TiTick className="text-[#03d29b] text-xl mx-auto" />
                         </span>
                       </td>
                       <td>
                         <span className="block text-sm">
-                          <NavButton
-                            title="Cart"
-                            color={currentColor}
-                            icon={<TiTick />}
-                          />
+                          <TiTick className="text-[#03d29b] text-xl mx-auto" />
                         </span>
                       </td>
                       <td>
                         <span className="block text-sm">
-                          <NavButton
-                            title="Cart"
-                            color={currentColor}
-                            icon={<TiTick />}
-                          />
+                          <TiTick className="text-[#03d29b] text-xl mx-auto" />
                         </span>
                       </td>
                       <td>
                         <span className="block text-sm">
-                          <NavButton
-                            title="Cart"
-                            color={currentColor}
-                            icon={<TiTick />}
-                          />
+                          <TiTick className="text-[#03d29b] text-xl mx-auto" />
                         </span>
                       </td>
                     </tr>
                   </>
                 ))}
               </tbody>
-              <tbody className="space-y-6 text-left divide-y divide-gray-700">
-                <p className="text-start text-2xl font-bold mt-5">
-                  Other features
-                </p>
+              <p className="text-start text-2xl font-bold mt-5">
+                Other features
+              </p>
+              <tbody className="space-y-6 text-left divide-y divide-gray-700 bg-white  dark:bg-[#2c313c] ">
                 {Other.map((items) => (
                   <>
                     <tr>
@@ -237,48 +187,32 @@ function Billingcomaper() {
                       </th>
                       <td>
                         <span className="block text-sm">
-                          <NavButton
-                            title="Cart"
-                            color={currentColor}
-                            icon={<TiTick />}
-                          />
+                          <TiTick className="text-[#03d29b] text-xl mx-auto" />
                         </span>
                       </td>
                       <td>
                         <span className="block text-sm">
-                          <NavButton
-                            title="Cart"
-                            color={currentColor}
-                            icon={<TiTick />}
-                          />
+                          <TiTick className="text-[#03d29b] text-xl mx-auto" />
                         </span>
                       </td>
                       <td>
                         <span className="block text-sm">
-                          <NavButton
-                            title="Cart"
-                            color={currentColor}
-                            icon={<TiTick />}
-                          />
+                          <TiTick className="text-[#03d29b] text-xl mx-auto" />
                         </span>
                       </td>
                       <td>
                         <span className="block text-sm">
-                          <NavButton
-                            title="Cart"
-                            color={currentColor}
-                            icon={<TiTick />}
-                          />
+                          <TiTick className="text-[#03d29b] text-xl mx-auto" />
                         </span>
                       </td>
                     </tr>
                   </>
                 ))}
               </tbody>
-              <tbody className="space-y-6 text-left divide-y divide-gray-700">
-                <p className="text-start text-2xl font-bold mt-5">
-                  Other features
-                </p>
+              <p className="text-start text-2xl font-bold mt-5">
+                Other features
+              </p>
+              <tbody className="space-y-6 text-left divide-y divide-gray-700 bg-white  dark:bg-[#2c313c] ">
                 {Other.map((items) => (
                   <>
                     <tr>
@@ -287,46 +221,30 @@ function Billingcomaper() {
                       </th>
                       <td>
                         <span className="block text-sm">
-                          <NavButton
-                            title="Cart"
-                            color={currentColor}
-                            icon={<TiTick />}
-                          />
+                          <TiTick className="text-[#03d29b] text-xl mx-auto" />
                         </span>
                       </td>
                       <td>
                         <span className="block text-sm">
-                          <NavButton
-                            title="Cart"
-                            color={currentColor}
-                            icon={<TiTick />}
-                          />
+                          <TiTick className="text-[#03d29b] text-xl mx-auto" />
                         </span>
                       </td>
                       <td>
                         <span className="block text-sm">
-                          <NavButton
-                            title="Cart"
-                            color={currentColor}
-                            icon={<TiTick />}
-                          />
+                          <TiTick className="text-[#03d29b] text-xl mx-auto" />
                         </span>
                       </td>
                       <td>
                         <span className="block text-sm">
-                          <NavButton
-                            title="Cart"
-                            color={currentColor}
-                            icon={<TiTick />}
-                          />
+                          <TiTick className="text-[#03d29b] text-xl mx-auto" />
                         </span>
                       </td>
                     </tr>
                   </>
                 ))}
               </tbody>
-              <tbody className="space-y-6 text-left divide-y divide-gray-700">
-                <p className="text-start text-2xl font-bold mt-5">Support</p>
+              <p className="text-start text-2xl font-bold mt-5">Support</p>
+              <tbody className="space-y-6 text-left divide-y divide-gray-700 bg-white  dark:bg-[#2c313c] ">
                 {Support.map((items) => (
                   <>
                     <tr>
@@ -335,38 +253,22 @@ function Billingcomaper() {
                       </th>
                       <td>
                         <span className="block text-sm">
-                          <NavButton
-                            title="Cart"
-                            color={currentColor}
-                            icon={<TiTick />}
-                          />
+                          <TiTick className="text-[#03d29b] text-xl mx-auto" />
                         </span>
                       </td>
                       <td>
                         <span className="block text-sm">
-                          <NavButton
-                            title="Cart"
-                            color={currentColor}
-                            icon={<TiTick />}
-                          />
+                          <TiTick className="text-[#03d29b] text-xl mx-auto" />
                         </span>
                       </td>
                       <td>
                         <span className="block text-sm">
-                          <NavButton
-                            title="Cart"
-                            color={currentColor}
-                            icon={<TiTick />}
-                          />
+                          <TiTick className="text-[#03d29b] text-xl mx-auto" />
                         </span>
                       </td>
                       <td>
                         <span className="block text-sm">
-                          <NavButton
-                            title="Cart"
-                            color={currentColor}
-                            icon={<TiTick />}
-                          />
+                          <TiTick className="text-[#03d29b] text-xl mx-auto" />
                         </span>
                       </td>
                     </tr>

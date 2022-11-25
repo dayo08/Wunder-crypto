@@ -16,7 +16,7 @@ import {
   MarketPlace,
 } from "./pages";
 import "./App.css";
-
+import { AiOutlineMenu, AiOutlineUser } from "react-icons/ai";
 import { useStateContext } from "./contexts/ContextProvider";
 
 const App = () => {
@@ -28,6 +28,7 @@ const App = () => {
     currentColor,
     themeSettings,
     setThemeSettings,
+    setActiveMenu,
   } = useStateContext();
 
   useEffect(() => {
@@ -39,13 +40,41 @@ const App = () => {
     }
   }, []);
 
+  const NavButton = ({ title, customFunc, icon, color, dotColor }) => (
+    <TooltipComponent content={title} position="BottomCenter">
+      <button
+        type="button"
+        onClick={() => customFunc()}
+        style={{ color }}
+        className="relative text-xl rounded-full p-3 hover:bg-light-gray"
+      >
+        <span
+          style={{ background: dotColor }}
+          className="absolute inline-flex rounded-full h-2 w-2 right-2 top-2"
+        />
+        {icon}
+      </button>
+    </TooltipComponent>
+  );
+
+  const handleActiveMenu = () => setActiveMenu(!activeMenu);
   return (
     <div className={currentMode === "Dark" ? "dark" : ""}>
       <BrowserRouter>
-        <div className="sticky top-0 bg-main-bg dark:bg-main-dark-bg navbar w-full ">
+        <div className="sticky top-0 bg-main-bg dark:bg-[#282c34] navbar w-full ">
           <Navbar />
         </div>
+
         <div className="flex relative dark:bg-main-dark-bg">
+          <div className={`fixed bg-black rounded-full p-2 bottom-4 z-50 left-4 ${activeMenu ? "hidden" : "block"}`}>
+            
+            <NavButton
+              title="Menu"
+              customFunc={handleActiveMenu}
+              color={currentColor}
+              icon={<AiOutlineMenu />}
+            />
+          </div>
           <div className="fixed right-4 bottom-4" style={{ zIndex: "1000" }}>
             <TooltipComponent content="Settings" position="Top">
               <button
@@ -67,11 +96,12 @@ const App = () => {
               <Sidebar />
             </div>
           )}
+
           <div
             className={
               activeMenu
-                ? "dark:bg-main-dark-bg  bg-main-bg min-h-screen md:ml-72 w-full  "
-                : "bg-main-bg dark:bg-main-dark-bg  w-full min-h-screen flex-2 "
+                ? "dark:bg-[#282c34]  bg-[#f5f6fa] min-h-screen md:ml-72 w-full  "
+                : "bg-[#f5f6fa] dark:bg-[#282c34]  w-full min-h-screen flex-2 "
             }
           >
             <div>

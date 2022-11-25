@@ -30,13 +30,13 @@ const Sidebar = () => {
       <div className="border-r border-gray-500 h-screen md:overflow-hidden overflow-auto md:hover:overflow-auto pb-10 ">
         {activeMenu && (
           <>
-            <div className="flex justify-between items-center">
+            <div className="flex justify-end items-center">
               <TooltipComponent content="Menu" position="BottomCenter">
                 <button
                   type="button"
                   onClick={() => setActiveMenu(!activeMenu)}
                   style={{ color: currentColor }}
-                  className="text-xl rounded-full p-3 hover:bg-light-gray mt-4 block lg:hidden"
+                  className="text-xl rounded-full p-3 hover:bg-light-gray block lg:hidden"
                 >
                   <MdOutlineCancel />
                 </button>

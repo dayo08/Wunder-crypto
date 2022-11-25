@@ -54,16 +54,16 @@ const MarketPlace = () => {
   };
 
   return (
-    <div className="mt-24 md:mt-3">
-      <div className=" dark:text-gray-200 dark:bg-[#20242b] rounded-xl px-8 pt-5 m-3 border-b border-white ">
-        <div className="p-3 ">
-          <div className="md:text-2xl text-lg font-bold mb-5">Marketplace</div>
-          <div className="flex md:text-xl text-base font-bold gap-8 cursor-pointer dark:text-white border-b-2 border-[#828282]">
+    <>
+      <div className=" dark:text-gray-200 dark:bg-[#20252a] bg-white  border-b border-white ">
+        <div className="px-6 pt-6 ">
+          <div className="md:text-xl text-lg font-bold mb-5">Marketplace</div>
+          <div className="flex  text-base font-bold gap-8 cursor-pointer dark:text-white">
             <div
               style={{ padding: "16px 0 20px" }}
               className={`${
                 active === 1
-                  ? "border-b-4 hover:text-[#598fff] border-[#03c9d7]  "
+                  ? "border-b-4 hover:text-[#598fff] border-[#598fff]  "
                   : "deActive hover:text-[#598fff]"
               }`}
               onClick={() => {
@@ -79,7 +79,7 @@ const MarketPlace = () => {
               style={{ padding: "16px 0 20px" }}
               className={`${
                 active === 2
-                  ? "border-b-4 border-[#03c9d7] hover:text-[#598fff] "
+                  ? "border-b-4 border-[#598fff] hover:text-[#598fff] "
                   : "deActive hover:text-[#598fff]"
               }`}
             >
@@ -90,23 +90,23 @@ const MarketPlace = () => {
       </div>
       {active === 1 && (
         <>
-          <div className="grid 2xl:grid-cols-5 m-3 xl:grid-cols-3 md:grid-cols-2 lg:place-content-center place-content-start lg:place-items-center place-items-start gap-5">
+          <div className="grid 2xl:grid-cols-6 px-6 pt-5 xl:grid-cols-3 lg:grid-cols-2 md:grid-cols-1 place-content-start place-items-start gap-5">
             <div>
-              <select className="dropdown list">
+              <select className="bg-[#e1e3e9] dark:bg-[#31353e] dark:text-white px-2 py-1 rounded w-56 text-sm">
                 <option value="AllTime">All Time</option>
                 <option value="LastMonth">Last Month</option>
                 <option value="LastWeek"> Last Week</option>
               </select>
             </div>
             <div>
-              <select className="dropdown list">
+              <select className="bg-[#e1e3e9] dark:bg-[#31353e] px-2 py-1 dark:text-white  rounded w-56 text-sm">
                 <option value="AllTime">All Time</option>
                 <option value="LastMonth">Last Month</option>
                 <option value="LastWeek"> Last Week</option>
               </select>
             </div>
             <div>
-              <select className="dropdown list">
+              <select className="bg-[#e1e3e9] dark:bg-[#31353e] px-2 py-1 dark:text-white  rounded w-56 text-sm">
                 <option value="label.all.exchanges">All exchanges</option>
                 <option value="BINANCE">BINANCE-SPOT</option>
                 <option value="BINANCE_FUTURES">
@@ -125,7 +125,7 @@ const MarketPlace = () => {
               </select>
             </div>
             <div>
-              <select className="dropdown list">
+              <select className="bg-[#e1e3e9] dark:bg-[#31353e] px-2 py-1 dark:text-white  rounded w-56 text-sm">
                 <option value="label.all.base.currencies">
                   All base currencies
                 </option>
@@ -140,24 +140,21 @@ const MarketPlace = () => {
                 name=""
                 id=""
                 placeholder="Min Trades Quantity"
-                className="dark:text-gray-200 p-1 dark:bg-[#20242b] border-2 rounded"
+                className="dark:text-gray-200 p-1  border-2 rounded bg-[#e1e3e9] dark:bg-[#31353e] px-2 py-1 dark:text-white   w-56 text-sm"
               />
             </div>
-            <div className="flex m-3 gap-3 items-center ">
-              <Button
-                color="white"
-                bgColor={currentColor}
-                text="Filter"
-                borderRadius="5px"
-              />
+            <div className="flex gap-2 items-center">
               <p className="dark:text-gray-200">Show Followed Only</p>
               <input type="checkbox" name="" id="" />
             </div>
+            <button className=" bg-[#598fff] hover:bg-[#3c60c3]  text-black dark:text-white font-bold py-1 px-3 rounded ">
+              Filter
+            </button>
           </div>
-          <div className=" md:grid xl:grid-cols-3 md:grid-cols-2  gap-4 ">
+          <div className="mt-5 md:grid xl:grid-cols-3 md:grid-cols-2  gap-4 ">
             {getData(current, size).map((data, index) => (
               <div
-                className=" bg-white rounded-lg shadow-md dark:text-gray-200 dark:bg-gray-800 dark:border-gray-700 mb-4 mx-10"
+                className=" bg-white rounded-lg shadow-md dark:text-gray-200 dark:bg-[#2c313c] dark:border-gray-700 mb-4 mx-10"
                 key={data.id}
               >
                 <div className="flex justify-between md:px-5 px-2 py-5">
@@ -207,18 +204,12 @@ const MarketPlace = () => {
 
                 <div className="px-5 py-5">
                   <div className="flex items-center justify-between">
-                    <Button
-                      color="white"
-                      bgColor={currentColor}
-                      text="View Trader"
-                      borderRadius="5px"
-                    />
-                    <Button
-                      color="white"
-                      bgColor={currentColor}
-                      text="Follow"
-                      borderRadius="5px"
-                    />
+                    <button className="hover:text-white  hover:bg-[#3c60c3]  text-[#3c60c3] border border-[#3c60c3]  font-bold py-2 px-4 rounded ">
+                      View Trader
+                    </button>
+                    <button className="hover:text-white  hover:bg-[#3c60c3]  text-[#3c60c3] border border-[#3c60c3]  font-bold py-2 px-4 rounded ">
+                      Follow
+                    </button>
                   </div>
                 </div>
               </div>
@@ -241,13 +232,12 @@ const MarketPlace = () => {
           </div>
         </>
       )}
-
       {active === 2 && (
         <>
-          <div className=" grid xl:grid-cols-3 md:grid-cols-2 gap-4 ">
+          <div className=" grid xl:grid-cols-3 md:grid-cols-2 gap-4 mt-5">
             {datatableUsers1.map((data, index) => (
               <div
-                className=" bg-white rounded-lg shadow-md dark:text-gray-200 dark:bg-gray-800 dark:border-gray-700 mb-4 mx-10"
+                className=" bg-white rounded-lg shadow-md dark:text-gray-200 dark:bg-[#2c313c] dark:border-gray-700 mb-4 mx-10"
                 key={data.id}
               >
                 <div className="flex justify-between md:px-5 px-2 py-5">
@@ -296,7 +286,7 @@ const MarketPlace = () => {
           </div>
         </>
       )}
-    </div>
+    </>
   );
 };
 

@@ -57,6 +57,7 @@ const Navbar = () => {
       setActiveMenu(false);
     }
   };
+  const handleActiveMenu = () => setActiveMenu(!activeMenu);
   return (
     <div className=" border-b border-gray-500">
       <div className="flex justify-between p-2 md:ml-1 md:mr-6 relative">
@@ -67,6 +68,7 @@ const Navbar = () => {
         >
           <SiShopware /> <span>Wunder</span>
         </Link>
+ 
         <div className="flex">
           <NavButton
             title="Cart"
