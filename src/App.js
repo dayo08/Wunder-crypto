@@ -14,7 +14,6 @@ import {
   ManageCopyTrading,
   Positions,
   MarketPlace,
-  Terminal,
 } from "./pages";
 import "./App.css";
 
@@ -43,6 +42,9 @@ const App = () => {
   return (
     <div className={currentMode === "Dark" ? "dark" : ""}>
       <BrowserRouter>
+        <div className="sticky top-0 bg-main-bg dark:bg-main-dark-bg navbar w-full ">
+          <Navbar />
+        </div>
         <div className="flex relative dark:bg-main-dark-bg">
           <div className="fixed right-4 bottom-4" style={{ zIndex: "1000" }}>
             <TooltipComponent content="Settings" position="Top">
@@ -72,9 +74,6 @@ const App = () => {
                 : "bg-main-bg dark:bg-main-dark-bg  w-full min-h-screen flex-2 "
             }
           >
-            <div className="fixed md:static bg-main-bg dark:bg-main-dark-bg navbar w-full ">
-              <Navbar />
-            </div>
             <div>
               <section className="user-subs-inf-banner text-center">
                 Current plan: Pro ( 3 days left )
@@ -91,7 +90,6 @@ const App = () => {
                 <Route path="/Referrals" element={<Referrals />} />
                 <Route path="/Settings" element={<Settings />} />
                 <Route path="/Marketplace" element={<MarketPlace />} />
-                <Route path="/Terminal" element={<Terminal />} />
                 <Route
                   path="/ManageCopyTrading"
                   element={<ManageCopyTrading />}
