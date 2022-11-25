@@ -19,11 +19,10 @@ const Sidebar = () => {
     }
   };
 
-
   const activeLink =
-    "flex items-center gap-2 pl-3 pt-3 pb-2.5 bg-[#f5f6fa] dark:bg-[#31353e] text-[#598fff]  text-md ";
+    "flex items-center gap-2 pl-3 py-3 bg-[#f5f6fa] dark:bg-[#31353e] text-[#598fff]  text-md ";
   const normalLink =
-    "flex items-center gap-2 pl-3 pt-3 pb-2.5  text-md text-gray-700 dark:text-gray-200 dark:hover:text-[#598fff] dark:hover:bg-[#31353e] hover:bg-[#f5f6fa]   ";
+    "flex items-center gap-2 pl-3 py-3  text-md text-gray-700 dark:text-gray-200 dark:hover:text-[#598fff] dark:hover:bg-[#31353e] hover:bg-[#f5f6fa]   ";
 
   return (
     <>
@@ -55,7 +54,14 @@ const Sidebar = () => {
                       }
                     >
                       {link.icon}
-                      <span className="capitalize ">{link.name}</span>
+
+                      <span
+                        className={
+                          link.name === "Manage Copy-Trading" ? "ml-8" : null
+                        }
+                      >
+                        {link.name}
+                      </span>
                     </NavLink>
                   ))}
                 </div>
@@ -63,7 +69,7 @@ const Sidebar = () => {
             </div>
           </>
         )}
-        <div className="border-b bor mt-28">
+        <div className="border-t bor mt-28">
           <div className="mt-10 ">
             {social.map((item) => (
               <div>

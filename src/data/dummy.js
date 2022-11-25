@@ -53,7 +53,7 @@ export const links = [
       },
       {
         name: "Manage Copy-Trading",
-        icon: <FaLandmark />,
+        // icon: <FaLandmark />,
         path: "/ManageCopyTrading",
       },
       {

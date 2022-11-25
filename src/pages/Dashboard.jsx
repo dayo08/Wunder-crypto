@@ -4,6 +4,7 @@ import { Pie, Button } from "../components";
 import { ecomPieChartData } from "../data/dummy";
 import { ImCheckmark } from "react-icons/im";
 import { useStateContext } from "../contexts/ContextProvider";
+import { Link } from "react-router-dom";
 
 const Dashboard = () => {
   const { currentColor } = useStateContext();
@@ -27,9 +28,11 @@ const Dashboard = () => {
           </p>
           <div className="flex gap-5 mt-4">
             <div>
-              <button className="hover:text-white  hover:bg-[#3c60c3]  text-[#3c60c3] border border-[#3c60c3]  font-bold py-2 px-4 rounded ">
-                Manage
-              </button>
+              <Link to="/MyExchanges">
+                <button className="hover:text-white  hover:bg-[#3c60c3]  text-[#3c60c3] border border-[#3c60c3]  font-bold py-2 px-4 rounded ">
+                  Manage
+                </button>
+              </Link>
             </div>
             <div>
               <button className="hover:text-white  hover:bg-[#3c60c3]  text-[#3c60c3]  border-[#3c60c3] border font-bold py-2 px-4 rounded ">
@@ -55,9 +58,11 @@ const Dashboard = () => {
           </p>
           <div className="flex gap-5 mt-4">
             <div>
-              <button className="hover:text-white  hover:bg-[#3c60c3]  text-[#3c60c3]  border-[#3c60c3] border font-bold py-2 px-4 rounded ">
-                Create a trade
-              </button>
+              <Link to="/Terminal">
+                <button className="hover:text-white  hover:bg-[#3c60c3]  text-[#3c60c3]  border-[#3c60c3] border font-bold py-2 px-4 rounded ">
+                  Create a trade
+                </button>
+              </Link>
             </div>
           </div>
         </div>
@@ -78,9 +83,11 @@ const Dashboard = () => {
           </p>
           <div className="flex gap-5 mt-4">
             <div>
-              <button className="hover:text-white  hover:bg-[#3c60c3]  text-[#3c60c3]  border-[#3c60c3] border font-bold py-2 px-4 rounded ">
-                Choose a signal provider
-              </button>
+              <Link to="/Marketplace">
+                <button className="hover:text-white  hover:bg-[#3c60c3]  text-[#3c60c3]  border-[#3c60c3] border font-bold py-2 px-4 rounded ">
+                  Choose a signal provider
+                </button>
+              </Link>
             </div>
           </div>
         </div>

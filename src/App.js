@@ -14,6 +14,8 @@ import {
   ManageCopyTrading,
   Positions,
   MarketPlace,
+  Terminal,
+  Createtraderaccount,
 } from "./pages";
 import "./App.css";
 import { AiOutlineMenu, AiOutlineUser } from "react-icons/ai";
@@ -66,8 +68,11 @@ const App = () => {
         </div>
 
         <div className="flex relative dark:bg-main-dark-bg">
-          <div className={`fixed bg-black rounded-full p-2 bottom-4 z-50 left-4 ${activeMenu ? "hidden" : "block"}`}>
-            
+          <div
+            className={`fixed bg-black rounded-full p-2 bottom-4 z-50 left-4 ${
+              activeMenu ? "hidden" : "block"
+            }`}
+          >
             <NavButton
               title="Menu"
               customFunc={handleActiveMenu}
@@ -120,6 +125,11 @@ const App = () => {
                 <Route path="/Referrals" element={<Referrals />} />
                 <Route path="/Settings" element={<Settings />} />
                 <Route path="/Marketplace" element={<MarketPlace />} />
+                <Route path="/Terminal" element={<Terminal />} />
+                <Route
+                  path="/Createtraderaccount"
+                  element={<Createtraderaccount />}
+                />
                 <Route
                   path="/ManageCopyTrading"
                   element={<ManageCopyTrading />}
