@@ -11,7 +11,7 @@ const Dashboard = () => {
   const [active, setactive] = useState(1);
   return (
     <div>
-      <div className="flex flex-wrap justify-start mt-24 md:mt-3">
+      <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 2xl:grid-cols-3 gap-4 mt-3 md:mt-3">
         <div className="bg-white  dark:text-gray-200 dark:bg-[#2c313c]  md:w-500 p-5 m-3 ">
           <div>
             <div className="flex justify-between">
@@ -108,14 +108,12 @@ const Dashboard = () => {
             </div>
             <div className="mt-6 flex justify-between">
               <p className="md:text-xl text-lg font-bold text-gray-400 dark:text">
-                <p className="font-bold text-gray-500 ">BTC </p>
-                <span className="text-white ">0.0000</span>
+                <p className="font-bold text-white ">BTC 0.0000 </p>
                 <p className="md:text-2xl text-xl  font-bold"></p>
               </p>
 
               <p className="md:text-xl text-lg font-bold text-gray-400 dark:text">
-                <p className="font-bold text-gray-500 "> ETH </p>
-                <span className="text-white ">0.0000</span>
+                <p className="font-bold text-white "> ETH 0.0000 </p>
                 <p className="md:text-2xl text-xl  font-bold"></p>
               </p>
             </div>
@@ -176,11 +174,10 @@ const Dashboard = () => {
             <div className="flex md:text-xl text-base font-bold gap-8 cursor-pointer dark:text-white border-b-2 border-[#828282]">
               <div
                 style={{ padding: "16px 0 20px" }}
-                className={`${
-                  active === 1
+                className={`${active === 1
                     ? "border-b-4 hover:text-[#598fff] border-[#598fff]  "
                     : "deActive hover:text-[#598fff]"
-                }`}
+                  }`}
                 onClick={() => {
                   setactive(1);
                 }}
@@ -192,21 +189,19 @@ const Dashboard = () => {
                   setactive(2);
                 }}
                 style={{ padding: "16px 0 20px" }}
-                className={`${
-                  active === 2
+                className={`${active === 2
                     ? "border-b-4 border-[#598fff] hover:text-[#598fff] "
                     : "deActive hover:text-[#598fff]"
-                }`}
+                  }`}
               >
                 Assets by Exchange
               </div>
               <div
                 style={{ padding: "16px 0 20px" }}
-                className={`${
-                  active === 3
+                className={`${active === 3
                     ? "border-b-4 border-[#598fff]  hover:text-[#598fff]"
                     : "deActive hover:text-[#598fff]"
-                }`}
+                  }`}
                 onClick={() => {
                   setactive(3);
                 }}
