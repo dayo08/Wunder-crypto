@@ -19,7 +19,7 @@ export const links = [
     links: [
       {
         name: "Dashboard",
-        icon: <AiFillDashboard />,
+        icon: <AiFillDashboard className="text-lg"/>,
         path: "/",
       },
     ],
@@ -29,17 +29,17 @@ export const links = [
     links: [
       {
         name: "My Exchanges",
-        icon: <FaExchangeAlt />,
+        icon: <FaExchangeAlt className="text-lg"/>,
         path: "/MyExchanges",
       },
       {
         name: "Positions",
-        icon: <GiPositionMarker />,
+        icon: <GiPositionMarker className="text-lg"/>,
         path: "/Positions",
       },
       {
         name: "Terminal",
-        icon: <FiTerminal />,
+        icon: <FiTerminal className="text-lg"/>,
         path: "/Terminal",
       },
     ],
@@ -48,7 +48,7 @@ export const links = [
     links: [
       {
         name: "Marketplace",
-        icon: <FaLandmark />,
+        icon: <FaLandmark className="text-lg"/>,
         path: "/Marketplace",
       },
       {
@@ -58,17 +58,17 @@ export const links = [
       },
       {
         name: "Referrals",
-        icon: <FaBullhorn />,
+        icon: <FaBullhorn className="text-lg"/>,
         path: "/Referrals",
       },
       {
         name: "Billing",
-        icon: <FaWallet />,
+        icon: <FaWallet className="text-lg"/>,
         path: "/Billing",
       },
       {
         name: "Settings",
-        icon: <FiSettings />,
+        icon: <FiSettings className="text-lg"/>,
         path: "/Settings",
       },
     ],
@@ -81,17 +81,17 @@ export const social = [
       {
         link: "https://wundertrading.com/",
         name: "Help Center",
-        icon: <FaBookOpen />,
+        icon: <FaBookOpen className="text-lg"/>,
       },
       {
         link: "https://wundertrading.com/",
         name: "Bitcoin analytics",
-        icon: <FaChartBar />,
+        icon: <FaChartBar className="text-lg"/>,
       },
       {
         link: "https://wundertrading.com/",
         name: "Roadmap",
-        icon: <FaRoute />,
+        icon: <FaRoute className="text-lg" />,
       },
     ],
   },
@@ -100,23 +100,23 @@ export const social = [
 export const socialmedai = [
   {
     link: "https://wundertrading.com/",
-    icon: <FiFacebook className="text-3xl"/>,
+    icon: <FiFacebook className="text-2xl"/>,
   },
   {
     link: "https://wundertrading.com/",
-    icon: <AiOutlineTwitter className="text-3xl"/>,
+    icon: <AiOutlineTwitter className="text-2xl"/>,
   },
   {
     link: "https://wundertrading.com/",
-    icon: <AiFillYoutube className="text-3xl"/>,
+    icon: <AiFillYoutube className="text-2xl"/>,
   },
   {
     link: "https://wundertrading.com/",
-    icon: <FaTelegram className="text-3xl"/>,
+    icon: <FaTelegram className="text-2xl"/>,
   },
   {
     link: "https://wundertrading.com/",
-    icon: <SiDiscord className="text-3xl"/>,
+    icon: <SiDiscord className="text-2xl"/>,
   },
 ];
 

@@ -20,9 +20,9 @@ const Sidebar = () => {
   };
 
   const activeLink =
-    "flex items-center gap-2 pl-3 py-3 bg-[#f5f6fa] dark:bg-[#31353e] text-[#598fff]  text-md ";
+    "flex items-center gap-2 pl-3 py-2 bg-[#f5f6fa] dark:bg-[#31353e] text-[#598fff]  text-sm ";
   const normalLink =
-    "flex items-center gap-2 pl-3 py-3  text-md text-gray-700 dark:text-gray-200 dark:hover:text-[#598fff] dark:hover:bg-[#31353e] hover:bg-[#f5f6fa]   ";
+    "flex items-center gap-2 pl-3 py-3  text-sm text-gray-700 dark:text-gray-200 dark:hover:text-[#598fff] dark:hover:bg-[#31353e] hover:bg-[#f5f6fa]   ";
 
   return (
     <>
@@ -89,11 +89,11 @@ const Sidebar = () => {
             ))}
           </div>
 
-          <div className="mt-10 flex gap-3 items-center justify-between mr-3 ">
+          <div className="mt-10 flex gap-3 items-center justify-between mx-3 ">
             {socialmedai.map((items, index) => (
               <>
                 <a href={items.link} className="text-3xl">
-                  <div className="dark:text-white text-black hover:text-[#598fff]">
+                  <div className="dark:text-white text-black hover:text-[#598fff] dark:hover:text-[#598fff]">
                     {items.icon}
                   </div>
                 </a>

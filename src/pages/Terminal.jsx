@@ -5,6 +5,132 @@ import React, { useState } from "react";
 const Terminal = () => {
   const [active, setactive] = useState(1);
   const [Order, setorder] = useState(1);
+  const [Portfolio, setPortfolio] = useState(1);
+  const [amountfixed, setamountfixed] = useState(1);
+  const [takeprofit1, settakeprofit1] = useState(false);
+  const [takeprofit2, settakeprofit2] = useState(false);
+  const [takeprofit3, settakeprofit3] = useState(false);
+  const [takeprofit4, settakeprofit4] = useState(false);
+  const [takeprofit5, settakeprofit5] = useState(false);
+  const [takeprofit6, settakeprofit6] = useState(false);
+  const [Portfoliotakeprofit1, setPortfoliotakeprofit1] = useState(false);
+  const [Portfoliotakeprofit11, setPortfoliotakeprofit11] = useState(false);
+  const [StopLoss, setStopLoss] = useState(false);
+  const [movestoploss, setmovestoploss] = useState(false);
+  const activePortfolio = [
+    {
+      id: 1,
+      size: 10,
+    },
+    {
+      id: 2,
+      size: 25,
+    },
+    {
+      id: 3,
+      size: 50,
+    },
+    {
+      id: 1,
+      size: 75,
+    },
+    {
+      id: 1,
+      size: 100,
+    },
+  ];
+
+  const activePortfolio1 = [
+    {
+      id: 1,
+      size: 10,
+    },
+    {
+      id: 2,
+      size: 25,
+    },
+    {
+      id: 3,
+      size: 50,
+    },
+    {
+      id: 1,
+      size: 75,
+    },
+    {
+      id: 1,
+      size: 100,
+    },
+  ];
+
+  const activePortfolio11 = [
+    {
+      id: 1,
+      size: 1,
+    },
+    {
+      id: 2,
+      size: 3,
+    },
+    {
+      id: 3,
+      size: 5,
+    },
+    {
+      id: 1,
+      size: 10,
+    },
+    {
+      id: 1,
+      size: 20,
+    },
+  ];
+
+  const a = [
+    {
+      id: 0,
+      title: "Tkae Profit 1",
+      state: takeprofit1,
+      setsatte: settakeprofit1,
+      onClickfunctopn: () => settakeprofit1(!takeprofit1),
+    },
+    {
+      id: 0,
+      title: "Tkae Profit 2",
+      state: takeprofit2,
+      setsatte: settakeprofit2,
+      onClickfunctopn: () => settakeprofit2(!takeprofit2),
+    },
+    {
+      id: 0,
+      title: "Tkae Profit 3",
+      state: takeprofit3,
+      setsatte: settakeprofit3,
+      onClickfunctopn: () => settakeprofit3(!takeprofit3),
+    },
+    {
+      id: 0,
+      title: "Tkae Profit 4",
+      state: takeprofit4,
+      setsatte: settakeprofit4,
+      onClickfunctopn: () => settakeprofit4(!takeprofit4),
+    },
+    {
+      id: 0,
+      title: "Tkae Profit 5",
+      state: takeprofit5,
+      setsatte: settakeprofit5,
+      onClickfunctopn: () => settakeprofit5(!takeprofit5),
+    },
+    {
+      id: 0,
+      title: "Tkae Profit 6",
+      state: takeprofit6,
+      setsatte: settakeprofit6,
+      onClickfunctopn: () => settakeprofit6(!takeprofit6),
+    },
+  ];
+
   return (
     <>
       <div className="flex items-center gap-3 p-3">
@@ -12,6 +138,7 @@ const Terminal = () => {
         <p className="dark:text-gray-200 font-bold">Your Balance:</p>
       </div>
       <div className="grid xl:grid-cols-3 grid-cols-1 place-content-between place-items-stretch">
+        {/* BINANCE: chart by TradingView */}
         <div
           className="col-span-2  py-2 mx-3 xl:sticky top-0"
           style={{ height: 700 }}
@@ -68,6 +195,7 @@ const Terminal = () => {
           </div>
         </div>
         <div className="col-span-1">
+          {/* Exchange && API*/}
           <div className="bg-white  dark:text-gray-200 dark:bg-[#2d313d]   px-5 py-2 mx-3 ">
             <div className="flex  flex-wrap justify-between items-start ">
               <div className="flex flex-col gap-2 justify-between items-start">
@@ -119,6 +247,7 @@ const Terminal = () => {
               </div>
             </div>
           </div>
+          {/* Exchange */}
           <div className="bg-white  dark:text-gray-200 dark:bg-[#2d313d]   px-5 py-2 mx-3 mt-3">
             <p className="font-bold">Exchange</p>
             <p className=" text-sm text-[#606266] py-2">
@@ -126,6 +255,7 @@ const Terminal = () => {
             </p>
             <select className="w-full my-2 dark:text-gray-200 outline-none p-3 rounded bg-transparent border-b" />
           </div>
+          {/* Order type */}
           <div className="bg-white  dark:text-gray-200 dark:bg-[#2d313d]    px-5 py-5 mx-3 mt-3">
             <div className="flex flex-wrap justify-between items-start gap-3 ">
               <div className="flex flex-col gap-2 justify-start items-start">
@@ -169,6 +299,7 @@ const Terminal = () => {
                   type="text"
                   className="dark:text-[#606266] outline-none px-1 rounded"
                   placeholder={0.0}
+                  disabled={Order === 1}
                 />
               </div>
             </div>
@@ -199,14 +330,33 @@ const Terminal = () => {
             </div>
           )}
 
-         
+          {/* Portfolio size
+           */}
           <div className="bg-white  dark:text-gray-200 dark:bg-[#2d313d]   px-5 py-5 mx-3 mt-3">
             <p className="font-bold ">Portfolio size</p>
             <div className="py-3 ppx-2">
-              <button className=" bg-[#598fff] border-[#3c60c3] border  text-black dark:text-white text-sm  rounded  px-2 py-2">
+              <button
+                className={` ${
+                  amountfixed === 1
+                    ? "bg-[#598fff]"
+                    : " border-[#3c60c3] border"
+                }    text-black dark:text-white text-sm  rounded  px-2 py-2`}
+                onClick={() => {
+                  setamountfixed(1);
+                }}
+              >
                 Percents
               </button>
-              <button className=" false border-[#3c60c3] border  text-black dark:text-white text-sm  rounded  px-2 py-2 ml-3">
+              <button
+                className={` ${
+                  amountfixed === 2
+                    ? "bg-[#598fff]"
+                    : " border-[#3c60c3] border"
+                }   text-black dark:text-white text-sm  rounded  px-2 py-2 ml-2`}
+                onClick={() => {
+                  setamountfixed(2);
+                }}
+              >
                 Fixed Amount
               </button>
               <div className="flex gap-5 flex-wrap justify-between ">
@@ -217,26 +367,24 @@ const Terminal = () => {
                       <input
                         type="number"
                         name=""
-                        placeholder="0%"
-                        className="w-full my-2 dark:text-gray-200 outline-none  rounded bg-transparent border-b "
+                        placeholder="0"
+                        className="w-full my-2 dark:text-gray-200 outline-none   bg-transparent border-b "
                         defaultValue={0}
+                        value={Portfolio}
+                        disabled={amountfixed === 2}
                       />
                       <div className="flex gap-2 cursor-pointer">
-                        <p className="border text-xs rounded-full p-1 border-[#e04caf] hover:bg-[#e04caf]">
-                          1%
-                        </p>
-                        <p className="border text-xs rounded-full p-1 border-[#e04caf] hover:bg-[#e04caf]">
-                          3%
-                        </p>
-                        <p className="border text-xs rounded-full p-1 border-[#e04caf] hover:bg-[#e04caf]">
-                          5%
-                        </p>
-                        <p className="border text-xs rounded-full p-1 border-[#e04caf] hover:bg-[#e04caf]">
-                          10%
-                        </p>
-                        <p className="border text-xs rounded-full p-1 border-[#e04caf] hover:bg-[#e04caf]">
-                          20%
-                        </p>
+                        {activePortfolio.map((i, id) => (
+                          <p
+                            className={`border text-xs rounded-full p-1 border-[#e04caf] hover:bg-[#e04caf] ${
+                              Portfolio === i.size ? "bg-[#e04caf]" : null
+                            }`}
+                            onClick={() => setPortfolio(i.size)}
+                            disabled={amountfixed === 2}
+                          >
+                            {i.size}%
+                          </p>
+                        ))}
                       </div>
                     </div>
                     <span>%</span>
@@ -248,13 +396,16 @@ const Terminal = () => {
                   </p>
                   <input
                     type="number"
-                    className="bg-[#606266] dark:text-white  outline-none px-1 rounded"
+                    className="dark:text-[#606266]  outline-none px-1 rounded"
                     placeholder={0.0}
+                    disabled={amountfixed === 1}
                   />
                 </div>
               </div>
             </div>
           </div>
+
+          {/* Keep my position open */}
           <div className="bg-white  dark:text-gray-200 dark:bg-[#2d313d]   px-5 py-2 mx-3 mt-3">
             <div className="flex gap-2">
               <input type="checkbox" name="" id="" className="w-4" />
@@ -265,79 +416,219 @@ const Terminal = () => {
               Stop Loss are disabled.
             </p>
           </div>
+          {/* Take Profit */}
           <div className="bg-white  dark:text-gray-200 dark:bg-[#2d313d]   px-5 py-2 mx-3 mt-3">
             <div className="list-container flex flex-col gap-2">
-              <div className="flex items-center gap-2">
-                <input
-                  type="checkbox"
-                  className="w-5"
-                  defaultValue="Take Profit 1"
-                />
-                <span className="not-checked-item dark:text-white py-2 text-lg font-bold">
-                  Take Profit 1
-                </span>
-              </div>
-              <div className="flex items-center gap-2">
-                <input
-                  type="checkbox"
-                  className="w-5"
-                  defaultValue="Take Profit 2"
-                />
-                <span className="not-checked-item dark:text-white py-2 text-lg font-bold">
-                  Take Profit 2
-                </span>
-              </div>
-              <div className="flex items-center gap-2">
-                <input
-                  type="checkbox"
-                  className="w-5"
-                  defaultValue="Take Profit 3"
-                />
-                <span className="not-checked-item dark:text-white py-2 text-lg font-bold">
-                  Take Profit 3
-                </span>
-              </div>
-              <div className="flex items-center gap-2">
-                <input
-                  type="checkbox"
-                  className="w-5"
-                  defaultValue="Take Profit 4"
-                />
-                <span className="not-checked-item dark:text-white py-2 text-lg font-bold">
-                  Take Profit 4
-                </span>
-              </div>
-              <div className="flex items-center gap-2">
-                <input
-                  type="checkbox"
-                  className="w-5"
-                  defaultValue="Take Profit 5"
-                />
-                <span className="not-checked-item dark:text-white py-2 text-lg font-bold">
-                  Take Profit 5
-                </span>
-              </div>
-              <div className="flex items-center gap-2">
-                <input
-                  type="checkbox"
-                  className="w-5"
-                  defaultValue="Take Profit 6"
-                />
-                <span className="not-checked-item dark:text-white py-2 text-lg font-bold">
-                  Take Profit 6
-                </span>
-              </div>
+              {a.map((i, id) => (
+                <>
+                  <div className="flex items-center gap-2">
+                    <input
+                      type="checkbox"
+                      className="w-5"
+                      defaultValue="Take Profit 1"
+                      onClick={i.onClickfunctopn}
+                    />
+                    <span className="not-checked-item dark:text-white py-2 text-lg font-bold">
+                      {i.title}
+                    </span>
+                  </div>
+                  {i.state && (
+                    <div className="flex flex-wrap justify-between">
+                      <div>
+                        <p className=" text-sm text-[#606266] py-2">
+                          Portfolio size
+                        </p>
+                        <div className="flex ">
+                          <div className="flex flex-col">
+                            <input
+                              type="number"
+                              name=""
+                              placeholder="0"
+                              className="w-full my-2 dark:text-gray-200 outline-none   bg-transparent border-b "
+                              defaultValue={0}
+                              value={Portfoliotakeprofit1}
+                            />
+                            <div className="flex gap-2 cursor-pointer">
+                              {activePortfolio1.map((i, id) => (
+                                <p
+                                  className={`border text-xs rounded-full p-1 border-[#e04caf] hover:bg-[#e04caf] ${
+                                    Portfoliotakeprofit1 === i.size
+                                      ? "bg-[#e04caf]"
+                                      : null
+                                  }`}
+                                  onClick={() =>
+                                    setPortfoliotakeprofit1(i.size)
+                                  }
+                                >
+                                  {i.size}%
+                                </p>
+                              ))}
+                            </div>
+                          </div>
+                          <span>%</span>
+                        </div>
+                      </div>
+                      <div>
+                        <p className=" text-sm text-[#606266] py-2">
+                          Take Profit
+                        </p>
+                        <div className="flex ">
+                          <div className="flex flex-col">
+                            <input
+                              type="number"
+                              name=""
+                              placeholder="0"
+                              className="w-full my-2 dark:text-gray-200 outline-none   bg-transparent border-b "
+                              defaultValue={0}
+                              value={Portfoliotakeprofit11}
+                            />
+                            <div className="flex gap-2 cursor-pointer">
+                              {activePortfolio11.map((i, id) => (
+                                <p
+                                  className={`border text-xs rounded-full p-1 border-[#e04caf] hover:bg-[#e04caf] ${
+                                    Portfoliotakeprofit11 === i.size
+                                      ? "bg-[#e04caf]"
+                                      : null
+                                  }`}
+                                  onClick={() =>
+                                    setPortfoliotakeprofit11(i.size)
+                                  }
+                                >
+                                  {i.size}%
+                                </p>
+                              ))}
+                            </div>
+                          </div>
+                          <span>%</span>
+                        </div>
+                        <p className="text-sm mt-3 text-[#606266]">Price</p>
+                        <input
+                          type="number"
+                          name=""
+                          id=""
+                          className="bg-transparent border-b outline-none"
+                          placeholder="0.00000"
+                        />
+                      </div>
+                    </div>
+                  )}
+                </>
+              ))}
+            </div>
+            <div className="flex flex-col gap-2 ">
               <div>
-                <div className="flex items-center gap-2">
-                  <input type="checkbox" name="" id="" className="w-5" />
+                <div className="flex items-center gap-2 mt-2">
+                  <input
+                    type="checkbox"
+                    name=""
+                    id=""
+                    className="w-5"
+                    onClick={() => setStopLoss(!StopLoss)}
+                  />
                   <p className="font-bold">Stop Loss</p>
                 </div>
+                {StopLoss && (
+                  <div className="flex justify-between flex-wrap items-start">
+                    <div>
+                      <p className=" text-sm text-[#606266] pt-2">Stop Loss</p>
+                      <div className="flex ">
+                        <div className="flex flex-col">
+                          <input
+                            type="number"
+                            name=""
+                            placeholder="0"
+                            className="w-full mb-2 dark:text-gray-200 outline-none   bg-transparent border-b "
+                            defaultValue={0}
+                            value={StopLoss}
+                          />
+                          <div className="flex gap-2 cursor-pointer">
+                            {activePortfolio11.map((i, id) => (
+                              <p
+                                className={`border text-xs rounded-full p-1 border-[#e04caf] hover:bg-[#e04caf] ${
+                                  setStopLoss === i.size ? "bg-[#e04caf]" : null
+                                }`}
+                                onClick={() => setStopLoss(i.size)}
+                              >
+                                {i.size}%
+                              </p>
+                            ))}
+                          </div>
+                        </div>
+                        <span>%</span>
+                      </div>
+                    </div>
+
+                    <div>
+                      <p className="text-sm mt-3">Price</p>
+                      <input
+                        type="number"
+                        name=""
+                        id=""
+                        className="bg-transparent border-b outline-none"
+                        placeholder="0.00000"
+                      />
+                    </div>
+                  </div>
+                )}
               </div>
               <div>
-                <div className="flex items-center gap-2">
-                  <input type="checkbox" name="" id="" className="w-5" />
+                <div className="flex items-center gap-2 mt-2">
+                  <input
+                    type="checkbox"
+                    name=""
+                    id=""
+                    className="w-5"
+                    onClick={() => setmovestoploss(!movestoploss)}
+                  />
                   <p className="font-bold">Move Stop Loss to breakeven</p>
                 </div>
+                {movestoploss && (
+                  <div className="flex justify-between flex-wrap items-start">
+                    <div>
+                      <p className=" text-sm text-[#606266] pt-2">
+                        Trigger percentage
+                      </p>
+                      <div className="flex ">
+                        <div className="flex flex-col">
+                          <input
+                            type="number"
+                            name=""
+                            placeholder="0"
+                            className="w-full mb-2 dark:text-gray-200 outline-none   bg-transparent border-b "
+                            defaultValue={0}
+                            value={movestoploss}
+                          />
+                          <div className="flex gap-2 cursor-pointer">
+                            {activePortfolio11.map((i, id) => (
+                              <p
+                                className={`border text-xs rounded-full p-1 border-[#e04caf] hover:bg-[#e04caf] ${
+                                  movestoploss === i.size
+                                    ? "bg-[#e04caf]"
+                                    : null
+                                }`}
+                                onClick={() => setmovestoploss(i.size)}
+                              >
+                                {i.size}%
+                              </p>
+                            ))}
+                          </div>
+                        </div>
+                        <span>%</span>
+                      </div>
+                    </div>
+
+                    <div>
+                      <p className="text-sm mt-3 text-[#606266] ">Trigger price</p>
+                      <input
+                        type="number"
+                        name=""
+                        id=""
+                        className="bg-transparent border-b outline-none"
+                        placeholder="0.00000"
+                      />
+                    </div>
+                  </div>
+                )}
               </div>
             </div>
           </div>

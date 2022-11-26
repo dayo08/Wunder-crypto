@@ -35,11 +35,13 @@ const Navbar = () => {
     handleClick,
     setScreenSize,
     screenSize,
-    setColor, setMode, currentMode, setThemeSettings
+    setColor,
+    setMode,
+    currentMode,
+    setThemeSettings,
   } = useStateContext();
 
-
-  console.log(setMode)
+  console.log(currentMode);
 
   useEffect(() => {
     const handleResize = () => setScreenSize(window.innerWidth);
@@ -65,7 +67,6 @@ const Navbar = () => {
     }
   };
 
-
   const handleActiveMenu = () => setActiveMenu(!activeMenu);
   return (
     <div className=" border-b border-gray-500">
@@ -84,20 +85,39 @@ const Navbar = () => {
             color={currentColor}
             icon={<AiOutlineUser />}
           /> */}
-          {
-            currentMode === 'Dark' ?
-              <GiSun className="fill-white"  />
-              :
-              <FiMoon className="fill-black" />
-          }
-
+          {currentMode === "Dark" ? (
+            <>
+              <GiSun className=" cursor-pointer fill-white" />
+            </>
+          ) : (
+            <>
+              <FiMoon className="fill-black cursor-pointer" />
+            </>
+          )}
+          <input
+            type="radio"
+            id="dark"
+            name="theme"
+            value="Dark"
+            onChange={setMode}
+            className="cursor-pointer"
+            checked={currentMode === "Dark"}
+          />
+          <input
+            type="radio"
+            id="light"
+            name="theme"
+            value="Light"
+            className="cursor-pointer"
+            onChange={setMode}
+            checked={currentMode === "Light"}
+          />
           <FaUser className="cursor-pointer hover:fill-[#0143cc] dark:fill-white" />
 
           <div
             className="flex items-center gap-2 cursor-pointer p-1 "
             onClick={() => handleClick("userProfile")}
           >
-
             <p>
               <span className="text-black font-normal hover:text-[#0143cc] dark:text-white dark:hover:text-[#598fff] ml-1 text-14">
                 Sign out

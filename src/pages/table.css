@@ -32,7 +32,7 @@ body {
 }
 
 .fl-table thead th:nth-child(odd) {
-  color: #ffffff;
+  /* color: #ffffff; */
 
 }
 

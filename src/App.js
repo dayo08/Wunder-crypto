@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { FiSettings } from "react-icons/fi";
+import { BsFillChatLeftTextFill } from "react-icons/bs";
 import { TooltipComponent } from "@syncfusion/ej2-react-popups";
 import { Navbar, Footer, Sidebar, ThemeSettings } from "./components";
 import {
@@ -84,11 +84,9 @@ const App = () => {
             <TooltipComponent content="Settings" position="Top">
               <button
                 type="button"
-                onClick={() => setThemeSettings(true)}
-                style={{ background: currentColor, borderRadius: "50%" }}
-                className="text-3xl text-white p-3 hover:drop-shadow-xl hover:bg-light-gray"
+                className="text-3xl text-white p-3 bg-blue-500  flex items-center rounded-full hover:drop-shadow-xl "
               >
-                <FiSettings />
+                <BsFillChatLeftTextFill className="" />
               </button>
             </TooltipComponent>
           </div>
@@ -113,7 +111,7 @@ const App = () => {
               <section className="user-subs-inf-banner text-center">
                 Current plan: Pro ( 3 days left )
               </section>
-              {themeSettings && <ThemeSettings />}
+              {/* {themeSettings && <ThemeSettings />} */}
               <Routes>
                 <Route path="/" element={<Dashboard />} />
                 <Route path="/Dashboard" element={<Dashboard />} />
