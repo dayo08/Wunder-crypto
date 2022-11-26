@@ -58,7 +58,9 @@ const App = () => {
       </button>
     </TooltipComponent>
   );
-
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
   const handleActiveMenu = () => setActiveMenu(!activeMenu);
   return (
     <div className={currentMode === "Dark" ? "dark" : ""}>
@@ -107,7 +109,7 @@ const App = () => {
                 : "bg-[#f5f6fa] dark:bg-[#282c34]  w-full min-h-screen flex-2 "
             }
           >
-            <div>
+            <div className="mb-20">
               <section className="user-subs-inf-banner text-center">
                 Current plan: Pro ( 3 days left )
               </section>

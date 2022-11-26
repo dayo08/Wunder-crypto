@@ -30,9 +30,9 @@ function Billingcomaper() {
         <div className="container mx-auto overflow-x-auto">
           <p className="p-2 text-xl font-bold">Pricing plan comparison</p>
           <div className="table-wrapper mt-10">
-            <table className="fl-table">
+            <table className="fl-table relative">
               <thead>
-                <tr>
+                <tr >
                   <th></th>
                   <th scope="col">
                     <h2 className="px-2 text-lg font-medium">Free</h2>
@@ -48,7 +48,7 @@ function Billingcomaper() {
                   </th>
                 </tr>
               </thead>
-              <p className="text-start text-2xl font-bold mt-5">
+              <p className="text-start text-2xl font-bold my-5">
                 General features
               </p>
               <tbody className="space-y- text-left divide-y divide-gray-700 bg-white  dark:bg-[#2c313c]  ">
@@ -56,7 +56,7 @@ function Billingcomaper() {
                   <>
                     <tr>
                       <th scope="row" className="text-left w-10">
-                        <h3 className="py-3 ">{items.title}</h3>
+                        <h3 className="py-3 px-3  ">{items.title}</h3>
                       </th>
                       <td>
                         <span className="block text-sm">100</span>
@@ -75,7 +75,7 @@ function Billingcomaper() {
                 ))}
               </tbody>
 
-              <p className="text-start text-2xl font-bold mt-5">
+              <p className="text-start text-2xl font-bold my-5">
                 Trading terminal
               </p>
               <tbody className="space-y-6 text-left divide-y divide-gray-700 bg-white  dark:bg-[#2c313c] ">
@@ -83,7 +83,7 @@ function Billingcomaper() {
                   <>
                     <tr>
                       <th scope="row" className="text-left">
-                        <h3 className="py-3">{items.title}</h3>
+                        <h3 className="py-3 px-3">{items.title}</h3>
                       </th>
                       <td>
                         <span className="block text-sm">
@@ -109,7 +109,7 @@ function Billingcomaper() {
                   </>
                 ))}
               </tbody>
-              <p className="text-start text-2xl font-bold mt-5">
+              <p className="text-start text-2xl font-bold my-5">
                 Traders / Signal Providers
               </p>
               <tbody className="space-y-6 text-left divide-y divide-gray-700 bg-white  dark:bg-[#2c313c] ">
@@ -117,7 +117,7 @@ function Billingcomaper() {
                   <>
                     <tr>
                       <th scope="row" className="text-left">
-                        <h3 className="py-3">{items.title}</h3>
+                        <h3 className="py-3 px-3">{items.title}</h3>
                       </th>
                       <td>
                         <span className="block text-sm">
@@ -143,13 +143,13 @@ function Billingcomaper() {
                   </>
                 ))}
               </tbody>
-              <p className="text-start text-2xl font-bold mt-5">Copy-Traders</p>
+              <p className="text-start text-2xl font-bold my-5">Copy-Traders</p>
               <tbody className="space-y-6 text-left divide-y divide-gray-700 bg-white  dark:bg-[#2c313c] ">
                 {Copy.map((items) => (
                   <>
                     <tr>
                       <th scope="row" className="text-left">
-                        <h3 className="py-3">{items.title}</h3>
+                        <h3 className="py-3 px-3">{items.title}</h3>
                       </th>
                       <td>
                         <span className="block text-sm">
@@ -175,7 +175,7 @@ function Billingcomaper() {
                   </>
                 ))}
               </tbody>
-              <p className="text-start text-2xl font-bold mt-5">
+              <p className="text-start text-2xl font-bold my-5">
                 Other features
               </p>
               <tbody className="space-y-6 text-left divide-y divide-gray-700 bg-white  dark:bg-[#2c313c] ">
@@ -183,7 +183,7 @@ function Billingcomaper() {
                   <>
                     <tr>
                       <th scope="row" className="text-left">
-                        <h3 className="py-3">{items.title}</h3>
+                        <h3 className="py-3 px-3">{items.title}</h3>
                       </th>
                       <td>
                         <span className="block text-sm">
@@ -209,7 +209,7 @@ function Billingcomaper() {
                   </>
                 ))}
               </tbody>
-              <p className="text-start text-2xl font-bold mt-5">
+              <p className="text-start text-2xl font-bold my-5">
                 Other features
               </p>
               <tbody className="space-y-6 text-left divide-y divide-gray-700 bg-white  dark:bg-[#2c313c] ">
@@ -217,7 +217,7 @@ function Billingcomaper() {
                   <>
                     <tr>
                       <th scope="row" className="text-left">
-                        <h3 className="py-3">{items.title}</h3>
+                        <h3 className="py-3 px-3">{items.title}</h3>
                       </th>
                       <td>
                         <span className="block text-sm">
@@ -243,13 +243,13 @@ function Billingcomaper() {
                   </>
                 ))}
               </tbody>
-              <p className="text-start text-2xl font-bold mt-5">Support</p>
+              <p className="text-start text-2xl font-bold my-5">Support</p>
               <tbody className="space-y-6 text-left divide-y divide-gray-700 bg-white  dark:bg-[#2c313c] ">
                 {Support.map((items) => (
                   <>
                     <tr>
                       <th scope="row" className="text-left">
-                        <h3 className="py-3">{items.title}</h3>
+                        <h3 className="py-3 px-3">{items.title}</h3>
                       </th>
                       <td>
                         <span className="block text-sm">

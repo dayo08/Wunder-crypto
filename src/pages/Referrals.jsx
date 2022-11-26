@@ -1,26 +1,29 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useStateContext } from "../contexts/ContextProvider";
 import { Button } from "../components";
 
 function Referrals() {
   const { currentColor } = useStateContext();
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
   return (
     <div>
       <div>
         <div className="grid md:grid-cols-2 dark:bg-[#2c313c]   bg-white p-3 gap-5 place-content-start dark:text-gray-200  m-3">
           <div className="grid-cols-1">
             <div className="flex md:gap-8 gap-2 flex-col md:flex-row items-start md:items-center justify-b">
-              <div className="font-bold flex dark:textflex-col md:gap-5 gap-2 justify-between ">
+              <div className="font-bold flex dark:text flex-col md:gap-5 gap-2 justify-between ">
                 <p>Referrals</p>
-                <p className="md:p-3">0</p>
+                <p className="md:py-3">0</p>
               </div>
-              <div className=" flex flex-col justify-center md:gap-5 gap-2 ">
+              <div className=" flex flex-col justify-center w-full md:gap-5 gap-2 ">
                 <p className="font-bold">Referral link</p>
-                <div className="flex gap-3  ">
+                <div className="flex gap-3 ">
                   <input
                     type="text"
                     placeholder="Enter promo code"
-                    className="bg-white  bg-transparent  border border-[#3c60c3] py-2 px-4  rounded w-full  outline-none"
+                    className="bg-white  bg-transparent  border border-[#3c60c3] py-2 px-4  rounded max-w-md w-full  outline-none"
                     readOnly=""
                   />
                   <div>
@@ -52,7 +55,7 @@ function Referrals() {
             </div>
           </div>
         </div>
-        <div className="grid md:grid-cols-2  ">
+        <div className="grid md:grid-cols-2 gap-5 ">
           <div className="dark:text-gray-200 bg-white  dark:bg-[#2c313c]   p-4 m-3 ">
             <p className="font-bold">USDT Payout Address (ERC-20)</p>
             <div className="flex justify-center gap-5 mt-2">

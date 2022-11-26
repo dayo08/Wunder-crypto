@@ -1,8 +1,11 @@
 /* eslint-disable jsx-a11y/iframe-has-title */
 /* eslint-disable react/jsx-no-target-blank */
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 const Terminal = () => {
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
   const [active, setactive] = useState(1);
   const [Order, setorder] = useState(1);
   const [Portfolio, setPortfolio] = useState(1);
@@ -132,7 +135,7 @@ const Terminal = () => {
   ];
 
   return (
-    <>
+    <div className="">
       <div className="flex items-center gap-3 p-3">
         <button className="bg-[#02d29a] text-sm p-1 rounded-sm">Update</button>
         <p className="dark:text-gray-200 font-bold">Your Balance:</p>
@@ -618,7 +621,9 @@ const Terminal = () => {
                     </div>
 
                     <div>
-                      <p className="text-sm mt-3 text-[#606266] ">Trigger price</p>
+                      <p className="text-sm mt-3 text-[#606266] ">
+                        Trigger price
+                      </p>
                       <input
                         type="number"
                         name=""
@@ -643,7 +648,7 @@ const Terminal = () => {
           </button>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

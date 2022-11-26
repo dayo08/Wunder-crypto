@@ -1,13 +1,15 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import TimezoneSelect from "react-timezone-select";
 import "./table.css";
 import { Generaldata } from "../data/dummy";
 import Swal from "sweetalert2";
-
+import { SiShopware } from "react-icons/si";
 function Settings() {
   const [active, setactive] = useState(1);
   const [selectedTimezone, setSelectedTimezone] = useState({});
-
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
   const settings = () => {
     const swalWithBootstrapButtons = Swal.mixin({
       customClass: {
@@ -97,7 +99,7 @@ function Settings() {
       </div>
       {active === 1 && (
         <>
-          <form className=" lg:max-w-4xl  px-6 pt-6 ">
+          <form className=" w-full  px-6 pt-6 ">
             <div className="flex flex-wrap justify-between  items-center  mb-6">
               <div className="w-full md:w-1/2 mb-6 md:mb-0">
                 <label
@@ -134,8 +136,8 @@ function Settings() {
                 />
               </div>
             </div>
-            <div className="flex flex-wrap -mx-3 mb-8">
-              <div className="w-full px-3">
+            <div className="flex flex-wrap -mx-3 max-w-lg mb-8">
+              <div className="w-full max-w-lg px-3">
                 <label className="block uppercase tracking-wide dark:text-white text-gray-700 text-base   font-bold mb-2 mt-4">
                   Change default page
                 </label>
@@ -150,8 +152,8 @@ function Settings() {
                 </div>
               </div>
             </div>
-            <div className="flex flex-wrap -mx-3 mb-8">
-              <div className="w-full px-3">
+            <div className="flex flex-wrap -mx-3 mb-8 max-w-lg">
+              <div className="w-full max-w-lg px-3">
                 <label className="block uppercase tracking-wide dark:text-white text-gray-700 text-base   font-bold mb-2 mt-4">
                   Time zone
                 </label>
@@ -167,8 +169,8 @@ function Settings() {
                 </div>
               </div>
             </div>
-            <div className="flex flex-wrap -mx-3 my-8">
-              <div className="w-full px-3">
+            <div className="flex flex-wrap justify-between items-start -mx-3 my-8">
+              <div className=" w-full md:w-1/2 px-3">
                 <label className="block uppercase tracking-wide dark:text-white text-gray-700 text-base   font-bold mb-2 mt-4">
                   Select image
                 </label>
@@ -176,17 +178,24 @@ function Settings() {
                   Click to add your profile picture (square images are
                   recommended; Max. size 300Kb).
                 </span>
-                <div className="flex items-center justify-center">
-                  <input
-                    className="appearance-none block w-full bg-white dark:bg-transparent text-gray-700 border border-gray-200 rounded-y py-3 px-4  my-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                    id="grid-last-name"
-                    type="file"
-                    placeholder="Doe"
-                  />
-                  <p className="border border-gray-200 rounded-y py-3 px-4">
-                    Browser
-                  </p>
+                <div className="flex flex-wrap md:flex-nowrap flex-row items-start justify-b md:gap-3">
+                  <div className="flex items-center ">
+                    <input
+                      className="appearance-none block w-full bg-white dark:bg-transparent text-gray-700 border border-gray-200 rounded-y py-2 px-4  my-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                      id="grid-last-name"
+                      type="file"
+                      placeholder="Doe"
+                    />
+                    <p className="border border-gray-200 rounded-y py-2 px-4">
+                      Browser
+                    </p>
+                  </div>
+
+                  <button className="bg-[#598fff]  my-3 py-2 px-4">Save</button>
                 </div>
+              </div>
+              <div className="w-full md:w-1/2 items-center gap-3  flex text-xl font-extrabold tracking-tight dark:text-white text-slate-900">
+                <SiShopware /> <span>Wunder</span>
               </div>
             </div>
             <div className="md:flex md:items-center">

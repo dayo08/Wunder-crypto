@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { SiShopware } from "react-icons/si";
 import { Link } from "react-router-dom";
 import { Button } from "../components";
@@ -19,6 +19,9 @@ function SignUp() {
     cpwd: "",
   });
 
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
   function onChangefirstname(e) {
     const input = e.currentTarget.value;
     setfirstname(input);
@@ -213,20 +216,17 @@ function SignUp() {
                   </>
                 ))}
 
-                <div className="flex justify-center"> 
-                  <Button
-                    color="white"
-                    bgColor={currentColor}
-                    text="Continue"
-                    borderRadius="5px"
-                  />
+                <div className="flex justify-center">
+                  <button className="  hover:bg-[#3c60c3] hover:text-white  text-[#3c60c3] border border-[#3c60c3] dark:text-white font-bold py-1 px-3 rounded ">
+                    Continue
+                  </button>
                 </div>
 
                 <p className="text-sm font-light text-gray-500 dark:text-gray-400">
                   Already have an account?{" "}
                   <Link
                     to="/signIn"
-                    className="font-medium text-primary-600 hover:underline dark:text-primary-500"
+                    className="font-medium text-primary-600  text-[#3c60c3] hover:underline dark:text-primary-500"
                   >
                     Login here
                   </Link>

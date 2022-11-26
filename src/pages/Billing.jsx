@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useStateContext } from "../contexts/ContextProvider";
 import Billingprice from "./Billingprice";
 import Billingcomaper from "./Billingcomaper";
@@ -6,7 +6,9 @@ import Billingcomaper from "./Billingcomaper";
 function Billing() {
   const [active, setactive] = useState(1);
   const { currentColor } = useStateContext();
-
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
   return (
     <div className=" dark:text-gray-200">
       <div className=" dark:text-gray-200 bg-white dark:bg-[#20252a]  ">

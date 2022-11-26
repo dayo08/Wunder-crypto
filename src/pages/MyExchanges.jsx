@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Button } from "../components";
 import { useStateContext } from "../contexts/ContextProvider";
 import binance from "../data/binance.webp";
@@ -8,8 +8,11 @@ import "./table.css";
 
 const Orders = () => {
   const { currentColor } = useStateContext();
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
   return (
-    <div className="2xl:col-span-2   dark:text-gray-200     ">
+    <div className="2xl:col-span-2     dark:text-gray-200     ">
       <div className="border-b bg-white dark:bg-[#20252a] border-gray-500  ">
         <div className="px-6 pt-6">
           <div className="md:text-xl text-lg font-bold ">My Exchanges</div>

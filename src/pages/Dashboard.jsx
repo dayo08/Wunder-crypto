@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { AiFillQuestionCircle } from "react-icons/ai";
 import { Pie, Button } from "../components";
 import { ecomPieChartData } from "../data/dummy";
@@ -9,6 +9,9 @@ import { Link } from "react-router-dom";
 const Dashboard = () => {
   const { currentColor } = useStateContext();
   const [active, setactive] = useState(1);
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
   return (
     <div>
       <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 2xl:grid-cols-3 gap-4 mt-3 md:mt-3">
@@ -174,10 +177,11 @@ const Dashboard = () => {
             <div className="flex md:text-xl text-base font-bold gap-8 cursor-pointer dark:text-white border-b-2 border-[#828282]">
               <div
                 style={{ padding: "16px 0 20px" }}
-                className={`${active === 1
+                className={`${
+                  active === 1
                     ? "border-b-4 hover:text-[#598fff] border-[#598fff]  "
                     : "deActive hover:text-[#598fff]"
-                  }`}
+                }`}
                 onClick={() => {
                   setactive(1);
                 }}
@@ -189,19 +193,21 @@ const Dashboard = () => {
                   setactive(2);
                 }}
                 style={{ padding: "16px 0 20px" }}
-                className={`${active === 2
+                className={`${
+                  active === 2
                     ? "border-b-4 border-[#598fff] hover:text-[#598fff] "
                     : "deActive hover:text-[#598fff]"
-                  }`}
+                }`}
               >
                 Assets by Exchange
               </div>
               <div
                 style={{ padding: "16px 0 20px" }}
-                className={`${active === 3
+                className={`${
+                  active === 3
                     ? "border-b-4 border-[#598fff]  hover:text-[#598fff]"
                     : "deActive hover:text-[#598fff]"
-                  }`}
+                }`}
                 onClick={() => {
                   setactive(3);
                 }}
@@ -226,7 +232,7 @@ const Dashboard = () => {
               <div className="flex justify-center items-center gap-2">
                 <p>Total ($): 0.000</p>
 
-                <button className="hover:text-white  hover:bg-[#02d29a]  text-[#02d29a] border border-[#02d29a]  font-bold py-2 px-4 rounded ">
+                <button className="hover:text-white  hover:bg-[#02d29a]  text-[#02d29a] border border-[#02d29a]  font-bold py-1 px-4 rounded ">
                   Update
                 </button>
               </div>

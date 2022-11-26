@@ -18,6 +18,7 @@ body {
   width: 100%;
   max-width: 100%;
   white-space: nowrap;
+  position: sticky;
 }
 
 .fl-table td,
@@ -33,7 +34,6 @@ body {
 
 .fl-table thead th:nth-child(odd) {
   /* color: #ffffff; */
-
 }
 
 /* Responsive */
@@ -42,6 +42,7 @@ body {
   .fl-table {
     display: block;
     width: 100%;
+    padding: 0 10px;
   }
   .table-wrapper:before {
     content: "Scroll horizontally >";

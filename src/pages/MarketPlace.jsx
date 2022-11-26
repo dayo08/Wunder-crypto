@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Button, SparkLine } from "../components";
 import { SparklineAreaData } from "../data/dummy";
 import { useStateContext } from "../contexts/ContextProvider";
@@ -19,6 +19,9 @@ const MarketPlace = () => {
     }
   };
 
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
   const getData = (current, pageSize) => {
     // Normally you should get the data from the server
     return datatableUsers.slice((current - 1) * pageSize, current * pageSize);
@@ -151,7 +154,7 @@ const MarketPlace = () => {
               Filter
             </button>
           </div>
-          <div className="mt-5 md:grid xl:grid-cols-3 md:grid-cols-2  gap-4 ">
+          <div className="mt-5 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-4 ">
             {getData(current, size).map((data, index) => (
               <div
                 className=" bg-white rounded-lg shadow-md dark:text-gray-200 dark:bg-[#2c313c] dark:border-gray-700 mb-4 mx-10"
@@ -202,8 +205,8 @@ const MarketPlace = () => {
                   </p>
                 </div>
 
-                <div className="px-5 py-5">
-                  <div className="flex items-center justify-between">
+                <div className="px-2  py-5">
+                  <div className="flex items-center gap-3 justify-between">
                     <button className="hover:text-white  hover:bg-[#3c60c3]  text-[#3c60c3] border border-[#3c60c3]  font-bold py-2 px-4 rounded ">
                       View Trader
                     </button>

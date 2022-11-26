@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Position.css";
 import { BsFilter } from "react-icons/bs";
 import { AiOutlineClose, AiOutlineTable } from "react-icons/ai";
@@ -21,6 +21,9 @@ const Positions = () => {
   const [size, setSize] = useState(perPage);
   const [current, setCurrent] = useState(1);
 
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
   // open/close popup
   const changePopuptable = () => {
     setIsOpentable(!isOpentable);
@@ -224,7 +227,7 @@ const Positions = () => {
                             className="cursor-pointer"
                             onClick={() => changePopup()}
                           >
-                            <AiOutlineClose />
+                            <AiOutlineClose className="dark:text-white" />
                           </div>
                         </div>
                         <div className="flex justify-start items-center gap-3 p-3 ">
@@ -258,7 +261,7 @@ const Positions = () => {
                         className="cursor-pointer"
                         onClick={() => changePopuptable()}
                       >
-                        <AiOutlineClose />
+                        <AiOutlineClose className="dark:text-white" />
                       </div>
                     </div>
                     <div className="title text-bold dark:text-white mt-2">
@@ -342,7 +345,7 @@ const Positions = () => {
               </button>
             </div>
             <div>
-              <select className="dropdown list">
+              <select className="border-b px-2 py-1 outline-none w-36 dark:bg-[#282c34] bg-[#f5f6fa] dark:text-white">
                 <option value="AllTime">All Time</option>
                 <option value="LastMonth">Last Month</option>
                 <option value="LastWeek"> Last Week</option>
