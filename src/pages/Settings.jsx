@@ -53,7 +53,7 @@ function Settings() {
     <div className=" dark:text-gray-200">
       <div className=" dark:text-gray-200 dark:bg-[#20252a]  bg-white ">
         <div className="px-6 pt-6 ">
-          <div className="md:text-2xl text-lg font-bold mb-5">Billing</div>
+          <div className="md:text-2xl text-lg font-bold mb-5">Settings</div>
           <div className="flex md:text-xl text-base font-bold gap-8 cursor-pointer dark:text-white border-b-2 border-[#828282]">
             <div
               style={{ padding: "16px 0 20px" }}
@@ -194,7 +194,7 @@ function Settings() {
                   <button className="bg-[#598fff]  my-3 py-2 px-4">Save</button>
                 </div>
               </div>
-              <div className="w-full md:w-1/2 items-center gap-3  flex text-xl font-extrabold tracking-tight dark:text-white text-slate-900">
+              <div className="w-full md:w-1/2 mb-2 mt-4 items-center gap-3  flex text-xl font-extrabold tracking-tight dark:text-white text-slate-900">
                 <SiShopware /> <span>Wunder</span>
               </div>
             </div>

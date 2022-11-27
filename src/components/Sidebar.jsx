@@ -20,7 +20,7 @@ const Sidebar = () => {
   };
 
   const activeLink =
-    "flex items-center gap-2 pl-3 py-2 bg-[#f5f6fa] dark:bg-[#31353e] text-[#598fff]  text-sm ";
+    "flex items-center gap-2 pl-3 py-3 bg-[#f5f6fa] dark:bg-[#31353e] text-[#598fff]  text-sm ";
   const normalLink =
     "flex items-center gap-2 pl-3 py-3  text-sm text-gray-700 dark:text-gray-200 dark:hover:text-[#598fff] dark:hover:bg-[#31353e] hover:bg-[#f5f6fa]   ";
 

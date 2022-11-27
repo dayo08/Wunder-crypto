@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useStateContext } from "../contexts/ContextProvider";
 import Billingprice from "./Billingprice";
 import Billingcomaper from "./Billingcomaper";
-
+import "./Billinghistory.css";
 function Billing() {
   const [active, setactive] = useState(1);
   const { currentColor } = useStateContext();
@@ -76,28 +76,30 @@ function Billing() {
       )}
       {active === 2 && (
         <>
-          <div className="table-wrapper px-3  py-5">
-            <table className="fl-table">
-              <thead>
+          <div className="table-wrapper-Billinghistory px-3  py-5">
+            <table className="Billinghistory dark:bg-[#2c313c] bg-white">
+              <thead className="">
                 <tr>
-                  <th>Subscription start date</th>
-                  <th>Subscription end date</th>
-                  <th> Subscription plan</th>
+                  <th className="text-[#598fff] hover:border-b font-bold   cursor-pointerF">
+                    Subscription start date
+                  </th>
+                  <th className="text-[#598fff] font-bold">Subscription end date</th>
+                  <th className="text-[#598fff]"> Subscription plan</th>
                   <th>Price ($)</th>
                   <th>Payment method</th>
                   <th>Invoice</th>
-                  <th>Status</th>
+                  <th className="text-[#598fff]">Status</th>
                 </tr>
               </thead>
-              <tbody>
+              <tbody className="dark:hover:bg-[#62676D] hover:bg-[#f5f6fa] hover:shadow-sm ">
                 <tr>
-                  <td>Content 1</td>
-                  <td>Content 1</td>
-                  <td>Content 1</td>
-                  <td>Content 1</td>
-                  <td>Content 1</td>
-                  <td>Content 1</td>
-                  <td>Content 1</td>
+                  <td>2022-11-26</td>
+                  <td>2023-11-26</td>
+                  <td>Free</td>
+                  <td>0.00</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td className="text-[#08bb8c] font-bold">Active</td>
                 </tr>
               </tbody>
               <tbody />

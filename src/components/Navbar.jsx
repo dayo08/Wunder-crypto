@@ -41,7 +41,7 @@ const Navbar = () => {
     setThemeSettings,
   } = useStateContext();
 
-  console.log(currentMode);
+  console.log(setMode);
 
   useEffect(() => {
     const handleResize = () => setScreenSize(window.innerWidth);

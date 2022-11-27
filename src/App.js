@@ -83,14 +83,12 @@ const App = () => {
             />
           </div>
           <div className="fixed right-4 bottom-4" style={{ zIndex: "1000" }}>
-            <TooltipComponent content="Settings" position="Top">
-              <button
-                type="button"
-                className="text-3xl text-white p-3 bg-blue-500  flex items-center rounded-full hover:drop-shadow-xl "
-              >
-                <BsFillChatLeftTextFill className="" />
-              </button>
-            </TooltipComponent>
+            <button
+              type="button"
+              className="text-3xl text-white p-3 bg-blue-500  flex items-center rounded-full hover:drop-shadow-xl "
+            >
+              <BsFillChatLeftTextFill className="" />
+            </button>
           </div>
           {activeMenu ? (
             <div className="w-[220px] fixed sidebar dark:bg-[#20242b] bg-white ">
