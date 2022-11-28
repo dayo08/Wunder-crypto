@@ -58,7 +58,7 @@ table td {
     padding: 0 10px;
   }
   .table-wrapper-Billinghistory:before {
-    content: "Scroll horizontally >";
+    
     display: block;
     text-align: right;
     font-size: 11px;

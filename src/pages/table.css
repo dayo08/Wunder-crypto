@@ -45,7 +45,6 @@ body {
     padding: 0 10px;
   }
   .table-wrapper:before {
-    content: "Scroll horizontally >";
     display: block;
     text-align: right;
     font-size: 11px;
@@ -96,7 +95,8 @@ body {
   }
 
   .fl-table tbody td {
-    display: block;
+    display: flex;
     text-align: center;
+    flex-direction: row;
   }
 }

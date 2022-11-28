@@ -81,30 +81,36 @@ const Navbar = () => {
           <div>
             {currentMode === "Light" ? (
               <div className="relative">
-                <input
-                  // type="checked"
-                  type="radio"
-                  id="dark"
-                  name="theme"
-                  value="Dark"
-                  onChange={setMode}
-                  className="cursor-pointer w-10 h-10 border bg-transparent  border-transparent z-50  outline-none"
-                  checked={currentMode === "Dark"}
-                />
-                <FiMoon className="fill-black cursor-pointer absolute top-3 left-3 -z-0" />
+                <label className="inline-flex relative items-center  cursor-pointer">
+                  <input
+                    type="checkbox"
+                    className="sr-only peer outline-none "
+                    defaultValue=""
+                    checked={currentMode === "Dark"}
+                    id="dark"
+                    name="theme"
+                    value="Dark"
+                    onChange={setMode}
+                  />
+                  <div className="hidden bg-gray-200 outline-none rounded-full peer peer-focus:ring-4   dark:bg-white peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-[#adb4bc] after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600" />
+                  <FiMoon className="fill-black cursor-pointer   -bottom-1  right-0  -z-0 absolute" />
+                </label>
               </div>
             ) : (
               <div className="relative">
-                <input
-                  type="radio"
-                  id="light"
-                  name="theme"
-                  value="Light"
-                  className="cursor-pointer w-10 h-10 border border-transparent z-50 bg-transparent dark:bg-[#282c34]  outline-none"
-                  onChange={setMode}
-                  checked={currentMode === "Light"}
-                />
-                <GiSun className="fill-black cursor-pointer absolute top-3 left-3 -z-0" />
+                <label className="inline-flex relative items-center  cursor-pointer">
+                  <input
+                    type="checkbox"
+                    id="light"
+                    name="theme"
+                    value="Light"
+                    className="sr-only peer outline-none "
+                    onChange={setMode}
+                    checked={currentMode === "Light"}
+                  />
+                  <div className="hidden bg-gray-200 outline-none rounded-full peer peer-focus:ring-4   dark:bg-white peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-[#adb4bc] after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600" />
+                  <GiSun className="dark:fill-white cursor-pointer   -bottom-1  right-0  -z-0 absolute" />
+                </label>
               </div>
             )}
           </div>

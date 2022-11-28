@@ -4,13 +4,62 @@ import { SparklineAreaData } from "../data/dummy";
 import { useStateContext } from "../contexts/ContextProvider";
 import Pagination from "rc-pagination";
 import { datatableUsers, datatableUsers1 } from "../data/dummy";
+import {
+  LineChart,
+  ResponsiveContainer,
+  Legend,
+  Tooltip,
+  Line,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+} from "recharts";
 const MarketPlace = () => {
+  // Sample chart data
+  const pdata = [
+    {
+      name: "MongoDb",
+      student: 11,
+      fees: 120,
+    },
+    {
+      name: "Javascript",
+      student: 15,
+      fees: 12,
+    },
+    {
+      name: "PHP",
+      student: 5,
+      fees: 10,
+    },
+    {
+      name: "Java",
+      student: 10,
+      fees: 5,
+    },
+    {
+      name: "C#",
+      student: 9,
+      fees: 4,
+    },
+    {
+      name: "C++",
+      student: 10,
+      fees: 8,
+    },
+  ];
   const [perPage] = useState(10);
   const [size, setSize] = useState(perPage);
   const [current, setCurrent] = useState(1);
   const { currentColor } = useStateContext();
   const [active, setactive] = useState(1);
 
+  function scrollToTop() {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  }
   const PerPageChange = (value) => {
     setSize(value);
     const newPerPage = Math.ceil(datatableUsers.length / value);
@@ -30,6 +79,7 @@ const MarketPlace = () => {
   const PaginationChange = (page, pageSize) => {
     setCurrent(page);
     setSize(pageSize);
+    scrollToTop();
   };
 
   const PrevNextArrow = (current, type, originalElement) => {
@@ -37,7 +87,7 @@ const MarketPlace = () => {
       return (
         <Button
           color="white"
-          bgColor={currentColor}
+          bgColor={"#598fff"}
           text="Left"
           borderRadius="5px"
         />
@@ -47,7 +97,7 @@ const MarketPlace = () => {
       return (
         <Button
           color="white"
-          bgColor={currentColor}
+          bgColor={"#598fff"}
           text="Right"
           borderRadius="5px"
         />
@@ -154,10 +204,10 @@ const MarketPlace = () => {
               Filter
             </button>
           </div>
-          <div className="mt-5 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-4 ">
+          <div className="mt-5 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-4 px-3">
             {getData(current, size).map((data, index) => (
               <div
-                className=" bg-white rounded-lg shadow-md dark:text-gray-200 dark:bg-[#2c313c] dark:border-gray-700 mb-4 mx-10"
+                className=" bg-white rounded-lg  shadow-md dark:text-gray-200 dark:bg-[#2c313c] dark:border-gray-700 mb-4 xl:mx-4"
                 key={data.id}
               >
                 <div className="flex justify-between md:px-5 px-2 py-5">
@@ -187,15 +237,16 @@ const MarketPlace = () => {
                 </div>
 
                 <div className="mx-auto flex items-center justify-center p-3">
-                  <SparkLine
-                    currentColor={currentColor}
-                    id="line-sparkLine"
-                    type="Line"
-                    height="80px"
-                    width="250px"
-                    data={SparklineAreaData}
-                    color={currentColor}
-                  />
+                  <ResponsiveContainer width="100%" aspect={3}>
+                    <LineChart data={pdata}>
+                      <CartesianGrid />
+                      {/* <XAxis dataKey="name" interval={"preserveStartEnd"} /> */}
+                      <YAxis></YAxis>
+                      <Legend />
+                      <Tooltip />
+                      <Line dataKey="fees" stroke="red" activeDot={{ r: 8 }} />
+                    </LineChart>
+                  </ResponsiveContainer>
                 </div>
 
                 <div className="p-5 text-center">
@@ -276,12 +327,9 @@ const MarketPlace = () => {
 
                 <div className="px-5 py-5">
                   <div className="flex items-center justify-between">
-                    <Button
-                      color="white"
-                      bgColor={currentColor}
-                      text="Follow"
-                      borderRadius="5px"
-                    />
+                    <button className="hover:text-white  hover:bg-[#3c60c3]  text-[#3c60c3] border border-[#3c60c3]  font-bold py-2 px-4 rounded ">
+                      Follow
+                    </button>
                   </div>
                 </div>
               </div>

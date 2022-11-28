@@ -317,7 +317,7 @@ export const Trading = [
   { id: 1, title: "Spot Trading" },
   { id: 2, title: "Futures Trading" },
   { id: 3, title: "Take Profit / Stop Loss" },
-  { id: 4, title: "Market entry (for limit order when unfilled)" },
+  { id: 4, title: `Market entry (for limit order)` },
   { id: 5, title: "Market close" },
   { id: 6, title: "Trailing Stop" },
   { id: 7, title: "Multiple take profits" },

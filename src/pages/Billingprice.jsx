@@ -62,7 +62,7 @@ function Billingprice() {
               </p>
             </div>
           </div>
-          <div className="space-y-8 lg:grid 2xl:grid-cols-4 sm:gap-6 xl:gap-10 lg:space-y-0">
+          <div className="space-y-8 lg:grid 2xl:grid-cols-4 xl:grid-cols-3 grid-cols-2 sm:gap-6 xl:gap-10 lg:space-y-0">
             {/* Pricing Card */}
             <div className="flex flex-col justify-between items-center p-6 mx-auto max-w-lg text-center text-gray-900 bg-white rounded-lg border border-gray-100 shadow dark:border-gray-600 xl:p-8 dark:bg-[#2c313c] dark:text-white">
               <div>

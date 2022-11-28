@@ -217,9 +217,11 @@ function SignUp() {
                 ))}
 
                 <div className="flex justify-center">
-                  <button className="  hover:bg-[#3c60c3] hover:text-white  text-[#3c60c3] border border-[#3c60c3] dark:text-white font-bold py-1 px-3 rounded ">
-                    Continue
-                  </button>
+                  <Link to="/">
+                    <button className="  hover:bg-[#3c60c3] hover:text-white  text-[#3c60c3] border border-[#3c60c3] dark:text-white font-bold py-1 px-3 rounded ">
+                      Continue
+                    </button>
+                  </Link>
                 </div>
 
                 <p className="text-sm font-light text-gray-500 dark:text-gray-400">

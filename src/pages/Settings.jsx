@@ -10,43 +10,20 @@ function Settings() {
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, []);
-  const settings = () => {
-    const swalWithBootstrapButtons = Swal.mixin({
-      customClass: {
-        confirmButton: "btn btn-success",
-        cancelButton: "btn btn-danger",
-      },
-      buttonsStyling: false,
+  const setting = () => {
+    Swal.fire({
+      title: "Are you sure?",
+      text: "Are you sure you would like to close all open positions?",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire("Deleted!", "Your file has been deleted.", "success");
+      }
     });
-
-    swalWithBootstrapButtons
-      .fire({
-        title: "Are you sure?",
-        text: "You won't be able to revert this!",
-        icon: "warning",
-        showCancelButton: true,
-        confirmButtonText: "Yes, delete it!",
-        cancelButtonText: "No, cancel!",
-        reverseButtons: true,
-      })
-      .then((result) => {
-        if (result.isConfirmed) {
-          swalWithBootstrapButtons.fire(
-            "Deleted!",
-            "Your file has been deleted.",
-            "success"
-          );
-        } else if (
-          /* Read more about handling dismissals below */
-          result.dismiss === Swal.DismissReason.cancel
-        ) {
-          swalWithBootstrapButtons.fire(
-            "Cancelled",
-            "Your imaginary file is safe :)",
-            "error"
-          );
-        }
-      });
   };
 
   return (
@@ -214,7 +191,7 @@ function Settings() {
             <div>
               <button
                 className="bg-[#e04caf] px-2 py-1 rounded-sm"
-                onClick={() => settings()}
+                onClick={() => setting()}
               >
                 Terminate
               </button>

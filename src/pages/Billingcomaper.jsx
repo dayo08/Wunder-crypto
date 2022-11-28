@@ -29,259 +29,246 @@ function Billingcomaper() {
     <div>
       <section className="dark: dark:text-gray-100">
         <p className="px-12 text-xl font-bold">Pricing plan comparison</p>
-        <div className="container mx-auto overflow-x-auto p-3">
-          <div className="table-wrapper-rwd mt-10">
-            <table className="rwd-table relative">
-              <thead>
-                <tr>
-                  <th></th>
-                  {/* <th></th> */}
-                  <th scope="col">
-                    <h2 className="px-2 text-lg font-medium">Free</h2>
-                  </th>
-                  <th scope="col">
-                    <h2 className="px-2 text-lg font-medium">Basic</h2>
-                  </th>
-                  <th scope="col">
-                    <h2 className="px-2 text-lg font-medium">Pro</h2>
-                  </th>
-                  <th scope="col">
-                    <h2 className="px-2 text-lg font-medium">Premium</h2>
-                  </th>
-                </tr>
-              </thead>
-              <p className="text-start text-2xl font-bold my-5 mx-8">
+        <div className="container mx-auto overflow-x-hidden ">
+          <div className="mt-10">
+            <div className="sticky bottom-0">
+              <div className="pl-6 PB-2 flex w-full   sm:items-center items-start sm:flex-row flex-col ">
+                <>
+                  <div className="text-start text-base font-light w-96 "></div>
+
+                  <div className="flex font-bold text-xl justify-around w-full items-center">
+                    <div>
+                      <span>Free</span>
+                    </div>
+                    <div>
+                      <span>Basic</span>
+                    </div>
+                    <div>
+                      <span>Pro</span>
+                    </div>
+                    <div>
+                      <span>Premium</span>
+                    </div>
+                  </div>
+                </>
+              </div>
+            </div>
+            <div>
+              <p className="text-start text-2xl font-bold my-5 md:mx-8 mx-5">
                 General features
               </p>
-              <tbody className=" text-left  bg-white  dark:bg-[#2c313c]  ">
-                {General.map((items) => (
+              {General.map((items) => (
+                <div className="pl-6 pb-2 flex w-full  bg-white  dark:bg-[#2c313c] sm:items-center items-start sm:flex-row flex-col ">
                   <>
-                    <tr>
-                      <th className="text-left text-sm font-light w-10">
-                        <h3 className="py-3 px-3  ">{items.title}</h3>
-                      </th>
-                      <td>
-                        <span className="block mx-auto text-sm">100</span>
-                      </td>
-                      <td>
-                        <span className="block text-sm">100</span>
-                      </td>
-                      <td>
-                        <span className="block text-sm">10</span>
-                      </td>
-                      <td>
-                        <span className="block text-sm">10</span>
-                      </td>
-                    </tr>
-                  </>
-                ))}
-              </tbody>
+                    <div className="text-start text-base font-light w-96 ">
+                      <h3 className="py-3 px-3">{items.title}</h3>
+                    </div>
 
+                    <div className="flex justify-around w-full items-center">
+                      <div>
+                        <span className="block text-sm">100</span>
+                      </div>
+                      <div>
+                        <span className="block text-sm">100</span>
+                      </div>
+                      <div>
+                        <span className="block text-sm">100</span>
+                      </div>
+                      <div>
+                        <span className="block text-sm">100</span>
+                      </div>
+                    </div>
+                  </>
+                </div>
+              ))}
+            </div>
+
+            <div>
               <p className="text-start text-2xl font-bold my-5 md:mx-8 mx-5">
                 Trading terminal
               </p>
-              <tbody className=" text-left  bg-white  dark:bg-[#2c313c] ">
-                {Trading.map((items) => (
+              {Trading.map((items) => (
+                <div className="pl-6 pb-2 flex w-full  bg-white  dark:bg-[#2c313c] sm:items-center items-start sm:flex-row flex-col ">
                   <>
-                    <tr>
-                      <th scope="row" className="text-left text-sm font-light w-10">
-                        <h3 className="py-3 px-3">{items.title}</h3>
-                      </th>
-                      <td>
+                    <div className="text-start text-base font-light w-96 ">
+                      <h3 className="py-3 px-3">{items.title}</h3>
+                    </div>
+
+                    <div className="flex justify-around w-full items-center">
+                      <div>
                         <span className="block text-sm">
                           <TiTick className="text-[#03d29b] text-xl mx-auto" />
                         </span>
-                      </td>
-                      <td>
+                      </div>
+                      <div>
                         <span className="block text-sm">
                           <TiTick className="text-[#03d29b] text-xl mx-auto" />
                         </span>
-                      </td>
-                      <td>
+                      </div>
+                      <div>
                         <span className="block text-sm">
                           <TiTick className="text-[#03d29b] text-xl mx-auto" />
                         </span>
-                      </td>
-                      <td>
+                      </div>
+                      <div>
                         <span className="block text-sm">
                           <TiTick className="text-[#03d29b] text-xl mx-auto" />
                         </span>
-                      </td>
-                    </tr>
+                      </div>
+                    </div>
                   </>
-                ))}
-              </tbody>
+                </div>
+              ))}
+            </div>
+            <div>
               <p className="text-start text-2xl font-bold my-5 md:mx-8 mx-5">
                 Traders / Signal Providers
               </p>
-              <tbody className=" text-left  bg-white  dark:bg-[#2c313c] ">
-                {Traders.map((items) => (
+              {Traders.map((items) => (
+                <div className="pl-6 pb-2 flex w-full  bg-white  dark:bg-[#2c313c] sm:items-center items-start sm:flex-row flex-col ">
                   <>
-                    <tr>
-                      <th scope="row" className="text-left text-sm font-light w-10">
-                        <h3 className="py-3 px-3">{items.title}</h3>
-                      </th>
-                      <td>
+                    <div className="text-start text-base font-light w-96 ">
+                      <h3 className="py-3 px-3">{items.title}</h3>
+                    </div>
+
+                    <div className="flex justify-around w-full items-center">
+                      <div>
                         <span className="block text-sm">
                           <TiTick className="text-[#03d29b] text-xl mx-auto" />
                         </span>
-                      </td>
-                      <td>
+                      </div>
+                      <div>
                         <span className="block text-sm">
                           <TiTick className="text-[#03d29b] text-xl mx-auto" />
                         </span>
-                      </td>
-                      <td>
+                      </div>
+                      <div>
                         <span className="block text-sm">
                           <TiTick className="text-[#03d29b] text-xl mx-auto" />
                         </span>
-                      </td>
-                      <td>
+                      </div>
+                      <div>
                         <span className="block text-sm">
                           <TiTick className="text-[#03d29b] text-xl mx-auto" />
                         </span>
-                      </td>
-                    </tr>
+                      </div>
+                    </div>
                   </>
-                ))}
-              </tbody>
+                </div>
+              ))}
+            </div>
+
+            <div>
               <p className="text-start text-2xl font-bold my-5 md:mx-8 mx-5">
                 Copy-Traders
               </p>
-              <tbody className=" text-left  bg-white  dark:bg-[#2c313c] ">
-                {Copy.map((items) => (
+              {Copy.map((items) => (
+                <div className="pl-6 pb-2 flex w-full  bg-white  dark:bg-[#2c313c] sm:items-center items-start sm:flex-row flex-col ">
                   <>
-                    <tr>
-                      <th scope="row" className="text-left text-sm font-light w-10">
-                        <h3 className="py-3 px-3">{items.title}</h3>
-                      </th>
-                      <td>
+                    <div className="text-start text-base font-light w-96 ">
+                      <h3 className="py-3 px-3">{items.title}</h3>
+                    </div>
+
+                    <div className="flex justify-around w-full items-center">
+                      <div>
                         <span className="block text-sm">
                           <TiTick className="text-[#03d29b] text-xl mx-auto" />
                         </span>
-                      </td>
-                      <td>
+                      </div>
+                      <div>
                         <span className="block text-sm">
                           <TiTick className="text-[#03d29b] text-xl mx-auto" />
                         </span>
-                      </td>
-                      <td>
+                      </div>
+                      <div>
                         <span className="block text-sm">
                           <TiTick className="text-[#03d29b] text-xl mx-auto" />
                         </span>
-                      </td>
-                      <td>
+                      </div>
+                      <div>
                         <span className="block text-sm">
                           <TiTick className="text-[#03d29b] text-xl mx-auto" />
                         </span>
-                      </td>
-                    </tr>
+                      </div>
+                    </div>
                   </>
-                ))}
-              </tbody>
+                </div>
+              ))}
+            </div>
+            <div>
               <p className="text-start text-2xl font-bold my-5 md:mx-8 mx-5">
                 Other features
               </p>
-              <tbody className=" text-left  bg-white  dark:bg-[#2c313c] ">
-                {Other.map((items) => (
+              {Other.map((items) => (
+                <div className="pl-6 pb-2 flex w-full  bg-white  dark:bg-[#2c313c] sm:items-center items-start sm:flex-row flex-col ">
                   <>
-                    <tr>
-                      <th scope="row" className="text-left text-sm font-light w-10">
-                        <h3 className="py-3 px-3">{items.title}</h3>
-                      </th>
-                      <td>
+                    <div className="text-start text-base font-light w-96 ">
+                      <h3 className="py-3 px-3">{items.title}</h3>
+                    </div>
+
+                    <div className="flex justify-around w-full items-center">
+                      <div>
                         <span className="block text-sm">
                           <TiTick className="text-[#03d29b] text-xl mx-auto" />
                         </span>
-                      </td>
-                      <td>
+                      </div>
+                      <div>
                         <span className="block text-sm">
                           <TiTick className="text-[#03d29b] text-xl mx-auto" />
                         </span>
-                      </td>
-                      <td>
+                      </div>
+                      <div>
                         <span className="block text-sm">
                           <TiTick className="text-[#03d29b] text-xl mx-auto" />
                         </span>
-                      </td>
-                      <td>
+                      </div>
+                      <div>
                         <span className="block text-sm">
                           <TiTick className="text-[#03d29b] text-xl mx-auto" />
                         </span>
-                      </td>
-                    </tr>
+                      </div>
+                    </div>
                   </>
-                ))}
-              </tbody>
-              <p className="text-start text-2xl font-bold my-5 md:mx-8 mx-5">
-                Other features
-              </p>
-              <tbody className=" text-left  bg-white  dark:bg-[#2c313c] ">
-                {Other.map((items) => (
-                  <>
-                    <tr>
-                      <th scope="row" className="text-left text-sm font-light w-10">
-                        <h3 className="py-3 px-3">{items.title}</h3>
-                      </th>
-                      <td>
-                        <span className="block text-sm">
-                          <TiTick className="text-[#03d29b] text-xl mx-auto" />
-                        </span>
-                      </td>
-                      <td>
-                        <span className="block text-sm">
-                          <TiTick className="text-[#03d29b] text-xl mx-auto" />
-                        </span>
-                      </td>
-                      <td>
-                        <span className="block text-sm">
-                          <TiTick className="text-[#03d29b] text-xl mx-auto" />
-                        </span>
-                      </td>
-                      <td>
-                        <span className="block text-sm">
-                          <TiTick className="text-[#03d29b] text-xl mx-auto" />
-                        </span>
-                      </td>
-                    </tr>
-                  </>
-                ))}
-              </tbody>
+                </div>
+              ))}
+            </div>
+            <div>
               <p className="text-start text-2xl font-bold my-5 md:mx-8 mx-5">
                 Support
               </p>
-              <tbody className=" text-left  bg-white  dark:bg-[#2c313c] ">
-                {Support.map((items) => (
+              {Support.map((items) => (
+                <div className="pl-6 pb-2 flex w-full  bg-white  dark:bg-[#2c313c] sm:items-center items-start sm:flex-row flex-col ">
                   <>
-                    <tr>
-                      <th scope="row" className="text-left text-sm font-light w-10">
-                        <h3 className="py-3 px-3">{items.title}</h3>
-                      </th>
-                      <td>
+                    <div className="text-start text-base font-light w-96 ">
+                      <h3 className="py-3 px-3">{items.title}</h3>
+                    </div>
+
+                    <div className="flex justify-around w-full items-center">
+                      <div>
                         <span className="block text-sm">
                           <TiTick className="text-[#03d29b] text-xl mx-auto" />
                         </span>
-                      </td>
-                      <td>
+                      </div>
+                      <div>
                         <span className="block text-sm">
                           <TiTick className="text-[#03d29b] text-xl mx-auto" />
                         </span>
-                      </td>
-                      <td>
+                      </div>
+                      <div>
                         <span className="block text-sm">
                           <TiTick className="text-[#03d29b] text-xl mx-auto" />
                         </span>
-                      </td>
-                      <td>
+                      </div>
+                      <div>
                         <span className="block text-sm">
                           <TiTick className="text-[#03d29b] text-xl mx-auto" />
                         </span>
-                      </td>
-                    </tr>
+                      </div>
+                    </div>
                   </>
-                ))}
-              </tbody>
-            </table>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>

@@ -5,6 +5,7 @@ import binance from "../data/binance.webp";
 import bitmex from "../data/bitmex.webp";
 import { AiOutlineSave } from "react-icons/ai";
 import "./table.css";
+import { Link } from "react-router-dom";
 
 const Orders = () => {
   const { currentColor } = useStateContext();
@@ -47,11 +48,11 @@ const Orders = () => {
               Create and manage exchange accounts.
             </p>
             <div>
-              <a href="/Createtraderaccount">
-                <button class="bg-[#02d29a] px-2 py-1 rounded-sm">
+              <Link  to="/Createtraderaccount">
+                <button class="bg-[#02d29a] text-white px-2 py-1 rounded-sm">
                   Add New
                 </button>
-              </a>
+              </Link>
             </div>
           </div>
           <div class="md:text-end">
@@ -67,7 +68,7 @@ const Orders = () => {
             </div>
           </div>
         </div>
-        <div className="table-wrapper mt-10 bg-white dark:bg-[#2c313c]">
+        <div className="table-wrapper mt-10 bg-white dark:bg-[#2c313c] overflow-x-auto">
           <table className="fl-table overflow-y-auto w-20 ">
             <thead>
               <tr>
@@ -86,7 +87,7 @@ const Orders = () => {
                 <td>Content 1</td>
                 <td>Content 1</td>
                 <td>
-                  <div className="flex justify-around">
+                  <div className="flex flex-wrap items-start justify-center gap-1">
                     <select className=" text-black border">
                       <option value="error -> Account has no assets!">
                         error -&gt; Account has no assets!
@@ -106,9 +107,9 @@ const Orders = () => {
                     </svg>
                   </div>
                 </td>
-                <td>cq1njK6l7</td>
-                <td>***</td>
-                <td className="flex flex-row gap-2 justify-center items-center">
+                <td>23*****13</td>
+                <td>123*****132</td>
+                <td className="flex md:flex-wrap flex-row gap-2 md:justify-center items-center">
                   <div>
                     <label className="inline-flex relative items-center cursor-pointer">
                       <input

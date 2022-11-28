@@ -5,15 +5,16 @@ import { ecomPieChartData } from "../data/dummy";
 import { ImCheckmark } from "react-icons/im";
 import { useStateContext } from "../contexts/ContextProvider";
 import { Link } from "react-router-dom";
-
+import { MdOutlineCancel } from "react-icons/md";
 const Dashboard = () => {
   const { currentColor } = useStateContext();
   const [active, setactive] = useState(1);
+  const [open, setopen] = useState(false);
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, []);
   return (
-    <div>
+    <div className="relative">
       <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 2xl:grid-cols-3 gap-4 mt-3 md:mt-3">
         <div className="bg-white  dark:text-gray-200 dark:bg-[#2c313c]  md:w-500 p-5 m-3 ">
           <div>
@@ -329,6 +330,22 @@ const Dashboard = () => {
         </div>
         <p className="p-3">No matching records found.</p>
       </div>
+      <>
+        <div className="backdrop-blur-md  overflow-y-auto overflow-x-hidden fixed top-0 bottom-0 z-50 p-4 w-full  h-modal md:h-full">
+          <div className="relative w-full max-w-lg m-auto h-full md:h-auto">
+            {/* Modal content */}
+            <div className="relative ">
+              {/* Modal header */}
+              <div className="flex flex-col dark:text-white  text-black items-center  gap-5 justify-between fixed top-2/4  p-4  ">
+                <div>👋 Welcome Let's connect your first exchange account</div>
+                <button className="bg-[#598fff] hover:bg-[#598fff] text-white font-bold py-2 px-4 rounded btn">
+                  connect an exchange
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </>
     </div>
   );
 };

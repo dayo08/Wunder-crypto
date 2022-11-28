@@ -92,10 +92,16 @@ const Positions = () => {
     // Normally you should get the data from the server
     return "0".slice((current - 1) * pageSize, current * pageSize);
   };
-
+  function scrollToTop() {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  }
   const PaginationChange = (page, pageSize) => {
     setCurrent(page);
     setSize(pageSize);
+    scrollToTop();
   };
 
   const PrevNextArrow = (current, type, originalElement) => {
@@ -103,7 +109,7 @@ const Positions = () => {
       return (
         <Button
           color="white"
-          bgColor={currentColor}
+          bgColor={"#598fff"}
           text="Left"
           borderRadius="5px"
         />
@@ -113,7 +119,7 @@ const Positions = () => {
       return (
         <Button
           color="white"
-          bgColor={currentColor}
+          bgColor={"#598fff"}
           text="Right"
           borderRadius="5px"
         />
@@ -335,19 +341,22 @@ const Positions = () => {
 
       {History && (
         <>
-          <div className="p-3 flex flex-col md:flex-row gap-10 items-center">
-            <div className="flex flex-wrap gap-2 justify-center items-center">
-              <span className="dark:text-gray-200 font-bold">Orders</span>
-              <button className="hover:bg-[#598fff] border-[#3c60c3] border text-black dark:text-white font-bold py-2 px-4 rounded btn">
-                All
-              </button>
-              <button className="hover:bg-[#598fff] border-[#3c60c3] border text-black dark:text-white font-bold py-2 px-4 rounded  btn">
-                Completed
-              </button>
-              <button className="hover:bg-[#598fff] border-[#3c60c3] border text-black dark:text-white font-bold py-2 px-4 rounded  btn">
-                Cancelled
-              </button>
+          <div className="px-6 flex flex-col md:flex-row gap-10 items-start">
+            <div className="flex">
+              <div className="dark:text-gray-200 font-bold">Orders</div>
+              <div className="flex flex-wrap gap-2 justify-start items-center">
+                <button className="hover:bg-[#598fff] border-[#3c60c3] border text-black dark:text-white font-bold py-2 px-4 rounded btn">
+                  All
+                </button>
+                <button className="hover:bg-[#598fff] border-[#3c60c3] border text-black dark:text-white font-bold py-2 px-4 rounded  btn">
+                  Completed
+                </button>
+                <button className="hover:bg-[#598fff] border-[#3c60c3] border text-black dark:text-white font-bold py-2 px-4 rounded  btn">
+                  Cancelled
+                </button>
+              </div>
             </div>
+
             <div>
               <select className="border-b px-2 py-1 outline-none w-36 dark:bg-[#282c34] bg-[#f5f6fa] dark:text-white">
                 <option value="AllTime">All Time</option>
