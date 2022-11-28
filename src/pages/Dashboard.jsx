@@ -12,6 +12,7 @@ const Dashboard = () => {
   const [open, setopen] = useState(false);
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
+    setopen(true);
   }, []);
   return (
     <div className="relative">
@@ -330,22 +331,32 @@ const Dashboard = () => {
         </div>
         <p className="p-3">No matching records found.</p>
       </div>
-      <>
-        <div className="backdrop-blur-md  overflow-y-auto overflow-x-hidden fixed top-0 bottom-0 z-50 p-4 w-full  h-modal md:h-full">
-          <div className="relative w-full max-w-lg m-auto h-full md:h-auto">
-            {/* Modal content */}
-            <div className="relative ">
-              {/* Modal header */}
-              <div className="flex flex-col dark:text-white  text-black items-center  gap-5 justify-between fixed top-2/4  p-4  ">
-                <div>👋 Welcome Let's connect your first exchange account</div>
-                <button className="bg-[#598fff] hover:bg-[#598fff] text-white font-bold py-2 px-4 rounded btn">
-                  connect an exchange
-                </button>
+      {open && (
+        <>
+          <div className="backdrop-blur-md  overflow-y-auto overflow-x-hidden fixed top-0 bottom-0 z-50 p-4 w-full  h-modal md:h-full">
+            <div className="relative w-full max-w-lg m-auto h-full md:h-auto">
+              {/* Modal content */}
+              <div className="relative ">
+                {/* Modal header */}
+                <div className="fixed top-2/4  p-4 ">
+                  <div className="flex justify-end mb-3">
+                    <MdOutlineCancel className="dark:text-white  text-black cursor-pointer"  onClick={()=>setopen(false)}/>
+                  </div>
+
+                  <div className="flex flex-col dark:text-white  text-black items-center  gap-5 justify-between  ">
+                    <div>
+                      👋 Welcome Let's connect your first exchange account
+                    </div>
+                    <button className="bg-[#598fff] hover:bg-[#598fff] text-white font-bold py-2 px-4 rounded btn">
+                      connect an exchange
+                    </button>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </>
+        </>
+      )}
     </div>
   );
 };
