@@ -33,7 +33,9 @@ class SparkLine extends React.PureComponent {
         type={type}
       >
         <Inject services={[SparklineTooltip]} />
+        
       </SparklineComponent>
+      
     );
   }
 }

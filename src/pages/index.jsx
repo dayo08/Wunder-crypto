@@ -8,3 +8,5 @@ export { default as Settings } from "./Settings";
 export { default as ManageCopyTrading } from "./ManageCopyTrading";
 export { default as Positions } from "./Positions";
 export { default as MarketPlace } from "./MarketPlace";
+export { default as Terminal } from "./Terminal";
+export { default as Createtraderaccount } from "./Createtraderaccount";

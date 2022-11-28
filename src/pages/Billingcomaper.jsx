@@ -3,6 +3,7 @@ import { TooltipComponent } from "@syncfusion/ej2-react-popups";
 import { TiTick } from "react-icons/ti";
 import { useStateContext } from "../contexts/ContextProvider";
 import { Trading, General, Traders, Other, Copy } from "../data/dummy";
+import "./tablecssforbilling.css";
 
 function Billingcomaper() {
   const { currentColor } = useStateContext();
@@ -26,357 +27,252 @@ function Billingcomaper() {
   const Support = [{ id: 0, title: "Support" }];
   return (
     <div>
-      <section className="dark:bg-gray-800 dark:text-gray-100">
-        <div className="container mx-auto overflow-x-auto">
-          <p className="p-2 text-xl font-bold">Pricing plan comparison</p>
-          <div className="table-wrapper mt-10">
-            <table className="fl-table">
-              <thead>
-                <tr>
-                  <th></th>
-                  <th scope="col">
-                    <h2 className="px-2 text-lg font-medium">Free</h2>
-                  </th>
-                  <th scope="col">
-                    <h2 className="px-2 text-lg font-medium">Basic</h2>
-                  </th>
-                  <th scope="col">
-                    <h2 className="px-2 text-lg font-medium">Pro</h2>
-                  </th>
-                  <th scope="col">
-                    <h2 className="px-2 text-lg font-medium">Premium</h2>
-                  </th>
-                </tr>
-              </thead>
-              <p className="text-start text-2xl font-bold mt-5">
+      <section className="dark: dark:text-gray-100">
+        <p className="px-12 text-xl font-bold">Pricing plan comparison</p>
+        <div className="container mx-auto overflow-x-hidden ">
+          <div className="mt-10">
+            <div className="sticky bottom-0">
+              <div className="pl-6 PB-2 flex w-full   sm:items-center items-start sm:flex-row flex-col ">
+                <>
+                  <div className="text-start text-base font-light w-96 "></div>
+
+                  <div className="flex font-bold text-xl justify-around w-full items-center">
+                    <div>
+                      <span>Free</span>
+                    </div>
+                    <div>
+                      <span>Basic</span>
+                    </div>
+                    <div>
+                      <span>Pro</span>
+                    </div>
+                    <div>
+                      <span>Premium</span>
+                    </div>
+                  </div>
+                </>
+              </div>
+            </div>
+            <div>
+              <p className="text-start text-2xl font-bold my-5 md:mx-8 mx-5">
                 General features
               </p>
-              <tbody className="space-y- text-left divide-y divide-gray-700">
-                {General.map((items) => (
+              {General.map((items) => (
+                <div className="pl-6 pb-2 flex w-full  bg-white  dark:bg-[#2c313c] sm:items-center items-start sm:flex-row flex-col ">
                   <>
-                    <tr>
-                      <th scope="row" className="text-left w-10">
-                        <h3 className="py-3 ">{items.title}</h3>
-                      </th>
-                      <td>
-                        <span className="block text-sm">100</span>
-                      </td>
-                      <td>
-                        <span className="block text-sm">100</span>
-                      </td>
-                      <td>
-                        <span className="block text-sm">10</span>
-                      </td>
-                      <td>
-                        <span className="block text-sm">10</span>
-                      </td>
-                    </tr>
-                  </>
-                ))}
-              </tbody>
+                    <div className="text-start text-base font-light w-96 ">
+                      <h3 className="py-3 px-3">{items.title}</h3>
+                    </div>
 
-              <tbody className="space-y-6 text-left divide-y divide-gray-700">
-                <p className="text-start text-2xl font-bold mt-5">
-                  Trading terminal
-                </p>
-                {Trading.map((items) => (
-                  <>
-                    <tr>
-                      <th scope="row" className="text-left">
-                        <h3 className="py-3">{items.title}</h3>
-                      </th>
-                      <td>
-                        <span className="block text-sm">
-                          <NavButton
-                            title="Cart"
-                            color={currentColor}
-                            icon={<TiTick />}
-                          />
-                        </span>
-                      </td>
-                      <td>
-                        <span className="block text-sm">
-                          <NavButton
-                            title="Cart"
-                            color={currentColor}
-                            icon={<TiTick />}
-                          />
-                        </span>
-                      </td>
-                      <td>
-                        <span className="block text-sm">
-                          <NavButton
-                            title="Cart"
-                            color={currentColor}
-                            icon={<TiTick />}
-                          />
-                        </span>
-                      </td>
-                      <td>
-                        <span className="block text-sm">
-                          <NavButton
-                            title="Cart"
-                            color={currentColor}
-                            icon={<TiTick />}
-                          />
-                        </span>
-                      </td>
-                    </tr>
+                    <div className="flex justify-around w-full items-center">
+                      <div>
+                        <span className="block text-sm">100</span>
+                      </div>
+                      <div>
+                        <span className="block text-sm">100</span>
+                      </div>
+                      <div>
+                        <span className="block text-sm">100</span>
+                      </div>
+                      <div>
+                        <span className="block text-sm">100</span>
+                      </div>
+                    </div>
                   </>
-                ))}
-              </tbody>
-              <tbody className="space-y-6 text-left divide-y divide-gray-700">
-                <p className="text-start text-2xl font-bold mt-5">
-                  Traders / Signal Providers
-                </p>
-                {Traders.map((items) => (
+                </div>
+              ))}
+            </div>
+
+            <div>
+              <p className="text-start text-2xl font-bold my-5 md:mx-8 mx-5">
+                Trading terminal
+              </p>
+              {Trading.map((items) => (
+                <div className="pl-6 pb-2 flex w-full  bg-white  dark:bg-[#2c313c] sm:items-center items-start sm:flex-row flex-col ">
                   <>
-                    <tr>
-                      <th scope="row" className="text-left">
-                        <h3 className="py-3">{items.title}</h3>
-                      </th>
-                      <td>
+                    <div className="text-start text-base font-light w-96 ">
+                      <h3 className="py-3 px-3">{items.title}</h3>
+                    </div>
+
+                    <div className="flex justify-around w-full items-center">
+                      <div>
                         <span className="block text-sm">
-                          <NavButton
-                            title="Cart"
-                            color={currentColor}
-                            icon={<TiTick />}
-                          />
+                          <TiTick className="text-[#03d29b] text-xl mx-auto" />
                         </span>
-                      </td>
-                      <td>
+                      </div>
+                      <div>
                         <span className="block text-sm">
-                          <NavButton
-                            title="Cart"
-                            color={currentColor}
-                            icon={<TiTick />}
-                          />
+                          <TiTick className="text-[#03d29b] text-xl mx-auto" />
                         </span>
-                      </td>
-                      <td>
+                      </div>
+                      <div>
                         <span className="block text-sm">
-                          <NavButton
-                            title="Cart"
-                            color={currentColor}
-                            icon={<TiTick />}
-                          />
+                          <TiTick className="text-[#03d29b] text-xl mx-auto" />
                         </span>
-                      </td>
-                      <td>
+                      </div>
+                      <div>
                         <span className="block text-sm">
-                          <NavButton
-                            title="Cart"
-                            color={currentColor}
-                            icon={<TiTick />}
-                          />
+                          <TiTick className="text-[#03d29b] text-xl mx-auto" />
                         </span>
-                      </td>
-                    </tr>
+                      </div>
+                    </div>
                   </>
-                ))}
-              </tbody>
-              <tbody className="space-y-6 text-left divide-y divide-gray-700">
-                <p className="text-start text-2xl font-bold mt-5">
-                  Copy-Traders
-                </p>
-                {Copy.map((items) => (
+                </div>
+              ))}
+            </div>
+            <div>
+              <p className="text-start text-2xl font-bold my-5 md:mx-8 mx-5">
+                Traders / Signal Providers
+              </p>
+              {Traders.map((items) => (
+                <div className="pl-6 pb-2 flex w-full  bg-white  dark:bg-[#2c313c] sm:items-center items-start sm:flex-row flex-col ">
                   <>
-                    <tr>
-                      <th scope="row" className="text-left">
-                        <h3 className="py-3">{items.title}</h3>
-                      </th>
-                      <td>
+                    <div className="text-start text-base font-light w-96 ">
+                      <h3 className="py-3 px-3">{items.title}</h3>
+                    </div>
+
+                    <div className="flex justify-around w-full items-center">
+                      <div>
                         <span className="block text-sm">
-                          <NavButton
-                            title="Cart"
-                            color={currentColor}
-                            icon={<TiTick />}
-                          />
+                          <TiTick className="text-[#03d29b] text-xl mx-auto" />
                         </span>
-                      </td>
-                      <td>
+                      </div>
+                      <div>
                         <span className="block text-sm">
-                          <NavButton
-                            title="Cart"
-                            color={currentColor}
-                            icon={<TiTick />}
-                          />
+                          <TiTick className="text-[#03d29b] text-xl mx-auto" />
                         </span>
-                      </td>
-                      <td>
+                      </div>
+                      <div>
                         <span className="block text-sm">
-                          <NavButton
-                            title="Cart"
-                            color={currentColor}
-                            icon={<TiTick />}
-                          />
+                          <TiTick className="text-[#03d29b] text-xl mx-auto" />
                         </span>
-                      </td>
-                      <td>
+                      </div>
+                      <div>
                         <span className="block text-sm">
-                          <NavButton
-                            title="Cart"
-                            color={currentColor}
-                            icon={<TiTick />}
-                          />
+                          <TiTick className="text-[#03d29b] text-xl mx-auto" />
                         </span>
-                      </td>
-                    </tr>
+                      </div>
+                    </div>
                   </>
-                ))}
-              </tbody>
-              <tbody className="space-y-6 text-left divide-y divide-gray-700">
-                <p className="text-start text-2xl font-bold mt-5">
-                  Other features
-                </p>
-                {Other.map((items) => (
+                </div>
+              ))}
+            </div>
+
+            <div>
+              <p className="text-start text-2xl font-bold my-5 md:mx-8 mx-5">
+                Copy-Traders
+              </p>
+              {Copy.map((items) => (
+                <div className="pl-6 pb-2 flex w-full  bg-white  dark:bg-[#2c313c] sm:items-center items-start sm:flex-row flex-col ">
                   <>
-                    <tr>
-                      <th scope="row" className="text-left">
-                        <h3 className="py-3">{items.title}</h3>
-                      </th>
-                      <td>
+                    <div className="text-start text-base font-light w-96 ">
+                      <h3 className="py-3 px-3">{items.title}</h3>
+                    </div>
+
+                    <div className="flex justify-around w-full items-center">
+                      <div>
                         <span className="block text-sm">
-                          <NavButton
-                            title="Cart"
-                            color={currentColor}
-                            icon={<TiTick />}
-                          />
+                          <TiTick className="text-[#03d29b] text-xl mx-auto" />
                         </span>
-                      </td>
-                      <td>
+                      </div>
+                      <div>
                         <span className="block text-sm">
-                          <NavButton
-                            title="Cart"
-                            color={currentColor}
-                            icon={<TiTick />}
-                          />
+                          <TiTick className="text-[#03d29b] text-xl mx-auto" />
                         </span>
-                      </td>
-                      <td>
+                      </div>
+                      <div>
                         <span className="block text-sm">
-                          <NavButton
-                            title="Cart"
-                            color={currentColor}
-                            icon={<TiTick />}
-                          />
+                          <TiTick className="text-[#03d29b] text-xl mx-auto" />
                         </span>
-                      </td>
-                      <td>
+                      </div>
+                      <div>
                         <span className="block text-sm">
-                          <NavButton
-                            title="Cart"
-                            color={currentColor}
-                            icon={<TiTick />}
-                          />
+                          <TiTick className="text-[#03d29b] text-xl mx-auto" />
                         </span>
-                      </td>
-                    </tr>
+                      </div>
+                    </div>
                   </>
-                ))}
-              </tbody>
-              <tbody className="space-y-6 text-left divide-y divide-gray-700">
-                <p className="text-start text-2xl font-bold mt-5">
-                  Other features
-                </p>
-                {Other.map((items) => (
+                </div>
+              ))}
+            </div>
+            <div>
+              <p className="text-start text-2xl font-bold my-5 md:mx-8 mx-5">
+                Other features
+              </p>
+              {Other.map((items) => (
+                <div className="pl-6 pb-2 flex w-full  bg-white  dark:bg-[#2c313c] sm:items-center items-start sm:flex-row flex-col ">
                   <>
-                    <tr>
-                      <th scope="row" className="text-left">
-                        <h3 className="py-3">{items.title}</h3>
-                      </th>
-                      <td>
+                    <div className="text-start text-base font-light w-96 ">
+                      <h3 className="py-3 px-3">{items.title}</h3>
+                    </div>
+
+                    <div className="flex justify-around w-full items-center">
+                      <div>
                         <span className="block text-sm">
-                          <NavButton
-                            title="Cart"
-                            color={currentColor}
-                            icon={<TiTick />}
-                          />
+                          <TiTick className="text-[#03d29b] text-xl mx-auto" />
                         </span>
-                      </td>
-                      <td>
+                      </div>
+                      <div>
                         <span className="block text-sm">
-                          <NavButton
-                            title="Cart"
-                            color={currentColor}
-                            icon={<TiTick />}
-                          />
+                          <TiTick className="text-[#03d29b] text-xl mx-auto" />
                         </span>
-                      </td>
-                      <td>
+                      </div>
+                      <div>
                         <span className="block text-sm">
-                          <NavButton
-                            title="Cart"
-                            color={currentColor}
-                            icon={<TiTick />}
-                          />
+                          <TiTick className="text-[#03d29b] text-xl mx-auto" />
                         </span>
-                      </td>
-                      <td>
+                      </div>
+                      <div>
                         <span className="block text-sm">
-                          <NavButton
-                            title="Cart"
-                            color={currentColor}
-                            icon={<TiTick />}
-                          />
+                          <TiTick className="text-[#03d29b] text-xl mx-auto" />
                         </span>
-                      </td>
-                    </tr>
+                      </div>
+                    </div>
                   </>
-                ))}
-              </tbody>
-              <tbody className="space-y-6 text-left divide-y divide-gray-700">
-                <p className="text-start text-2xl font-bold mt-5">Support</p>
-                {Support.map((items) => (
+                </div>
+              ))}
+            </div>
+            <div>
+              <p className="text-start text-2xl font-bold my-5 md:mx-8 mx-5">
+                Support
+              </p>
+              {Support.map((items) => (
+                <div className="pl-6 pb-2 flex w-full  bg-white  dark:bg-[#2c313c] sm:items-center items-start sm:flex-row flex-col ">
                   <>
-                    <tr>
-                      <th scope="row" className="text-left">
-                        <h3 className="py-3">{items.title}</h3>
-                      </th>
-                      <td>
+                    <div className="text-start text-base font-light w-96 ">
+                      <h3 className="py-3 px-3">{items.title}</h3>
+                    </div>
+
+                    <div className="flex justify-around w-full items-center">
+                      <div>
                         <span className="block text-sm">
-                          <NavButton
-                            title="Cart"
-                            color={currentColor}
-                            icon={<TiTick />}
-                          />
+                          <TiTick className="text-[#03d29b] text-xl mx-auto" />
                         </span>
-                      </td>
-                      <td>
+                      </div>
+                      <div>
                         <span className="block text-sm">
-                          <NavButton
-                            title="Cart"
-                            color={currentColor}
-                            icon={<TiTick />}
-                          />
+                          <TiTick className="text-[#03d29b] text-xl mx-auto" />
                         </span>
-                      </td>
-                      <td>
+                      </div>
+                      <div>
                         <span className="block text-sm">
-                          <NavButton
-                            title="Cart"
-                            color={currentColor}
-                            icon={<TiTick />}
-                          />
+                          <TiTick className="text-[#03d29b] text-xl mx-auto" />
                         </span>
-                      </td>
-                      <td>
+                      </div>
+                      <div>
                         <span className="block text-sm">
-                          <NavButton
-                            title="Cart"
-                            color={currentColor}
-                            icon={<TiTick />}
-                          />
+                          <TiTick className="text-[#03d29b] text-xl mx-auto" />
                         </span>
-                      </td>
-                    </tr>
+                      </div>
+                    </div>
                   </>
-                ))}
-              </tbody>
-            </table>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
+      <></>
     </div>
   );
 }

@@ -1,24 +1,25 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useStateContext } from "../contexts/ContextProvider";
-import { Button } from "../components";
 import Billingprice from "./Billingprice";
 import Billingcomaper from "./Billingcomaper";
-
+import "./Billinghistory.css";
 function Billing() {
   const [active, setactive] = useState(1);
   const { currentColor } = useStateContext();
-
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
   return (
-    <div className="mt-24 md:mt-3 dark:text-gray-200">
-      <div className=" dark:text-gray-200 dark:bg-secondary-dark-bg rounded-xl px-8 pt-5 m-3 border-b border-white ">
-        <div className="p-3 ">
-          <div className="md:text-2xl text-lg font-bold mb-5">Billing</div>
-          <div className="flex md:text-xl items-start justify-start text-base font-bold gap-8 cursor-pointer dark:text-white border-b-2 border-[#828282]">
+    <div className=" dark:text-gray-200">
+      <div className=" dark:text-gray-200 bg-white dark:bg-[#20252a]  ">
+        <div className="px-6 pt-6 ">
+          <div className="md:text-xl text-lg font-bold mb-5">Billing</div>
+          <div className="flex md:text-xl items-start justify-start text-base font-bold gap-8 cursor-pointer dark:text-white border-b border-[#828282]">
             <div
               style={{ padding: "16px 0 20px" }}
               className={`${
                 active === 1
-                  ? "border-b-4 hover:text-[#598fff] border-[#03c9d7]  "
+                  ? "border-b-4 hover:text-[#598fff] border-[#598fff]  "
                   : "deActive hover:text-[#598fff]"
               }`}
               onClick={() => {
@@ -34,7 +35,7 @@ function Billing() {
               style={{ padding: "16px 0 20px" }}
               className={`${
                 active === 2
-                  ? "border-b-4 border-[#03c9d7] hover:text-[#598fff] "
+                  ? "border-b-4 border-[#598fff] hover:text-[#598fff] "
                   : "deActive hover:text-[#598fff]"
               }`}
             >
@@ -43,30 +44,28 @@ function Billing() {
           </div>
         </div>
       </div>
+
       {active === 1 && (
         <>
           <div className="grid md:grid-cols-2  ">
-            <div className="dark:text-gray-200 bg-slate-200  dark:bg-secondary-dark-bg rounded-xl p-8 m-3 ">
+            <div className="dark:text-gray-200 bg-white  dark:bg-[#2c313c]  px-6 py-6 m-3  ">
               <p className="font-bold">Current plan</p>
               <p className="lg:text-3xl md:text-xl text-lg font-bold mt-5">
                 Pro ( 2 days left )
               </p>
             </div>
-            <div className="dark:text-gray-200 bg-slate-200  dark:bg-secondary-dark-bg rounded-xl p-8 m-3 ">
+            <div className="dark:text-gray-200 bg-white  dark:bg-[#2c313c]  px-6 py-6  m-3 ">
               <p className="font-bold">Promo code</p>
               <div className="flex justify-center ">
                 <input
                   type="text"
                   placeholder="Enter promo code"
-                  className="bg-slate-200  dark:bg-secondary-dark-bg border-b w-full outline-none"
+                  className="bg-white  dark:bg-[#2c313c] border-b w-full outline-none"
                 />
                 <div>
-                  <Button
-                    color="white"
-                    bgColor={currentColor}
-                    text="Apply"
-                    borderRadius="2px"
-                  />
+                  <button className="  hover:bg-[#3c60c3] hover:text-white text-[#3c60c3] border-[#3c60c3] dark:hover:text-white dark:text-[#3c60c3]  font-bold rounded btn">
+                    Apply
+                  </button>
                 </div>
               </div>
             </div>
@@ -77,31 +76,33 @@ function Billing() {
       )}
       {active === 2 && (
         <>
-          <div className="table-wrapper mt-10 p-8 ">
-            <table className="fl-table">
-              <thead>
+          <div className="table-wrapper-Billinghistory px-3  py-5">
+            <table className="Billinghistory dark:bg-[#2c313c] bg-white">
+              <thead className="">
                 <tr>
-                  <th>Subscription start date</th>
-                  <th>Subscription end date</th>
-                  <th> Subscription plan</th>
+                  <th className="text-[#598fff] hover:border-b font-bold   cursor-pointerF">
+                    Subscription start date
+                  </th>
+                  <th className="text-[#598fff] font-bold">Subscription end date</th>
+                  <th className="text-[#598fff]"> Subscription plan</th>
                   <th>Price ($)</th>
                   <th>Payment method</th>
                   <th>Invoice</th>
-                  <th>Status</th>
+                  <th className="text-[#598fff]">Status</th>
                 </tr>
               </thead>
-              <tbody>
+              <tbody className="dark:hover:bg-[#62676D] hover:bg-[#f5f6fa] hover:shadow-sm ">
                 <tr>
-                  <td>Content 1</td>
-                  <td>Content 1</td>
-                  <td>Content 1</td>
-                  <td>Content 1</td>
-                  <td>Content 1</td>
-                  <td>Content 1</td>
-                  <td>Content 1</td>
+                  <td>2022-11-26</td>
+                  <td>2023-11-26</td>
+                  <td>Free</td>
+                  <td>0.00</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td className="text-[#08bb8c] font-bold">Active</td>
                 </tr>
               </tbody>
-              <tbody></tbody>
+              <tbody />
             </table>
           </div>
         </>

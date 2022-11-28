@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { SiShopware } from "react-icons/si";
 import { Link } from "react-router-dom";
 import { Button } from "../components";
@@ -8,6 +8,9 @@ function SignIn() {
   const [password, setPassword] = useState("");
   const [showPass, setShowPass] = useState(false);
   const { currentColor } = useStateContext();
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
   /*================ERROR MESSAGE============= */
   const [error, setError] = useState({
     email: "",
@@ -44,7 +47,7 @@ function SignIn() {
 
   return (
     <div>
-      <section className="bg-gray-50 dark:bg-secondary-dark-bg">
+      <section className="bg-gray-50 dark:bg-[#20242b]">
         <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
           <a
             href="/#"
@@ -53,7 +56,7 @@ function SignIn() {
           >
             <SiShopware /> <span>Wunder</span>
           </a>
-          <div className="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
+          <div className="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-[#2c313c] dark:border-gray-700">
             <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
               <h1 className="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
                 Sign in to your account
@@ -163,24 +166,23 @@ function SignIn() {
                   </div>
                   <a
                     href="#/"
-                    className="text-sm font-medium text-primary-600 hover:underline dark:text-primary-500"
+                    className="text-sm font-medium text-[#3c60c3] hover:underline dark:text-primary-500"
                   >
                     Forgot password?
                   </a>
                 </div>
                 <div className="flex justify-center">
-                  <Button
-                    color="white"
-                    bgColor={currentColor}
-                    text="Continue"
-                    borderRadius="5px"
-                  />
+                  <Link to="/">
+                    <button className="  hover:bg-[#3c60c3] hover:text-white  text-[#3c60c3] border border-[#3c60c3] dark:text-white font-bold py-1 px-3 rounded ">
+                      Continue
+                    </button>
+                  </Link>
                 </div>
                 <p className="text-sm font-normal text-[#a1a5c6] text-center dark:text-gray-400">
                   Don’t have an account yet?{" "}
                   <Link
                     to="/signUp"
-                    className="font-medium text-[#009ef7] hover:underline dark:text-primary-500"
+                    className="font-medium text-[#3c60c3] hover:underline dark:text-primary-500"
                   >
                     Sign up
                   </Link>
