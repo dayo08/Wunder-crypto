@@ -61,7 +61,7 @@ function Billingcomaper() {
                         <h3 className="py-3 px-3  ">{items.title}</h3>
                       </th>
                       <td>
-                        <span className="block text-sm">100</span>
+                        <span className="block mx-auto text-sm">100</span>
                       </td>
                       <td>
                         <span className="block text-sm">100</span>

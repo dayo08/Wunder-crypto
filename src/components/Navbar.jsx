@@ -41,8 +41,6 @@ const Navbar = () => {
     setThemeSettings,
   } = useStateContext();
 
-  console.log(setMode);
-
   useEffect(() => {
     const handleResize = () => setScreenSize(window.innerWidth);
 
@@ -70,7 +68,7 @@ const Navbar = () => {
   const handleActiveMenu = () => setActiveMenu(!activeMenu);
   return (
     <div className=" border-b border-gray-500">
-      <div className="flex justify-between p-2 md:ml-1 md:mr-6 relative">
+      <div className="flex justify-between items-center p-2 md:ml-1 md:mr-6 relative">
         <Link
           to="/"
           onClick={handleCloseSideBar}
@@ -79,50 +77,48 @@ const Navbar = () => {
           <SiShopware /> <span>Wunder</span>
         </Link>
 
-        <div className="flex items-center gap-5">
-          {/* <NavButton
-            title="Cart"
-            color={currentColor}
-            icon={<AiOutlineUser />}
-          /> */}
-          {currentMode === "Dark" ? (
-            <>
-              <GiSun className=" cursor-pointer fill-white" />
-            </>
-          ) : (
-            <>
-              <FiMoon className="fill-black cursor-pointer" />
-            </>
-          )}
-          <input
-            type="radio"
-            id="dark"
-            name="theme"
-            value="Dark"
-            onChange={setMode}
-            className="cursor-pointer"
-            checked={currentMode === "Dark"}
-          />
-          <input
-            type="radio"
-            id="light"
-            name="theme"
-            value="Light"
-            className="cursor-pointer"
-            onChange={setMode}
-            checked={currentMode === "Light"}
-          />
+        <div className="flex items-center justify-center gap-5">
+          <div>
+            {currentMode === "Light" ? (
+              <div className="relative">
+                <input
+                  // type="checked"
+                  type="radio"
+                  id="dark"
+                  name="theme"
+                  value="Dark"
+                  onChange={setMode}
+                  className="cursor-pointer w-10 h-10 border bg-transparent  border-transparent z-50  outline-none"
+                  checked={currentMode === "Dark"}
+                />
+                <FiMoon className="fill-black cursor-pointer absolute top-3 left-3 -z-0" />
+              </div>
+            ) : (
+              <div className="relative">
+                <input
+                  type="radio"
+                  id="light"
+                  name="theme"
+                  value="Light"
+                  className="cursor-pointer w-10 h-10 border border-transparent z-50 bg-transparent dark:bg-[#282c34]  outline-none"
+                  onChange={setMode}
+                  checked={currentMode === "Light"}
+                />
+                <GiSun className="fill-black cursor-pointer absolute top-3 left-3 -z-0" />
+              </div>
+            )}
+          </div>
           <FaUser className="cursor-pointer hover:fill-[#0143cc] dark:fill-white" />
 
           <div
             className="flex items-center gap-2 cursor-pointer p-1 "
             onClick={() => handleClick("userProfile")}
           >
-            <p>
+            <Link to="/signUp">
               <span className="text-black font-normal hover:text-[#0143cc] dark:text-white dark:hover:text-[#598fff] ml-1 text-14">
                 Sign out
               </span>
-            </p>
+            </Link>
           </div>
         </div>
       </div>

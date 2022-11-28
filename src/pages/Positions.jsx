@@ -178,13 +178,17 @@ const Positions = () => {
 
       <div className="p-5">
         <button
-          className="bg-[#598fff] hover:bg-[#3c60c3]  text-black dark:text-white font-bold py-2 px-4 rounded btn"
+          className={`hover:bg-[#598fff] border-[#3c60c3] border ${
+            closetabeHistory && "bg-[#598fff] text-[white]"
+          } text-[#3c60c3]  hover:text-[white] font-bold py-2 px-4 rounded  btn`}
           onClick={() => closetabeHistory()}
         >
           Live
         </button>
         <button
-          className="hover:bg-[#598fff] border-[#3c60c3] border  text-black dark:text-white font-bold py-2 px-4 rounded  btn"
+          className={`hover:bg-[#598fff] border-[#3c60c3] border ${
+            setHistory === true ? "bg-[#598fff] text-[white]" : ""
+          } text-[#3c60c3]  hover:text-[white] font-bold py-2 px-4 rounded  btn`}
           onClick={() => closetabeLive()}
         >
           History

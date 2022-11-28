@@ -25,7 +25,7 @@
 .Billinghistory table th,
 table td {
   padding: 0.625em;
-  text-align: start;
+  /* text-align: start; */
 }
 
 .Billinghistory .small-spacer,
