@@ -40,9 +40,11 @@ const Dashboard = () => {
               </Link>
             </div>
             <div>
-              <button className="hover:text-white  hover:bg-[#3c60c3]  text-[#3c60c3]  border-[#3c60c3] border font-bold py-2 px-4 rounded ">
-                Connect an exchange
-              </button>
+              <Link to="/Createtraderaccount">
+                <button className="hover:text-white  hover:bg-[#3c60c3]  text-[#3c60c3]  border-[#3c60c3] border font-bold py-2 px-4 rounded ">
+                  Connect an exchange
+                </button>
+              </Link>
             </div>
           </div>
         </div>
@@ -340,16 +342,21 @@ const Dashboard = () => {
                 {/* Modal header */}
                 <div className="fixed top-2/4  p-4 ">
                   <div className="flex justify-end mb-3">
-                    <MdOutlineCancel className="dark:text-white  text-black cursor-pointer"  onClick={()=>setopen(false)}/>
+                    <MdOutlineCancel
+                      className="dark:text-white  text-black cursor-pointer"
+                      onClick={() => setopen(false)}
+                    />
                   </div>
 
                   <div className="flex flex-col dark:text-white  text-black items-center  gap-5 justify-between  ">
                     <div>
                       👋 Welcome Let's connect your first exchange account
                     </div>
-                    <button className="bg-[#598fff] hover:bg-[#598fff] text-white font-bold py-2 px-4 rounded btn">
-                      connect an exchange
-                    </button>
+                    <Link to="/Createtraderaccount">
+                      <button className="bg-[#598fff] hover:bg-[#598fff] text-white font-bold py-2 px-4 rounded btn">
+                        connect an exchange
+                      </button>
+                    </Link>
                   </div>
                 </div>
               </div>

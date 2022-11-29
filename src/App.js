@@ -49,22 +49,7 @@ const App = () => {
     }
   }, []);
 
-  const NavButton = ({ title, customFunc, icon, color, dotColor }) => (
-    <TooltipComponent content={title} position="BottomCenter">
-      <button
-        type="button"
-        onClick={() => customFunc()}
-        style={{ color }}
-        className="relative text-xl rounded-full p-3 hover:bg-light-gray"
-      >
-        <span
-          style={{ background: dotColor }}
-          className="absolute inline-flex rounded-full h-2 w-2 right-2 top-2"
-        />
-        {icon}
-      </button>
-    </TooltipComponent>
-  );
+
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, []);
@@ -78,7 +63,7 @@ const App = () => {
 
       <div className="flex relative dark:bg-main-dark-bg">
         <div
-          className={`text-3xl text-white p-3 bg-blue-500 fixed bottom-3 left-4 flex items-center rounded-full hover:drop-shadow-xl ${
+          className={`text-3xl text-white p-3 z-50 bg-blue-500 fixed bottom-3 left-4 flex items-center rounded-full hover:drop-shadow-xl ${
             activeMenu ? "hidden" : "block"
           }`}
         >
